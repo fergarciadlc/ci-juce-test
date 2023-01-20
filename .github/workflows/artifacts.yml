@@ -3,7 +3,7 @@ name: Artifacts
 on:
   push:
     branches:
-    - main
+    - mainn
 
   workflow_dispatch:
 
@@ -33,10 +33,10 @@ jobs:
     needs: [stage-1]
     name: Read file on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
 
     steps:
     - uses: actions/checkout@master
