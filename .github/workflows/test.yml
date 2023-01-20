@@ -4,9 +4,6 @@ on:
   push:
     branches:
     - main
-  pull_request:
-    branches:
-    - main
 
   workflow_dispatch:
 
@@ -24,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: mkdir -p path/to/artifact
-    - run: echo hello > path/to/artifact/world.txt
+    - run: echo "hello ${{ runner.os }}" > path/to/artifact/world.txt
 
     - uses: actions/upload-artifact@v3
       with:
