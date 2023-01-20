@@ -1,0 +1,23 @@
+name: Configurable Build Matrix
+
+on: push
+jobs:
+  matrix_prep:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+    - id: set-matrix
+      run: |   
+        branchName=$(echo '${{ github.ref }}' | sed 's,refs/heads/,,g')  
+        matrix=$(jq --arg branchName "$branchName" 'map(. | select((.runOn==$branchName) or (.runOn=="always")) )' matrix_includes.json)        
+        echo ::set-output name=matrix::{\"include\":$(echo $matrix)}\"
+  build-n-test:    
+    needs: matrix_prep
+    runs-on: ${{ matrix.runs_on }}
+    strategy:
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    steps:
+    - run: echo "Hello ${{ matrix.someValue }}"

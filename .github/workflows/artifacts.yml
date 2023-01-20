@@ -11,7 +11,7 @@ jobs:
 
   stage-1:
     # if: contains(toJson(github.event.commits), '/ut')
-    name: Unit Testing on ${{ matrix.os }}
+    name: Create file ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -31,7 +31,7 @@ jobs:
   stage-2:
     # if: contains(toJson(github.event.commits), '/no-ci') == false
     needs: [stage-1]
-    name: Build and test on ${{ matrix.os }}
+    name: Read file on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
