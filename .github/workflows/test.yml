@@ -1,0 +1,52 @@
+name: CI-Cmake
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+  workflow_dispatch:
+
+jobs:
+
+  stage-1:
+    # if: contains(toJson(github.event.commits), '/ut')
+    name: Unit Testing on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, macOS-latest]
+
+    steps:
+    - uses: actions/checkout@master
+    - run: mkdir -p path/to/artifact
+    - run: echo hello > path/to/artifact/world.txt
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: path/to/artifact/world.txt
+
+  stage-2:
+    # if: contains(toJson(github.event.commits), '/no-ci') == false
+    needs: [stage-1]
+    name: Build and test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, macOS-latest]
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/download-artifact@master
+      with:
+        name: my-artifact
+        path: path/to/artifact
+      
+    - run: ls -R path/to/artifact/
+    - run: cat path/to/artifact/world.txt
