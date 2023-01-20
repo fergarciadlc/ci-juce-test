@@ -1,0 +1,17 @@
+//
+//  AAXLibrary_common.xcconfig
+//  AAXLibrary
+//
+
+// Common config
+#include "AAXLibrary_common.xcconfig"
+
+
+//:configuration = Debug
+COPY_PHASE_STRIP = NO
+SEPARATE_STRIP = YES
+GCC_DYNAMIC_NO_PIC = NO
+GCC_OPTIMIZATION_LEVEL = 0
+
+// Manually set _DEBUG since it does not appear to be set by LLVM
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) _DEBUG=1

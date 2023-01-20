@@ -1,0 +1,54 @@
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Test Log: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Support_IDs_20230117_025632_01/DSH_AAXVAL_Support_IDs_20230117_025632_01_l.txt
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Tester: jsvaldezv
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Start time: 2023-01-17 02:56:32 -0600
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] ======
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: delete_pt_prefs, {}
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: true
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] bundle_path: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] uniq_id: 4174085103131265527
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: exist_on_target?, "/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: true
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: perform_on_target, {:obj=>#<Pathname:/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin>, :method=>:realpath, :args=>nil, :block=>nil}
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] obj: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin (Pathname)
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] method: realpath (Symbol)
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] args:  (NilClass)
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] block:  (NilClass)
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: #<Pathname:/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: launch_app, {:app_class=>DishTestTool::PipeApp, :app_name=>"dsh", :app_options=>"-a", :local_target=>true}
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh -a
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: true
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] launch_app true
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd117907b68 @cmd="clear_trace_config", @params=nil>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd11790c870 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd117916870 @cmd="enable_trace_facility", @params=["DTF_GOLDSMITH", "DTP_LOW"]>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd117925690 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd11792fb68 @cmd="enable_trace_facility", @params=["DTF_DSI", "DTP_NORMAL"]>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd11794d3c0 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd1179568f8 @cmd="enable_trace_facility", @params=["DTF_COREAUDIO", "DTP_NORMAL"]>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd117964d18 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:32 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd11796da80 @cmd="enable_trace_facility", @params=["DTF_CORE_ENGINE_SETTINGS", "DTP_LOWEST"]>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd117986300 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd11798ed48 @cmd="info", @params=nil>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd1179bb168 @result={"cmd_result"=>{"build"=>"release", "trace_path"=>"/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/Logs/dsh_2023_01_17_02_56_33.txt"}, "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd1179b80f8 @cmd="enable_trace_facility", @params=["DTF_AAXH_CLIENT", "DTP_LOWEST"]>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd1179e2768 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd1179e0080 @cmd="load_dish", @params=["aaxh"]>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd1179fa958 @result={"cmd_result"=>{"loaded_dishes_count"=>1}, "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd1179f8b08 @cmd="init", @params="debug_max">
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fd117a19358 @result={"cmd_result"=>{"debugLevel"=>15, "initialized"=>true}, "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd117a214b8 @cmd="loadpi", @params="/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin">
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fd117a42488 @result={"cmd_result"=>{"pluginID"=>0, "pluginPath"=>"/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin/"}, "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd117a4ab38 @cmd="listeffects", @params=0>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fd117a5a218 @result={"cmd_result"=>{"effectIDs"=>[{"effectID"=>"com.earCandyTech.ci-cmake-juce", "effectIdx"=>0}], "pluginID"=>0, "pluginPath"=>"/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin/"}, "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd117a588c8 @cmd="getdescription", @params={"plugin"=>0, "effect"=>0, "stringformat"=>"yaml"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fd117b6fba8 @result={"cmd_result"=>{"effectDescription"=>{"plugin_descriptor"=>{"bypass_category"=>{"bypass_category_mask"=>0}, "category_mask"=>0, "components"=>{"component_descriptor"=>[{"procs"=>{"proc_set"=>{"proc_descriptor"=>[{"dll"=>"/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin/Contents/MacOS/ci-cmake-juce", "properties"=>{"property_map"=>{"property"=>[{"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ManufacturerID", "val_formatted"=>"'Ects'", "val_literal"=>1164145779}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ProductID", "val_formatted"=>"'ci01'", "val_literal"=>1667838001}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_Native", "val_formatted"=>"'jccc'", "val_literal"=>1784898403}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_AudioSuite", "val_formatted"=>"'jycc'", "val_literal"=>1786340195}, {"cat"=>"general", "key"=>"AAX_eProperty_InputStemFormat", "val_literal"=>65538}, {"cat"=>"general", "key"=>"AAX_eProperty_OutputStemFormat", "val_literal"=>65538}, {"cat"=>"general", "key"=>"AAX_eProperty_CanBypass", "val_literal"=>1}, {"cat"=>"constraints", "key"=>"AAX_eProperty_Constraint_MultiMonoSupport", "val_literal"=>1}, {"cat"=>"features", "key"=>"309_AAX_EProperty", "val_literal"=>1}]}}, "type"=>"AAX_CProcessProc"}, {"type"=>"AAX_CInstanceInitProc"}, {"type"=>"AAX_CBackgroundProc"}]}}}, {"procs"=>{"proc_set"=>{"proc_descriptor"=>[{"dll"=>"/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin/Contents/MacOS/ci-cmake-juce", "properties"=>{"property_map"=>{"property"=>[{"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ManufacturerID", "val_formatted"=>"'Ects'", "val_literal"=>1164145779}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ProductID", "val_formatted"=>"'ci01'", "val_literal"=>1667838001}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_Native", "val_formatted"=>"'jcbb'", "val_literal"=>1784898146}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_AudioSuite", "val_formatted"=>"'jybb'", "val_literal"=>1786339938}, {"cat"=>"general", "key"=>"AAX_eProperty_InputStemFormat", "val_literal"=>1}, {"cat"=>"general", "key"=>"AAX_eProperty_OutputStemFormat", "val_literal"=>1}, {"cat"=>"general", "key"=>"AAX_eProperty_CanBypass", "val_literal"=>1}, {"cat"=>"constraints", "key"=>"AAX_eProperty_Constraint_MultiMonoSupport", "val_literal"=>1}, {"cat"=>"features", "key"=>"309_AAX_EProperty", "val_literal"=>1}]}}, "type"=>"AAX_CProcessProc"}, {"type"=>"AAX_CInstanceInitProc"}, {"type"=>"AAX_CBackgroundProc"}]}}}]}, "name"=>"ci-cmake-juce", "proc_ptrs"=>{"proc_ptr"=>[{"id"=>"kAAX_ProcPtrID_Create_EffectParameters"}, {"id"=>"kAAX_ProcPtrID_Create_EffectGUI"}]}}}, "effectIdx"=>0, "pluginID"=>0}, "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd117b762f0 @cmd="teardown", @params=nil>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fd117b85fe8 @result={"cmd_result"=>{"initialized"=>false}, "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fd117b857f0 @cmd="exit", @params=nil>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fd117b8d220 @result={"cmd_result"=>"exiting", "message_type"=>"cmd_result"}>
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Send: close_app, nil
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Recv: nil
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Send: dsh_running?, {}
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Recv: false
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] DSH_AAXVAL_Support_IDs PASSED: See plug-in description
+[Tue Jan 17 02:56:33 2023] [00:00:00:01] Elapsed time: 1 second.

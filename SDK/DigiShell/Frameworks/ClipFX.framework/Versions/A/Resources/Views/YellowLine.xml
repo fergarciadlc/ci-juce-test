@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View" id="Yellow Line">
+    <bounds x="169" y="0" width="2" height="188"/>
+    <intercepts_mouse value="false"/>
+    <image_list id="background" src="UIGraphics/cfx_dnd_line.png" stretch="true" x="0" y="0"/>
+    </view>
+</view>

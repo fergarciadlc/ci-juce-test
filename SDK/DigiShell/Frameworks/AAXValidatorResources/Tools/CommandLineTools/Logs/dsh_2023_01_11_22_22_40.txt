@@ -1,0 +1,33 @@
+
+
+*** Refreshing session trace for:	/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0x17f18, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+124923.977234,00103,0034: execute succeeded
+124923.977269,00103,0034: before writing message
+124923.977555,00103,0034: writing message completed
+124923.977562,00103,0034: waiting for command
+124923.980302,00103,0034: cmd: "enable_trace_facility"
+124923.980331,00103,0034: got: "---"
+124923.980344,00103,0034: got: "- DTF_CORE_ENGINE_SETTINGS"
+124923.980351,00103,0034: got: "- DTP_LOWEST"
+124923.980356,00103,0034: got: "..."
+124923.980390,00103,0034: yaml parsing succeeded
+124923.980648,00103,0034: parsed params:
+---
+- DTF_CORE_ENGINE_SETTINGS
+- DTP_LOWEST
+124923.980682,00103,0034: got command
+124923.980688,00103,0034: before check input parameters
+124923.980693,00103,0034: before calling execute

@@ -1,0 +1,211 @@
+
+
+*** Refreshing session trace for:	/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0xca2, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+DTF_CORE_ENGINE_SETTINGS@DTP_LOWEST(0e0c)
+DTF_AAXH_CLIENT@DTP_LOWEST(0f0a)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+317510.947506,00103,0034: execute succeeded
+317510.947525,00103,0034: before writing message
+317510.947718,00103,0034: writing message completed
+317510.947724,00103,0034: waiting for command
+317510.949356,00103,0034: cmd: "load_dish"
+317510.949369,00103,0034: got: "---"
+317510.949375,00103,0034: got: "- aaxh"
+317510.949380,00103,0034: got: "..."
+317510.949395,00103,0034: yaml parsing succeeded
+317510.949476,00103,0034: parsed params:
+---
+- aaxh
+317510.949490,00103,0034: got command
+317510.949494,00103,0034: before check input parameters
+317510.949498,00103,0034: before calling execute
+317510.950550,00103,0034: dish directory doesn't exist "Macintosh HD:Library:Application Support:Avid:Audio:dishes:"
+317510.951831,00103,0034: processing dish "Macintosh HD:Users:username:Documents:GitHub:Personal:ci-juce-test:SDK:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:aaxh.dish:"
+317511.046788,00103,0f0a: Initialize: enter
+317511.046836,00103,0f0a: Initialize: exit (48 us)
+317511.047049,00103,0034: AAXDishCommon::CSharedData created
+317511.047566,00103,0034: yaml parsing succeeded
+317511.047771,00103,0034: yaml parsing succeeded
+317511.048644,00103,0034: yaml parsing succeeded
+317511.048732,00103,0034: yaml parsing succeeded
+317511.048805,00103,0034: yaml parsing succeeded
+317511.048873,00103,0034: yaml parsing succeeded
+317511.048990,00103,0034: yaml parsing succeeded
+317511.049389,00103,0034: yaml parsing succeeded
+317511.049502,00103,0034: yaml parsing succeeded
+317511.050145,00103,0034: yaml parsing succeeded
+317511.051386,00103,0034: yaml parsing succeeded
+317511.051771,00103,0034: yaml parsing succeeded
+317511.053061,00103,0034: yaml parsing succeeded
+317511.053361,00103,0034: yaml parsing succeeded
+317511.053672,00103,0034: yaml parsing succeeded
+317511.054204,00103,0034: yaml parsing succeeded
+317511.054584,00103,0034: yaml parsing succeeded
+317511.054886,00103,0034: yaml parsing succeeded
+317511.055265,00103,0034: dish loaded
+317511.055272,00103,0034: processing dish "Macintosh HD:Users:username:Documents:GitHub:Personal:ci-juce-test:SDK:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:DAE.dish:"
+317511.055275,00103,0034: dish ignored
+317511.055281,00103,0034: execute succeeded
+317511.055283,00103,0034: before writing message
+317511.055367,00103,0034: writing message completed
+317511.055370,00103,0034: waiting for command
+317511.056119,00103,0034: cmd: "init"
+317511.056123,00103,0034: got: "--- debug_max"
+317511.056125,00103,0034: got: "..."
+317511.056130,00103,0034: yaml parsing succeeded
+317511.056160,00103,0034: parsed params:
+--- debug_max
+317511.056163,00103,0034: got command
+317511.056164,00103,0034: before check input parameters
+317511.056166,00103,0034: cmd: init
+317511.056187,00103,0034: 
+failed sequence '""', user input 'debug_max', failure reason - got non empty input when expected empty element
+317511.056213,00103,0034: before calling execute
+317511.056229,00103,0034: DSH_TParameter::SetFromAny - set parameter "debuglevel" to "15"
+317511.056237,00103,0f0a: AAXHShell_SetDebugLevel: returning true
+317511.056243,00103,0f0a: AAXHShell_GetDebugLevel: returning true
+317511.056279,00103,0034: execute succeeded
+317511.056283,00103,0034: before writing message
+317511.056397,00103,0034: writing message completed
+317511.056400,00103,0034: waiting for command
+317511.057060,00103,0034: cmd: "loadpi"
+317511.057067,00103,0034: got: "--- "/Users/username/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin""
+317511.057068,00103,0034: got: "..."
+317511.057072,00103,0034: yaml parsing succeeded
+317511.057117,00103,0034: parsed params:
+--- /Users/username/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin
+317511.057120,00103,0034: got command
+317511.057121,00103,0034: before check input parameters
+317511.057122,00103,0034: cmd: loadpi
+317511.057141,00103,0034: before calling execute
+317511.057149,00103,0034: DSH_TParameter::SetFromAny - set parameter "path" to "/Users/username/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"
+317511.057407,00103,0f0a: AAXHShell_CCommandManager::CreateList - created command list id: 0
+317511.057409,00103,0f0a: AAXHShell_CreateCommandList: returning true
+317511.057435,00103,0f0a: AAXHShell_AddCommandListData: returning true
+317511.057437,00103,0f0a: AAXHShell_AddCommandListData: returning true
+317511.057450,00103,0f0a: AAXHShell_CCommandManager::Push - pushed command to command list id: 0
+317511.057452,00103,0f0a: AAXHShell_PushCommandLoadPlugIn: returning true
+317511.057453,00103,0f0a: AAXHShell_CCommandManager::DoActionOnList - executing action: 0, command list id: 0
+317511.057456,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Execute: enter
+317511.057457,00103,0f0a: LoadPlugIn: enter
+317511.057458,00103,0f0a:   path: /Users/username/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin
+317511.491711,00103,0f0a: AAXHShell_CPlugInManager::LoadPlugIn succeeded - id: 0, collection: 0x600003fb88c0, plug-in: /Users/username/Documents/GitHub/Personal/ci-juce-test/plugins/ci-cmake-juce.aaxplugin
+317511.491722,00103,0f0a: LoadPlugIn: exit (434264 us)
+317511.491723,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Execute: exit (434266 us)
+317511.491728,00103,0f0a: AAXHShell_ExecuteCommandList: returning true
+317511.491750,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.491775,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.491790,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.491815,00103,0f0a: AAXHShell_GetPlugInPath: returning true
+317511.491828,00103,0034: execute succeeded
+317511.491835,00103,0034: before writing message
+317511.492001,00103,0034: writing message completed
+317511.492004,00103,0034: waiting for command
+317511.492811,00103,0034: cmd: "listeffects"
+317511.492814,00103,0034: got: "--- 0"
+317511.492815,00103,0034: got: "..."
+317511.492825,00103,0034: yaml parsing succeeded
+317511.492854,00103,0034: parsed params:
+--- 0
+317511.492858,00103,0034: got command
+317511.492860,00103,0034: before check input parameters
+317511.492861,00103,0034: cmd: listeffects
+317511.492883,00103,0034: 
+failed sequence '""', user input '0', failure reason - got non empty input when expected empty element
+317511.492909,00103,0034: before calling execute
+317511.492925,00103,0034: DSH_TParameter::SetFromAny - set parameter "plugin" to "0"
+317511.492930,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.492934,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.492937,00103,0f0a: AAXHShell_GetPlugInPath: returning true
+317511.492939,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.492941,00103,0f0a: AAXHShell_GetNumberOfEffects: returning true
+317511.492942,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.492956,00103,0f0a: AAXHShell_GetEffectIDByIndex: returning true
+317511.493024,00103,0034: execute succeeded
+317511.493029,00103,0034: before writing message
+317511.493264,00103,0034: writing message completed
+317511.493267,00103,0034: waiting for command
+317511.494555,00103,0034: cmd: "getdescription"
+317511.494559,00103,0034: got: "---"
+317511.494561,00103,0034: got: "plugin: 0"
+317511.494563,00103,0034: got: "effect: 0"
+317511.494565,00103,0034: got: "stringformat: yaml"
+317511.494566,00103,0034: got: "..."
+317511.494572,00103,0034: yaml parsing succeeded
+317511.494701,00103,0034: parsed params:
+---
+effect: 0
+plugin: 0
+stringformat: yaml
+317511.494708,00103,0034: got command
+317511.494711,00103,0034: before check input parameters
+317511.494712,00103,0034: cmd: getdescription
+317511.494920,00103,0034: 
+failed sequence '"[plugin_listval, effect_listval]"' matching element '[plugin_listval, effect_listval]' with user input '{effect: 0, plugin: 0, stringformat: yaml}', failure reason - not a list
+317511.495062,00103,0034: before calling execute
+317511.495077,00103,0034: DSH_TParameter::SetFromAny - set parameter "effect" to "0"
+317511.495081,00103,0034: DSH_TParameter::SetFromAny - set parameter "plugin" to "0"
+317511.495087,00103,0034: DSH_TParameter::SetFromAny - set parameter "stringformat" to "2"
+317511.495095,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.495325,00103,0f0a: AAXHShell_GetEffectDescriptionSize: returning true
+317511.495328,00103,0f0a: AAXHShell_GetCommandListData: returning true
+317511.495331,00103,0f0a: AAXHShell_GetEffectDescription: returning true
+317511.498038,00103,0034: execute succeeded
+317511.498095,00103,0034: before writing message
+317511.500788,00103,0034: writing message completed
+317511.500819,00103,0034: waiting for command
+317511.503193,00103,0034: cmd: "teardown"
+317511.503196,00103,0034: got: "--- "
+317511.503198,00103,0034: got: "..."
+317511.503202,00103,0034: yaml parsing succeeded
+317511.503204,00103,0034: parsed params:
+--- ~
+317511.503207,00103,0034: got command
+317511.503208,00103,0034: before check input parameters
+317511.503209,00103,0034: before calling execute
+317511.503216,00103,0f0a: AAXHShell_CCommandManager::DoActionOnList - executing action: 1, command list id: 0
+317511.503218,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Undo: enter
+317511.503219,00103,0f0a: UnloadPlugIn: enter
+317511.503220,00103,0f0a:   pi: 0
+317511.503270,00103,0f0a: UnloadPlugIn: exit (51 us)
+317511.503272,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Undo: exit (54 us)
+317511.503275,00103,0f0a: AAXHShell_UndoCommandList: returning true
+317511.503279,00103,0f0a: AAXHShell_DeleteCommandList: returning true
+317511.503280,00103,0f0a: AAXHShell_UndoAndDeleteCommandList: returning true
+317511.503420,00103,0f0a: Teardown: enter
+317511.503426,00103,0f0a: Teardown: exit (5 us)
+317511.503484,00103,0034: execute succeeded
+317511.503488,00103,0034: before writing message
+317511.503571,00103,0034: writing message completed
+317511.503573,00103,0034: waiting for command
+317511.503797,00103,0034: cmd: "exit"
+317511.503801,00103,0034: got: "--- "
+317511.503802,00103,0034: got: "..."
+317511.503813,00103,0034: yaml parsing succeeded
+317511.503818,00103,0034: parsed params:
+--- ~
+317511.503821,00103,0034: got command
+317511.503823,00103,0034: before check input parameters
+317511.503824,00103,0034: before calling execute
+317511.503826,00103,0034: execute succeeded
+317511.503827,00103,0034: before writing message
+317511.503902,00103,0034: writing message completed
+317511.504105,00103,0034: AAXDishCommon::CSharedData deleted
+317511.504109,00103,0034: dish finalized
+
+
+ *** DigiTrace Log Complete ***

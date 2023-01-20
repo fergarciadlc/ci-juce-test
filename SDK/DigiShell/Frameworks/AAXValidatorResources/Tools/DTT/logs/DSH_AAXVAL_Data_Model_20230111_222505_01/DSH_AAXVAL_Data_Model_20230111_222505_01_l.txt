@@ -1,0 +1,4 @@
+[00:00:00:00] Test Log: /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Data_Model_20230111_222505_01/DSH_AAXVAL_Data_Model_20230111_222505_01_l.txt
+[00:00:00:00] ======
+[00:00:00:06] DSH_AAXVAL_Data_Model PASSED: ci-cmake-juce.aaxplugin Successfully created Data Model for all effects!
+[00:00:00:06] Elapsed time: 6 seconds.

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+<configuration XML_version="1.2" id="Raven XDS510USB Emulator">
+        <instance XML_version="1.2" desc="Raven XDS510USB Emulator" href="connections\SD510USB_Connection.xml" id="Raven XDS510USB Emulator" xml="SD510USB_Connection.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Raven XDS510USB Emulator">
+            <instance XML_version="1.2" href="drivers\sdgo6xusb.xml" id="drivers" xml="sdgo6xusb.xml" xmlpath="drivers"/>
+            <property Type="choicelist" Value="0" id="portAddr1"/>
+            <platform XML_version="1.2" id="platform_0">
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_0" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_0" href="cpus\c672x.xml" id="C672x_0" xml="c672x.xml" xmlpath="cpus"/>
+            	<cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_1" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_1" href="cpus\c672x.xml" id="C672x_1" xml="c672x.xml" xmlpath="cpus"/>
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_2" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_2" href="cpus\c672x.xml" id="C672x_2" xml="c672x.xml" xmlpath="cpus"/>
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_3" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_3" href="cpus\c672x.xml" id="C672x_3" xml="c672x.xml" xmlpath="cpus"/>
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_4" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_4" href="cpus\c672x.xml" id="C672x_4" xml="c672x.xml" xmlpath="cpus"/>
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_5" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_5" href="cpus\c672x.xml" id="C672x_5" xml="c672x.xml" xmlpath="cpus"/>
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_6" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_6" href="cpus\c672x.xml" id="C672x_6" xml="c672x.xml" xmlpath="cpus"/>
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_7" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_7" href="cpus\c672x.xml" id="C672x_7" xml="c672x.xml" xmlpath="cpus"/>
+                <cpu HW_revision="1.0" XML_version="1.2" description="Bypass Cpu" id="bypass_8" isa="BYPASS08"/>
+                <instance XML_version="1.2" desc="C672x_8" href="cpus\c672x.xml" id="C672x_8" xml="c672x.xml" xmlpath="cpus"/>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>

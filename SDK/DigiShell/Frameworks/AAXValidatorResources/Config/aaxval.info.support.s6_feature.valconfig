@@ -1,0 +1,29 @@
+process {
+	id: "process_s6feature_cpp"
+	name: "S6 Feature Test CPP"
+	arguments {
+		elem: "--bundle_path=\"$AAXVAL_PARAM_AAXPLUGIN$\""
+		elem: "--uniq_id=$AAXVAL_PARAM_UNIQ_ID$"
+		elem: "--port=$AAXVAL_TCP_PORT$"
+    }
+	platform_process {
+		platform: E_PLATFORM_OSX
+		invocation: "$AAXVAL_DIR_TOOLS$/CommandLineTools/aaxval_info_support_s6_feature"
+	}
+	platform_process {
+		platform: E_PLATFORM_WIN
+		invocation: "$AAXVAL_DIR_TOOLS$\\aaxval.info.support.s6_feature.exe"
+	}
+}
+
+test {
+	id: "info.support.s6_feature"
+	name: "Plug-In S6 Feature Test"
+	description: "Tests support of Avid S6 features and provides a score"
+	
+	module_id: "mod_info_features"
+	module_id: "mod_info_console"
+	category_id: "cat_s6"
+	
+	process_id: "process_s6feature_cpp"
+}

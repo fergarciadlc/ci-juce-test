@@ -1,0 +1,24 @@
+test {
+	id: "test.cycle_counts"
+	name: "Instance and Shared Cycle Count"
+	description: "Test cycle counts reported by an AAX DSP plug-in"
+	
+	module_id: "mod_tests_component_alg"
+	module_id: "mod_tests_required"
+	module_id: "mod_tests_plat_dsp"
+	category_id: "cat_hdx"
+	category_id: "cat_s3l"
+	category_id: "cat_performance"
+	category_id: "cat_reliability"
+	
+	process_id: "process_dtt"
+	arguments {
+		elem: "--script=DSH_AAXVAL_Cycle_Counts"
+	}
+	
+	constraints {
+		system {
+			type: E_HDX
+		}
+	}
+}

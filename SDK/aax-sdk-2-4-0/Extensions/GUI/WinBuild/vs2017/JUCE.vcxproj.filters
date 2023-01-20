@@ -1,0 +1,2393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Juce">
+      <UniqueIdentifier>{157379c4-a722-4259-b7aa-ed951d4c4afd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source">
+      <UniqueIdentifier>{df5ea863-c4f7-43de-957f-ade938bf7374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\application">
+      <UniqueIdentifier>{75e012ac-1e61-4cd6-8223-bc766682d4ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio">
+      <UniqueIdentifier>{28776646-9708-4812-95aa-b710a9f64ddb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\audio_file_formats">
+      <UniqueIdentifier>{2bd07796-4917-4da0-9026-2deab57361d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\audio_sources">
+      <UniqueIdentifier>{1b937eaf-300b-4723-8023-05133259781d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\devices">
+      <UniqueIdentifier>{4b020aa3-5647-48e1-9960-16b59c2bfe69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\dsp">
+      <UniqueIdentifier>{3dcd4084-0aff-405a-8bf8-f14f92440879}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\midi">
+      <UniqueIdentifier>{ea56b7b0-32d1-4634-977f-041c5901de2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\plugins">
+      <UniqueIdentifier>{2dbd9560-a8a9-4d14-8e76-ec99897fa6f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\plugins\wrapper code">
+      <UniqueIdentifier>{e7132f2b-8260-40b7-8c2b-84e05821a6bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\plugins\wrapper code\AU">
+      <UniqueIdentifier>{90efa77f-20d9-42a1-ad6d-d0ea7e8d9eea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\plugins\wrapper code\RTAS">
+      <UniqueIdentifier>{a8dbff40-57aa-4e44-82b9-f04eff001717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\plugins\wrapper code\VST">
+      <UniqueIdentifier>{13033f4f-24f2-4f7e-a102-c58a253f8793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\plugins\wrapper code\Standalone">
+      <UniqueIdentifier>{ef9df6b8-376c-468c-9abe-750990833724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\plugins\formats">
+      <UniqueIdentifier>{1e92e1c4-19e8-4f70-a92b-8b3bd4b340c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\processors">
+      <UniqueIdentifier>{32777987-2b7b-477b-8ad5-ef13cc5f0b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\audio\synthesisers">
+      <UniqueIdentifier>{dfac56c5-15e3-4355-9df8-444dedc87bc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\containers">
+      <UniqueIdentifier>{e191db1c-26eb-4597-bf94-0058aa2d2101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\core">
+      <UniqueIdentifier>{b1df937d-0e1a-44c3-887c-e92b41fb28dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\cryptography">
+      <UniqueIdentifier>{f282b92c-7d44-4da5-b941-7014e4e520fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\events">
+      <UniqueIdentifier>{9a4b3aca-95cb-4680-9c23-09a32c8ebb62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui">
+      <UniqueIdentifier>{05711f73-51b3-40f6-bff5-56a5c8b36a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components">
+      <UniqueIdentifier>{456bc246-d95f-4236-bf0d-8a2efe04d2d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\buttons">
+      <UniqueIdentifier>{a7b7ec4e-c464-47df-a49e-8a89b6d241c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\code_editor">
+      <UniqueIdentifier>{e0ba11e5-31d7-468b-826d-899e22b7da3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\controls">
+      <UniqueIdentifier>{7dfab330-4006-4b2f-b858-8a74335696ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\filebrowser">
+      <UniqueIdentifier>{c3c6ab55-fd8e-4e04-9674-67eafec442fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\keyboard">
+      <UniqueIdentifier>{fd8cfb9c-8a8a-44e3-91a3-d423e3435bca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\layout">
+      <UniqueIdentifier>{2a570d9d-64df-4558-a2db-efbaf517c1e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\lookandfeel">
+      <UniqueIdentifier>{7a385867-a404-4cf9-af4e-4cc523c21bad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\menus">
+      <UniqueIdentifier>{8a3c0385-238c-417e-ada9-a6ffc72aa6bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\mouse">
+      <UniqueIdentifier>{10afe826-3b76-4012-b8bc-aff9c27d5762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\positioning">
+      <UniqueIdentifier>{d72928c1-d504-4eee-a046-360454cc2f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\properties">
+      <UniqueIdentifier>{f7f170c9-8f95-4ff1-9d07-af54e8d9ba4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\special">
+      <UniqueIdentifier>{e82b0700-f0d5-4532-9e74-ea04471ac236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\components\windows">
+      <UniqueIdentifier>{2b31de84-59c3-4fc9-a53e-bbd56fb75aa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics">
+      <UniqueIdentifier>{be56caf0-e2ff-4148-8282-4046123e2703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\colour">
+      <UniqueIdentifier>{2b52d594-ee66-4d9d-bd26-e39a07b54864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\contexts">
+      <UniqueIdentifier>{bf2036cd-bba2-43c8-baeb-aea1c67d2e34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\drawables">
+      <UniqueIdentifier>{c0a07e7c-2c87-4841-ba90-ee519021e68a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\effects">
+      <UniqueIdentifier>{c310b558-59f2-4361-aaef-e9fef1222008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\fonts">
+      <UniqueIdentifier>{c66498c8-3acf-4126-badb-f409780e58d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\geometry">
+      <UniqueIdentifier>{6bb1f5cc-5bd3-444d-9189-4d33bd530833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\imaging">
+      <UniqueIdentifier>{a05191c0-e9eb-47af-aa7e-51212fff86bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\gui\graphics\imaging\image_file_formats">
+      <UniqueIdentifier>{fdf3d3ad-2a8d-4979-bc7e-55b93b581b97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\io">
+      <UniqueIdentifier>{08675ca9-6092-4a27-a70b-b74084894785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\io\files">
+      <UniqueIdentifier>{6e68a225-fdf4-4ed0-b79a-5665de7497e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\io\network">
+      <UniqueIdentifier>{19d59b64-8548-4053-b18f-d65f521696ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\io\streams">
+      <UniqueIdentifier>{3a0207c7-66e1-4cc5-acc0-15a75de97317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\maths">
+      <UniqueIdentifier>{4044de41-8be1-4da4-8b54-e3abb8a75cb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\memory">
+      <UniqueIdentifier>{06007da8-8f3a-4935-9b57-1c79d595d71d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\native">
+      <UniqueIdentifier>{4c82a554-e6a4-4be3-ac35-8145002aa4a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\native\common">
+      <UniqueIdentifier>{476fe469-093c-4a84-a11b-bfdede55ec14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\native\linux">
+      <UniqueIdentifier>{75866724-415f-466c-8512-0e44965f6f33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\native\mac">
+      <UniqueIdentifier>{ec614761-9a36-4fc9-9e59-a8f726ef929d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\native\windows">
+      <UniqueIdentifier>{d5d6bc20-cbb9-4c3f-9e4b-36b04aa011bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\native\android">
+      <UniqueIdentifier>{524cae3c-84e2-429f-a9f3-c8682b8553e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\text">
+      <UniqueIdentifier>{70057cd5-f790-44f5-a6dc-d1fd01733e60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\threads">
+      <UniqueIdentifier>{07d884ca-a980-46ee-949b-640ab71d2957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce\Source\utilities">
+      <UniqueIdentifier>{49d2f667-f0fd-4e0a-88c9-3dfc14119d00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(JuceSourceDir)\juce.h">
+      <Filter>Juce\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\juce_Config.h">
+      <Filter>Juce\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\application\juce_Application.h">
+      <Filter>Juce\Source\application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\application\juce_ApplicationCommandID.h">
+      <Filter>Juce\Source\application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\application\juce_ApplicationCommandInfo.h">
+      <Filter>Juce\Source\application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\application\juce_ApplicationCommandManager.h">
+      <Filter>Juce\Source\application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\application\juce_ApplicationCommandTarget.h">
+      <Filter>Juce\Source\application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\application\juce_ApplicationProperties.h">
+      <Filter>Juce\Source\application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AiffAudioFormat.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioCDBurner.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioCDReader.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormat.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormatManager.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormatReader.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormatWriter.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioSubsectionReader.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioThumbnail.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioThumbnailCache.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_FlacAudioFormat.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_OggVorbisAudioFormat.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_QuickTimeAudioFormat.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_WavAudioFormat.h">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_AudioFormatReaderSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_AudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_AudioSourcePlayer.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_AudioTransportSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_BufferingAudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_ChannelRemappingAudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_IIRFilterAudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_MixerAudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_PositionableAudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_ResamplingAudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\audio_sources\juce_ToneGeneratorAudioSource.h">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\devices\juce_AudioDeviceManager.h">
+      <Filter>Juce\Source\audio\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\devices\juce_AudioIODevice.h">
+      <Filter>Juce\Source\audio\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\devices\juce_AudioIODeviceType.h">
+      <Filter>Juce\Source\audio\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\dsp\juce_AudioDataConverters.h">
+      <Filter>Juce\Source\audio\dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\dsp\juce_AudioSampleBuffer.h">
+      <Filter>Juce\Source\audio\dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\dsp\juce_Decibels.h">
+      <Filter>Juce\Source\audio\dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\dsp\juce_IIRFilter.h">
+      <Filter>Juce\Source\audio\dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiBuffer.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiFile.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiInput.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiKeyboardState.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiMessage.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiMessageCollector.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiMessageSequence.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\midi\juce_MidiOutput.h">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\juce_AudioPluginFormat.h">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\juce_AudioPluginFormatManager.h">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\juce_AudioPluginInstance.h">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\juce_KnownPluginList.h">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\juce_PluginDescription.h">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\juce_PluginDirectoryScanner.h">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\juce_PluginListComponent.h">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\extras\audio plugins\wrapper\juce_IncludeCharacteristics.h">
+      <Filter>Juce\Source\audio\plugins\wrapper code</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\extras\audio plugins\wrapper\juce_PluginHeaders.h">
+      <Filter>Juce\Source\audio\plugins\wrapper code</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\extras\audio plugins\wrapper\juce_PluginHostType.h">
+      <Filter>Juce\Source\audio\plugins\wrapper code</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\extras\audio plugins\wrapper\RTAS\juce_RTAS_DigiCode_Header.h">
+      <Filter>Juce\Source\audio\plugins\wrapper code\RTAS</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\extras\audio plugins\wrapper\Standalone\juce_AudioFilterStreamer.h">
+      <Filter>Juce\Source\audio\plugins\wrapper code\Standalone</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\extras\audio plugins\wrapper\Standalone\juce_StandaloneFilterWindow.h">
+      <Filter>Juce\Source\audio\plugins\wrapper code\Standalone</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_AudioUnitPluginFormat.h">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_DirectXPluginFormat.h">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_LADSPAPluginFormat.h">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_VSTMidiEventList.h">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_VSTPluginFormat.h">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\processors\juce_AudioPlayHead.h">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessor.h">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessorEditor.h">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessorGraph.h">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessorListener.h">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessorPlayer.h">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\processors\juce_GenericAudioProcessorEditor.h">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\synthesisers\juce_Sampler.h">
+      <Filter>Juce\Source\audio\synthesisers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\audio\synthesisers\juce_Synthesiser.h">
+      <Filter>Juce\Source\audio\synthesisers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_AbstractFifo.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_Array.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_ArrayAllocationBase.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_DynamicObject.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_ElementComparator.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_HashMap.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_LinkedListPointer.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_NamedValueSet.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_OwnedArray.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_PropertySet.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_ReferenceCountedArray.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_ScopedValueSetter.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_SortedSet.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_SparseSet.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_Value.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_ValueTree.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\containers\juce_Variant.h">
+      <Filter>Juce\Source\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_FileLogger.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_Initialisation.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_Logger.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_PerformanceCounter.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_PlatformDefs.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_PlatformUtilities.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_RelativeTime.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_Result.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_Singleton.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_StandardHeader.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_SystemStats.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_TargetPlatform.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_Time.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\core\juce_Uuid.h">
+      <Filter>Juce\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\cryptography\juce_BlowFish.h">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\cryptography\juce_MD5.h">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\cryptography\juce_Primes.h">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\cryptography\juce_RSAKey.h">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_ActionBroadcaster.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_ActionListener.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_AsyncUpdater.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_CallbackMessage.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_ChangeBroadcaster.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_ChangeListener.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_InterprocessConnection.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_InterprocessConnectionServer.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_ListenerList.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_Message.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_MessageListener.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_MessageManager.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_MultiTimer.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\events\juce_Timer.h">
+      <Filter>Juce\Source\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\juce_Component.h">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\juce_ComponentListener.h">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\juce_Desktop.h">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\juce_ModalComponentManager.h">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ArrowButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_Button.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_DrawableButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_HyperlinkButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ImageButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ShapeButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_TextButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ToggleButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ToolbarButton.h">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\code_editor\juce_CodeDocument.h">
+      <Filter>Juce\Source\gui\components\code_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\code_editor\juce_CodeEditorComponent.h">
+      <Filter>Juce\Source\gui\components\code_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\code_editor\juce_CodeTokeniser.h">
+      <Filter>Juce\Source\gui\components\code_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\code_editor\juce_CPlusPlusCodeTokeniser.h">
+      <Filter>Juce\Source\gui\components\code_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_ComboBox.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_Label.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_ListBox.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_ProgressBar.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_Slider.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_TableHeaderComponent.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_TableListBox.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_TextEditor.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_Toolbar.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_ToolbarItemComponent.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_ToolbarItemFactory.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_ToolbarItemPalette.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\controls\juce_TreeView.h">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_DirectoryContentsDisplayComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_DirectoryContentsList.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileBrowserComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileBrowserListener.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileChooser.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileChooserDialogBox.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileFilter.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileListComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FilenameComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FilePreviewComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileSearchPathListComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileTreeComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_ImagePreviewComponent.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_WildcardFileFilter.h">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_CaretComponent.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyboardFocusTraverser.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyListener.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyMappingEditorComponent.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyPress.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyPressMappingSet.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_ModifierKeys.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_TextInputTarget.h">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentAnimator.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentBoundsConstrainer.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentBuilder.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentMovementWatcher.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_GroupComponent.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_MultiDocumentPanel.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ResizableBorderComponent.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ResizableCornerComponent.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ResizableEdgeComponent.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_ScrollBar.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_StretchableLayoutManager.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_StretchableLayoutResizerBar.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_StretchableObjectResizer.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_TabbedButtonBar.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_TabbedComponent.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\layout\juce_Viewport.h">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\lookandfeel\juce_LookAndFeel.h">
+      <Filter>Juce\Source\gui\components\lookandfeel</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\lookandfeel\juce_OldSchoolLookAndFeel.h">
+      <Filter>Juce\Source\gui\components\lookandfeel</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\menus\juce_MenuBarComponent.h">
+      <Filter>Juce\Source\gui\components\menus</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\menus\juce_MenuBarModel.h">
+      <Filter>Juce\Source\gui\components\menus</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\menus\juce_PopupMenu.h">
+      <Filter>Juce\Source\gui\components\menus</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_ComponentDragger.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_DragAndDropContainer.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_DragAndDropTarget.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_FileDragAndDropTarget.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_LassoComponent.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseCursor.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseEvent.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseInputSource.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseListener.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\mouse\juce_TooltipClient.h">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\positioning\juce_MarkerList.h">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeCoordinate.h">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeCoordinatePositioner.h">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeParallelogram.h">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativePoint.h">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativePointPath.h">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeRectangle.h">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\properties\juce_BooleanPropertyComponent.h">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\properties\juce_ButtonPropertyComponent.h">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\properties\juce_ChoicePropertyComponent.h">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\properties\juce_PropertyComponent.h">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\properties\juce_PropertyPanel.h">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\properties\juce_SliderPropertyComponent.h">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\properties\juce_TextPropertyComponent.h">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_ActiveXControlComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_AudioDeviceSelectorComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_BubbleComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_BubbleMessageComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_ColourSelector.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_DropShadower.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_MidiKeyboardComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_NSViewComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_OpenGLComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_PreferencesPanel.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_QuickTimeMovieComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_SystemTrayIconComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\special\juce_WebBrowserComponent.h">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_AlertWindow.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_CallOutBox.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_ComponentPeer.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_DialogWindow.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_DocumentWindow.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_NativeMessageBox.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_ResizableWindow.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_SplashScreen.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_ThreadWithProgressWindow.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_TooltipWindow.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\components\windows\juce_TopLevelWindow.h">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\colour\juce_Colour.h">
+      <Filter>Juce\Source\gui\graphics\colour</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\colour\juce_ColourGradient.h">
+      <Filter>Juce\Source\gui\graphics\colour</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\colour\juce_Colours.h">
+      <Filter>Juce\Source\gui\graphics\colour</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\colour\juce_PixelFormats.h">
+      <Filter>Juce\Source\gui\graphics\colour</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_EdgeTable.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_FillType.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_Graphics.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_Justification.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_LowLevelGraphicsContext.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_LowLevelGraphicsPostScriptRenderer.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_LowLevelGraphicsSoftwareRenderer.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_RectanglePlacement.h">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_Drawable.h">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableComposite.h">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableImage.h">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawablePath.h">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableRectangle.h">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableShape.h">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableText.h">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\effects\juce_DropShadowEffect.h">
+      <Filter>Juce\Source\gui\graphics\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\effects\juce_GlowEffect.h">
+      <Filter>Juce\Source\gui\graphics\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\effects\juce_ImageEffectFilter.h">
+      <Filter>Juce\Source\gui\graphics\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_Font.h">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_GlyphArrangement.h">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_TextLayout.h">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_Typeface.h">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_AffineTransform.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_BorderSize.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_Line.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_Path.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_PathIterator.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_PathStrokeType.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_Point.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_Rectangle.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_RectangleList.h">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_CameraDevice.h">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_Image.h">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_ImageCache.h">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_ImageConvolutionKernel.h">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_ImageFileFormat.h">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_DirectoryIterator.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_File.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_FileInputStream.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_FileOutputStream.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_FileSearchPath.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_NamedPipe.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_TemporaryFile.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\files\juce_ZipFile.h">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\network\juce_MACAddress.h">
+      <Filter>Juce\Source\io\network</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\network\juce_Socket.h">
+      <Filter>Juce\Source\io\network</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\network\juce_URL.h">
+      <Filter>Juce\Source\io\network</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_BufferedInputStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_FileInputSource.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_GZIPCompressorOutputStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_GZIPDecompressorInputStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_InputSource.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_InputStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_MemoryInputStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_MemoryOutputStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_OutputStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\io\streams\juce_SubregionStream.h">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\maths\juce_BigInteger.h">
+      <Filter>Juce\Source\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\maths\juce_Expression.h">
+      <Filter>Juce\Source\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\maths\juce_MathsFunctions.h">
+      <Filter>Juce\Source\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\maths\juce_Random.h">
+      <Filter>Juce\Source\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\maths\juce_Range.h">
+      <Filter>Juce\Source\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_Atomic.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_ByteOrder.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_HeapBlock.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_LeakedObjectDetector.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_Memory.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_MemoryBlock.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_OptionalScopedPointer.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_ReferenceCountedObject.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_ScopedPointer.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\memory\juce_WeakReference.h">
+      <Filter>Juce\Source\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\common\juce_MidiDataConcatenator.h">
+      <Filter>Juce\Source\native\common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\common\juce_posix_SharedCode.h">
+      <Filter>Juce\Source\native\common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\linux\juce_linux_NativeIncludes.h">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\mac\juce_mac_CarbonViewWrapperComponent.h">
+      <Filter>Juce\Source\native\mac</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\mac\juce_mac_NativeIncludes.h">
+      <Filter>Juce\Source\native\mac</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\mac\juce_mac_ObjCSuffix.h">
+      <Filter>Juce\Source\native\mac</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\windows\juce_win32_AutoLinkLibraries.h">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\windows\juce_win32_DynamicLibraryLoader.h">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\windows\juce_win32_NativeIncludes.h">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\native\android\juce_android_NativeIncludes.h">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_CharacterFunctions.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_CharPointer_ASCII.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_CharPointer_UTF16.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_CharPointer_UTF32.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_CharPointer_UTF8.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_Identifier.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_LocalisedStrings.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_NewLine.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_String.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_StringArray.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_StringPairArray.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_StringPool.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_XmlDocument.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\text\juce_XmlElement.h">
+      <Filter>Juce\Source\text</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_CriticalSection.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_InterProcessLock.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_Process.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_ReadWriteLock.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_ScopedLock.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_ScopedReadLock.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_ScopedTryLock.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_ScopedWriteLock.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_Thread.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_ThreadPool.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_TimeSliceThread.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\threads\juce_WaitableEvent.h">
+      <Filter>Juce\Source\threads</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_DeletedAtShutdown.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_FileBasedDocument.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_PropertiesFile.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_RecentlyOpenedFilesList.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_SelectedItemSet.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_SystemClipboard.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_UndoableAction.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_UndoManager.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(JuceSourceDir)\src\utilities\juce_UnitTest.h">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(JuceSourceDir)\src\application\juce_Application.cpp">
+      <Filter>Juce\Source\application</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\application\juce_ApplicationCommandInfo.cpp">
+      <Filter>Juce\Source\application</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\application\juce_ApplicationCommandManager.cpp">
+      <Filter>Juce\Source\application</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\application\juce_ApplicationCommandTarget.cpp">
+      <Filter>Juce\Source\application</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\application\juce_ApplicationProperties.cpp">
+      <Filter>Juce\Source\application</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AiffAudioFormat.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioCDReader.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormat.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormatManager.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormatReader.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioFormatWriter.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioSubsectionReader.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioThumbnail.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_AudioThumbnailCache.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_FlacAudioFormat.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_OggVorbisAudioFormat.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_QuickTimeAudioFormat.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_file_formats\juce_WavAudioFormat.cpp">
+      <Filter>Juce\Source\audio\audio_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_AudioFormatReaderSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_AudioSourcePlayer.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_AudioTransportSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_BufferingAudioSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_ChannelRemappingAudioSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_IIRFilterAudioSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_MixerAudioSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_ResamplingAudioSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\audio_sources\juce_ToneGeneratorAudioSource.cpp">
+      <Filter>Juce\Source\audio\audio_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\devices\juce_AudioDeviceManager.cpp">
+      <Filter>Juce\Source\audio\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\devices\juce_AudioIODevice.cpp">
+      <Filter>Juce\Source\audio\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\devices\juce_AudioIODeviceType.cpp">
+      <Filter>Juce\Source\audio\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\dsp\juce_AudioDataConverters.cpp">
+      <Filter>Juce\Source\audio\dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\dsp\juce_AudioSampleBuffer.cpp">
+      <Filter>Juce\Source\audio\dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\dsp\juce_IIRFilter.cpp">
+      <Filter>Juce\Source\audio\dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\midi\juce_MidiBuffer.cpp">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\midi\juce_MidiFile.cpp">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\midi\juce_MidiKeyboardState.cpp">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\midi\juce_MidiMessage.cpp">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\midi\juce_MidiMessageCollector.cpp">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\midi\juce_MidiMessageSequence.cpp">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\midi\juce_MidiOutput.cpp">
+      <Filter>Juce\Source\audio\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\juce_AudioPluginFormat.cpp">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\juce_AudioPluginFormatManager.cpp">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\juce_AudioPluginInstance.cpp">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\juce_KnownPluginList.cpp">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\juce_PluginDescription.cpp">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\juce_PluginDirectoryScanner.cpp">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\juce_PluginListComponent.cpp">
+      <Filter>Juce\Source\audio\plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\RTAS\juce_RTAS_DigiCode1.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\RTAS</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\RTAS\juce_RTAS_DigiCode2.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\RTAS</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\RTAS\juce_RTAS_DigiCode3.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\RTAS</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\RTAS\juce_RTAS_WinUtilities.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\RTAS</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\RTAS\juce_RTAS_Wrapper.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\RTAS</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\VST\juce_VST_Wrapper.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\VST</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\Standalone\juce_AudioFilterStreamer.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\Standalone</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\extras\audio plugins\wrapper\Standalone\juce_StandaloneFilterWindow.cpp">
+      <Filter>Juce\Source\audio\plugins\wrapper code\Standalone</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_VSTPluginFormat.cpp">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessor.cpp">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessorEditor.cpp">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessorGraph.cpp">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\processors\juce_AudioProcessorPlayer.cpp">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\processors\juce_GenericAudioProcessorEditor.cpp">
+      <Filter>Juce\Source\audio\processors</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\synthesisers\juce_Sampler.cpp">
+      <Filter>Juce\Source\audio\synthesisers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\audio\synthesisers\juce_Synthesiser.cpp">
+      <Filter>Juce\Source\audio\synthesisers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\containers\juce_AbstractFifo.cpp">
+      <Filter>Juce\Source\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\containers\juce_DynamicObject.cpp">
+      <Filter>Juce\Source\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\containers\juce_NamedValueSet.cpp">
+      <Filter>Juce\Source\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\containers\juce_PropertySet.cpp">
+      <Filter>Juce\Source\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\containers\juce_Value.cpp">
+      <Filter>Juce\Source\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\containers\juce_ValueTree.cpp">
+      <Filter>Juce\Source\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\containers\juce_Variant.cpp">
+      <Filter>Juce\Source\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_FileLogger.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_Initialisation.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_Logger.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_PerformanceCounter.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_RelativeTime.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_Result.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_SystemStats.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_Time.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\core\juce_Uuid.cpp">
+      <Filter>Juce\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\cryptography\juce_BlowFish.cpp">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\cryptography\juce_MD5.cpp">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\cryptography\juce_Primes.cpp">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\cryptography\juce_RSAKey.cpp">
+      <Filter>Juce\Source\cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_ActionBroadcaster.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_AsyncUpdater.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_ChangeBroadcaster.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_InterprocessConnection.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_InterprocessConnectionServer.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_Message.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_MessageListener.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_MessageManager.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_MultiTimer.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\events\juce_Timer.cpp">
+      <Filter>Juce\Source\events</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\juce_Component.cpp">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\juce_ComponentListener.cpp">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\juce_Desktop.cpp">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\juce_ModalComponentManager.cpp">
+      <Filter>Juce\Source\gui\components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ArrowButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_Button.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_DrawableButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_HyperlinkButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ImageButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ShapeButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_TextButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ToggleButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\buttons\juce_ToolbarButton.cpp">
+      <Filter>Juce\Source\gui\components\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\code_editor\juce_CodeDocument.cpp">
+      <Filter>Juce\Source\gui\components\code_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\code_editor\juce_CodeEditorComponent.cpp">
+      <Filter>Juce\Source\gui\components\code_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\code_editor\juce_CPlusPlusCodeTokeniser.cpp">
+      <Filter>Juce\Source\gui\components\code_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_ComboBox.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_Label.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_ListBox.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_ProgressBar.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_Slider.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_TableHeaderComponent.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_TableListBox.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_TextEditor.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_Toolbar.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_ToolbarItemComponent.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_ToolbarItemPalette.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\controls\juce_TreeView.cpp">
+      <Filter>Juce\Source\gui\components\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_DirectoryContentsDisplayComponent.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_DirectoryContentsList.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileBrowserComponent.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileChooser.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileChooserDialogBox.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileFilter.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileListComponent.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FilenameComponent.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileSearchPathListComponent.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_FileTreeComponent.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_ImagePreviewComponent.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\filebrowser\juce_WildcardFileFilter.cpp">
+      <Filter>Juce\Source\gui\components\filebrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_CaretComponent.cpp">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyboardFocusTraverser.cpp">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyListener.cpp">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyMappingEditorComponent.cpp">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyPress.cpp">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_KeyPressMappingSet.cpp">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\keyboard\juce_ModifierKeys.cpp">
+      <Filter>Juce\Source\gui\components\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentAnimator.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentBoundsConstrainer.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentBuilder.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ComponentMovementWatcher.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_GroupComponent.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_MultiDocumentPanel.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ResizableBorderComponent.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ResizableCornerComponent.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ResizableEdgeComponent.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_ScrollBar.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_StretchableLayoutManager.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_StretchableLayoutResizerBar.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_StretchableObjectResizer.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_TabbedButtonBar.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_TabbedComponent.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\layout\juce_Viewport.cpp">
+      <Filter>Juce\Source\gui\components\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\lookandfeel\juce_LookAndFeel.cpp">
+      <Filter>Juce\Source\gui\components\lookandfeel</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\lookandfeel\juce_OldSchoolLookAndFeel.cpp">
+      <Filter>Juce\Source\gui\components\lookandfeel</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\menus\juce_MenuBarComponent.cpp">
+      <Filter>Juce\Source\gui\components\menus</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\menus\juce_MenuBarModel.cpp">
+      <Filter>Juce\Source\gui\components\menus</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\menus\juce_PopupMenu.cpp">
+      <Filter>Juce\Source\gui\components\menus</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\mouse\juce_ComponentDragger.cpp">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\mouse\juce_DragAndDropContainer.cpp">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseCursor.cpp">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseEvent.cpp">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseInputSource.cpp">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\mouse\juce_MouseListener.cpp">
+      <Filter>Juce\Source\gui\components\mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\positioning\juce_MarkerList.cpp">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeCoordinate.cpp">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeCoordinatePositioner.cpp">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeParallelogram.cpp">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativePoint.cpp">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativePointPath.cpp">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\positioning\juce_RelativeRectangle.cpp">
+      <Filter>Juce\Source\gui\components\positioning</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\properties\juce_BooleanPropertyComponent.cpp">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\properties\juce_ButtonPropertyComponent.cpp">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\properties\juce_ChoicePropertyComponent.cpp">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\properties\juce_PropertyComponent.cpp">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\properties\juce_PropertyPanel.cpp">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\properties\juce_SliderPropertyComponent.cpp">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\properties\juce_TextPropertyComponent.cpp">
+      <Filter>Juce\Source\gui\components\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_AudioDeviceSelectorComponent.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_BubbleComponent.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_BubbleMessageComponent.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_ColourSelector.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_DropShadower.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_MidiKeyboardComponent.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_OpenGLComponent.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_PreferencesPanel.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\special\juce_SystemTrayIconComponent.cpp">
+      <Filter>Juce\Source\gui\components\special</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_AlertWindow.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_CallOutBox.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_ComponentPeer.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_DialogWindow.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_DocumentWindow.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_ResizableWindow.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_SplashScreen.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_ThreadWithProgressWindow.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_TooltipWindow.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\components\windows\juce_TopLevelWindow.cpp">
+      <Filter>Juce\Source\gui\components\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\colour\juce_Colour.cpp">
+      <Filter>Juce\Source\gui\graphics\colour</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\colour\juce_ColourGradient.cpp">
+      <Filter>Juce\Source\gui\graphics\colour</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\colour\juce_Colours.cpp">
+      <Filter>Juce\Source\gui\graphics\colour</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_EdgeTable.cpp">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_FillType.cpp">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_Graphics.cpp">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_Justification.cpp">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_LowLevelGraphicsPostScriptRenderer.cpp">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_LowLevelGraphicsSoftwareRenderer.cpp">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\contexts\juce_RectanglePlacement.cpp">
+      <Filter>Juce\Source\gui\graphics\contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_Drawable.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableComposite.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableImage.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawablePath.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableRectangle.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableShape.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_DrawableText.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\drawables\juce_SVGParser.cpp">
+      <Filter>Juce\Source\gui\graphics\drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\effects\juce_DropShadowEffect.cpp">
+      <Filter>Juce\Source\gui\graphics\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\effects\juce_GlowEffect.cpp">
+      <Filter>Juce\Source\gui\graphics\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_Font.cpp">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_GlyphArrangement.cpp">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_TextLayout.cpp">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\fonts\juce_Typeface.cpp">
+      <Filter>Juce\Source\gui\graphics\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_AffineTransform.cpp">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_Path.cpp">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_PathIterator.cpp">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_PathStrokeType.cpp">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\geometry\juce_RectangleList.cpp">
+      <Filter>Juce\Source\gui\graphics\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_Image.cpp">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_ImageCache.cpp">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_ImageConvolutionKernel.cpp">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\imaging\juce_ImageFileFormat.cpp">
+      <Filter>Juce\Source\gui\graphics\imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\imaging\image_file_formats\juce_GIFLoader.cpp">
+      <Filter>Juce\Source\gui\graphics\imaging\image_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\imaging\image_file_formats\juce_JPEGLoader.cpp">
+      <Filter>Juce\Source\gui\graphics\imaging\image_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\gui\graphics\imaging\image_file_formats\juce_PNGLoader.cpp">
+      <Filter>Juce\Source\gui\graphics\imaging\image_file_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_DirectoryIterator.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_File.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_FileInputStream.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_FileOutputStream.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_FileSearchPath.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_NamedPipe.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_TemporaryFile.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\files\juce_ZipFile.cpp">
+      <Filter>Juce\Source\io\files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\network\juce_MACAddress.cpp">
+      <Filter>Juce\Source\io\network</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\network\juce_Socket.cpp">
+      <Filter>Juce\Source\io\network</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\network\juce_URL.cpp">
+      <Filter>Juce\Source\io\network</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_BufferedInputStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_FileInputSource.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_GZIPCompressorOutputStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_GZIPDecompressorInputStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_InputStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_MemoryInputStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_MemoryOutputStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_OutputStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\io\streams\juce_SubregionStream.cpp">
+      <Filter>Juce\Source\io\streams</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\maths\juce_BigInteger.cpp">
+      <Filter>Juce\Source\maths</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\maths\juce_Expression.cpp">
+      <Filter>Juce\Source\maths</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\maths\juce_Random.cpp">
+      <Filter>Juce\Source\maths</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\memory\juce_MemoryBlock.cpp">
+      <Filter>Juce\Source\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\common\juce_posix_NamedPipe.cpp">
+      <Filter>Juce\Source\native\common</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Audio.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_AudioCDReader.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Clipboard.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_FileChooser.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Files.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Fonts.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_JackAudio.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Messaging.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Midi.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_NativeCode.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Network.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_SystemStats.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Threads.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_WebBrowserComponent.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\linux\juce_linux_Windowing.cpp">
+      <Filter>Juce\Source\native\linux</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\mac\juce_ios_Audio.cpp">
+      <Filter>Juce\Source\native\mac</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\mac\juce_mac_CoreAudio.cpp">
+      <Filter>Juce\Source\native\mac</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\mac\juce_mac_CoreMidi.cpp">
+      <Filter>Juce\Source\native\mac</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_ActiveXComponent.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_ASIO.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_AudioCDReader.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_CameraDevice.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Direct2DGraphicsContext.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_DirectSound.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_FileChooser.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Files.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Fonts.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Messaging.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Midi.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Misc.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_NativeCode.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Network.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_OpenGLComponent.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_PlatformUtils.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_QuickTimeMovieComponent.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_SystemStats.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Threads.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_WASAPI.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_WebBrowserComponent.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\windows\juce_win32_Windowing.cpp">
+      <Filter>Juce\Source\native\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Audio.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_CameraDevice.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_FileChooser.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Files.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Fonts.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_GraphicsContext.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Messaging.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Midi.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Misc.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_NativeCode.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Network.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_OpenGLComponent.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_SystemStats.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Threads.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_WebBrowserComponent.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\native\android\juce_android_Windowing.cpp">
+      <Filter>Juce\Source\native\android</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_CharacterFunctions.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_Identifier.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_LocalisedStrings.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_String.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_StringArray.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_StringPairArray.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_StringPool.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_XmlDocument.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\text\juce_XmlElement.cpp">
+      <Filter>Juce\Source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\threads\juce_ReadWriteLock.cpp">
+      <Filter>Juce\Source\threads</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\threads\juce_Thread.cpp">
+      <Filter>Juce\Source\threads</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\threads\juce_ThreadPool.cpp">
+      <Filter>Juce\Source\threads</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\threads\juce_TimeSliceThread.cpp">
+      <Filter>Juce\Source\threads</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\utilities\juce_DeletedAtShutdown.cpp">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\utilities\juce_FileBasedDocument.cpp">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\utilities\juce_PropertiesFile.cpp">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\utilities\juce_RecentlyOpenedFilesList.cpp">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\utilities\juce_UndoManager.cpp">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="$(JuceSourceDir)\src\utilities\juce_UnitTest.cpp">
+      <Filter>Juce\Source\utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(JuceSourceDir)\extras\audio plugins\wrapper\AU\juce_AU_Wrapper.mm">
+      <Filter>Juce\Source\audio\plugins\wrapper code\AU</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\extras\audio plugins\wrapper\RTAS\juce_RTAS_MacUtilities.mm">
+      <Filter>Juce\Source\audio\plugins\wrapper code\RTAS</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\extras\audio plugins\wrapper\VST\juce_VST_Wrapper.mm">
+      <Filter>Juce\Source\audio\plugins\wrapper code\VST</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_AudioUnitPluginFormat.mm">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\audio\plugin_host\formats\juce_VSTPluginFormat.mm">
+      <Filter>Juce\Source\audio\plugins\formats</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_ios_MessageManager.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_ios_MiscUtilities.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_ios_UIViewComponentPeer.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_AppleRemote.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_AudioCDBurner.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_AudioCDReader.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_CameraDevice.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_CoreGraphicsContext.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_Debugging.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_FileChooser.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_Files.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_Fonts.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_MainMenu.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_MessageManager.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_MiscUtilities.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_MouseCursor.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_NativeCode.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_Network.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_NSViewComponent.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_NSViewComponentPeer.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_OpenGLComponent.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_QuickTimeMovieComponent.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_Strings.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_SystemStats.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_Threads.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+    <None Include="$(JuceSourceDir)\src\native\mac\juce_mac_WebBrowserComponent.mm">
+      <Filter>Juce\Source\native\mac</Filter>
+    </None>
+  </ItemGroup>
+</Project>

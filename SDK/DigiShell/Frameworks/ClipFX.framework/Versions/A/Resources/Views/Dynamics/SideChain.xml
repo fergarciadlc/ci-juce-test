@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View" id="SideChain Section">
+    <bounds x="264" y="0" width="160" height="160"/>
+    <intercepts_mouse value="true"/>
+    
+    <view type="View" id="Sc Paremeters Section View">
+        <bounds x="0" y="5" width="151" height="64"/>
+        <intercepts_mouse value="true"/>
+        <image_list id="background" src="UIGraphics/grphc_dyn_box_rule.png" stretch="true" x="0" y="0"/>
+        
+        <view type="View" id="Sc Paremeters Section">
+            <bounds x="0" y="10" width="135" height="60"/>
+            <view type="StaticText" id="SourceStaticText">
+                <bounds x="0" y="4" width="60" height="12"/>
+                <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+                <color id="text" red="131" green="131" blue="131" alpha="255"/>
+                <justification horizontal="right" vertical="center"/>
+                <text string="Source:"/>
+            </view>
+            
+            <view type="Popup" id="SC Key Popup">
+                <parameter id="Sc Source"/>
+                <image_list id="background" src="popup_dark.png" stretch="true" x="0" y="0"/>
+                <bounds x="60" y="0" width="75" height="19"/>
+                <font typeface="Arial" height="9" bold="0" italic="0" underlined="0"/>
+                <justification horizontal="left" vertical="center"/>
+                <color id="text" red="255" green="255" blue="255" alpha="255"/>
+	    		<highlight thickness="1">
+	        		<color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    		</highlight>
+            </view>
+            
+            <view type="StaticText" id="DetectorStaticText">
+                <bounds x="0" y="30" width="60" height="12"/>
+                <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+                <color id="text" red="131" green="131" blue="131" alpha="255"/>
+                <justification horizontal="right" vertical="center"/>
+                <text string="Detector:"/>
+            </view>
+            
+            <view type="Popup" id="SCRMS Popup">
+                <parameter id="Sc Detector Type Avg/Pk"/>
+                <image_list id="background" src="popup_dark.png" stretch="true" x="0" y="0"/>
+                <bounds x="60" y="25" width="75" height="19"/>
+                <font typeface="Arial" height="9" bold="0" italic="0" underlined="0"/>
+                <justification horizontal="left" vertical="center"/>
+                <color id="text" red="255" green="255" blue="255" alpha="255"/>
+	    		<highlight thickness="1">
+	        		<color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    		</highlight>
+            </view>
+
+        </view>
+     </view>
+    
+    <view type="View" id="Sc Paremeters Section">
+        <bounds x="0" y="83" width="222" height="130"/>
+        <intercepts_mouse value="true"/>
+        
+        <view type="Button" id="Sc Filter In/Out">
+            <parameter id="Sc Filter In/Out"/>
+            <bounds x="0" y="0" width="61" height="15"/>
+            <image_list id="state">
+                <image id="" src="Buttons/btn_dyn_SIDE_off.png"/>
+                <image id="" src="Buttons/btn_dyn_SIDE_on.png"/>
+            </image_list>
+            <toggles value="1"/>
+	  	    <highlight thickness="1">
+	            <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	    </highlight>
+        </view>
+        
+        <view type="Button" id="Sc Listen In/Out">
+            <parameter id="Sc Listen In/Out"/>
+            <bounds x="71" y="2" width="10" height="12"/>
+            <image_list id="state">
+                <image id="" src="Icons/icn_listen_off.png"/>
+                <image id="" src="Icons/icn_listen_on.png"/>
+            </image_list>
+            <toggles value="1"/>
+	  	    <highlight thickness="1">
+	            <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	    </highlight>
+        </view>
+        
+        <view type="View" id="Filter Parameters View">
+            <bounds x="0" y="30" width="222" height="140"/>
+
+            <view type="StaticText" id="FilterFreqStaticText">
+                <bounds x="0" y="0" width="60" height="12"/>
+                <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+                <color id="text" red="131" green="131" blue="131" alpha="255"/>
+                <justification horizontal="right" vertical="center"/>
+                <text string="Filter Freq:"/>
+            </view>
+            
+            <view type="EditText" id="FilterFreq Text">
+                <parameter id="Sc Filter Frequency"/>
+                <text string="10.0 kHz"/>
+                <bounds x="60" y="0" width="50" height="14"/>
+                <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+                <justification horizontal="left" vertical="center"/>
+                <color id="text" red="198" green="198" blue="198" alpha="255"/>
+                <inset top="2" left="2" bottom="2" right="2"/>
+	  	        <highlight thickness="1">
+	               <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	       </highlight>
+            </view>
+            
+            <view type="StaticText" id="FilterTypeStaticText">
+                <bounds x="0" y="23" width="60" height="12"/>
+                <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+                <color id="text" red="131" green="131" blue="131" alpha="255"/>
+                <justification horizontal="right" vertical="center"/>
+                <text string="Filter Type:"/>
+            </view>
+            
+            <view type="Button" id="Filter Button">
+                <parameter id="Sc Filter Type"/>
+                <bounds x="62" y="20" width="88" height="17"/>
+                <image_list id="state" alpha="255">
+                    <image id="" src="Buttons/btn_fltr_high_shelf_on.png"/>
+                    <image id="" src="Buttons/btn_fltr_hlow_shelf_on.png"/>
+                    <image id="" src="Buttons/btn_fltr_band_pass_on.png"/>
+                    <image id="" src="Buttons/btn_fltr_band_reject_on.png"/>
+                </image_list>
+                <image_list id="disabled" alpha="255">
+                    <image id="" src="Buttons/btn_filters_dis.png"/>
+                    <image id="" src="Buttons/btn_filters_dis.png"/>
+                    <image id="" src="Buttons/btn_filters_dis.png"/>
+                    <image id="" src="Buttons/btn_filters_dis.png"/>
+                </image_list>
+                <segments range="4"/>
+	  	        <highlight thickness="1">
+	                <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	        </highlight>
+            </view>
+        </view>
+    </view>    
+</view>

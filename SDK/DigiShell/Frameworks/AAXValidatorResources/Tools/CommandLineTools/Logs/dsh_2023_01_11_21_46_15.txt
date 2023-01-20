@@ -1,0 +1,55 @@
+
+
+*** Refreshing session trace for:	/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0x179ce, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+DTF_CORE_ENGINE_SETTINGS@DTP_LOWEST(0e0c)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+123317.858161,00103,0034: execute succeeded
+123317.858186,00103,0034: before writing message
+123317.858407,00103,0034: writing message completed
+123317.858415,00103,0034: waiting for command
+123317.859930,00103,0034: cmd: "info"
+123317.859952,00103,0034: got: "--- "
+123317.859955,00103,0034: got: "..."
+123317.860037,00103,0034: yaml parsing succeeded
+123317.860055,00103,0034: parsed params:
+--- ~
+123317.860069,00103,0034: got command
+123317.860077,00103,0034: before check input parameters
+123317.860080,00103,0034: before calling execute
+123317.860108,00103,0034: execute succeeded
+123317.860118,00103,0034: before writing message
+123317.860533,00103,0034: writing message completed
+123317.860537,00103,0034: waiting for command
+123317.861735,00103,0034: cmd: "load_dish"
+123317.861749,00103,0034: got: "---"
+123317.861754,00103,0034: got: "- DAE"
+123317.861759,00103,0034: got: "..."
+123317.861774,00103,0034: yaml parsing succeeded
+123317.861861,00103,0034: parsed params:
+---
+- DAE
+123317.861875,00103,0034: got command
+123317.861879,00103,0034: before check input parameters
+123317.861883,00103,0034: before calling execute
+123317.862386,00103,0034: dish directory doesn't exist "Macintosh HD:Library:Application Support:Avid:Audio:dishes:"
+123317.863603,00103,0034: processing dish "Macintosh HD:Users:username:Downloads:aax-developer-tools-mac-x86_64-beta-2022-09-01:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:aaxh.dish:"
+123317.863612,00103,0034: dish ignored
+123317.863622,00103,0034: processing dish "Macintosh HD:Users:username:Downloads:aax-developer-tools-mac-x86_64-beta-2022-09-01:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:DAE.dish:"
+123318.101056,01407,0034: [catch_exception_raise] got mach exception: 1
+123319.106848,00103,0034: handle signal: 11
+
+
+ *** DigiTrace Log Complete ***

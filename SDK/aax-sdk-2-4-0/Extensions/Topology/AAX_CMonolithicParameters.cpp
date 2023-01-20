@@ -1,0 +1,321 @@
+/*================================================================================================*/
+/*
+ *	Copyright 2011-2015, 2018 by Avid Technology, Inc.
+ *	All rights reserved.
+ *
+ *	CONFIDENTIAL: This document contains confidential information.  Do not 
+ *	read or examine this document unless you are an Avid Technology employee
+ *	or have signed a non-disclosure agreement with Avid Technology which protects
+ *	the	confidentiality of this document.  DO NOT DISCLOSE ANY INFORMATION 
+ *	CONTAINED IN THIS DOCUMENT TO ANY THIRD-PARTY WITHOUT THE PRIOR WRITTEN	CONSENT 
+ *	OF Avid Technology, INC.
+ */
+/*================================================================================================*/
+
+// Self Include
+#include "AAX_CMonolithicParameters.h"
+
+// AAX Includes
+#include "AAX_Exception.h"
+
+
+AAX_CMonolithicParameters::AAX_CMonolithicParameters (void)
+: AAX_CEffectParameters()
+, mSynchronizedParameters()
+, mStateCounter(0)
+, mDirtyParameters()
+, mQueuedParameterChanges()
+, mFinishedParameterChanges()
+, mFinishedParameterValues()
+{	
+	
+}
+
+AAX_CMonolithicParameters::~AAX_CMonolithicParameters(void)
+{
+	// Clear the used parameter changes
+	DeleteUsedParameterChanges();
+}
+
+void AAX_CMonolithicParameters::AddSynchronizedParameter(const AAX_IParameter& inParameter)
+{
+	mSynchronizedParameters.insert(inParameter.Identifier());
+	AAX_ASSERT(inParameter.Automatable()); // No point in synchronizing non-automatable parameters
+	AAX_ASSERT(kSynchronizedParameterQueueSize >= mSynchronizedParameters.size()); // Avoid buffer overflows
+}
+
+AAX_Result AAX_CMonolithicParameters::UpdateParameterNormalizedValue(AAX_CParamID iParamID, double aValue, AAX_EUpdateSource inSource)
+{
+	// Call inherited
+	AAX_Result result = AAX_CEffectParameters::UpdateParameterNormalizedValue(iParamID, aValue, inSource);
+	if (AAX_SUCCESS != result) { return result; }
+	
+	const AAX_IParameter* const param = mParameterManager.GetParameterByID(iParamID);
+	
+	// Defer updating the algorithm with the state of
+	// automatable parameters in the synchronization set
+	if ((param) && (0 < mSynchronizedParameters.count(iParamID)))
+	{
+		mDirtyParameters.insert(param);
+	}
+	
+	return result;
+}
+
+AAX_Result AAX_CMonolithicParameters::GenerateCoefficients()
+{
+	// Call inherited
+	AAX_Result result = AAX_CEffectParameters::GenerateCoefficients();
+	if (AAX_SUCCESS != result) { return result; }
+	
+	const int64_t stateNum = mStateCounter++;
+	
+	// Check for "dirty" parameters and create a list of these
+	// parameters with their values
+	TNumberedParamStateList::second_type paramStateList;
+	while (false == mDirtyParameters.empty())
+	{
+		TParamSet::iterator paramIter = mDirtyParameters.begin();
+		const AAX_IParameter* const param = *paramIter;
+		mDirtyParameters.erase(param);
+		if (NULL != param)
+		{
+			paramStateList.push_back(new TParamValPair(param->Identifier(), param->CloneValue()));
+		}
+	}
+	
+	if (false == paramStateList.empty())
+	{
+		TNumberedParamStateList* const numberedParamState = new TNumberedParamStateList(std::make_pair(stateNum, paramStateList));
+		{
+			// Use a single atomic operation to add all states for this state number; this prevents
+			// the render thread from coming along in the middle of a push and picking up only part
+			// of the total state change.
+			const AAX_IContainer::EStatus pushResult = mQueuedParameterChanges.Push(numberedParamState);
+			AAX_ASSERT(AAX_IContainer::eStatus_Success == pushResult);
+		}
+	}
+	
+	result = Controller()->PostPacket(AAX_FIELD_INDEX(AAX_SInstrumentRenderInfo, mCurrentStateNum), &stateNum, sizeof(int64_t));
+	
+	return result;
+}
+
+AAX_Result AAX_CMonolithicParameters::ResetFieldData (AAX_CFieldIndex iFieldIndex, void * oData, uint32_t iDataSize) const  //override from CEffectParameters.
+{ 	
+	//If this is the MonolithicParameters field, let's initialize it to our this pointer.
+	if (iFieldIndex == AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mPrivateData) ) 
+	{				
+		//Make sure everything is at least initialized to 0.
+		AAX_ASSERT( iDataSize == sizeof(AAX_SInstrumentPrivateData) );
+		memset(oData, 0, iDataSize);
+
+		//Set all of the private data variables.
+		AAX_SInstrumentPrivateData* privateData = static_cast <AAX_SInstrumentPrivateData*> (oData);
+		privateData->mMonolithicParametersPtr = (AAX_CMonolithicParameters*) this;
+		return AAX_SUCCESS;
+	}
+	
+	//Call into the base class to clear all other private data.
+	return AAX_CEffectParameters::ResetFieldData(iFieldIndex, oData, iDataSize);
+}
+
+AAX_Result AAX_CMonolithicParameters::TimerWakeup()
+{
+	// Clear the used parameter changes
+	DeleteUsedParameterChanges();
+	
+	return AAX_CEffectParameters::TimerWakeup();
+}
+
+//StaticDescribe does all of the basic context setup and pointer passing work.  Call this from Describe.
+AAX_Result	AAX_CMonolithicParameters::StaticDescribe(AAX_IEffectDescriptor * ioDescriptor, const AAX_SInstrumentSetupInfo & setupInfo)
+{	
+	AAX_CheckedResult err;
+	AAX_IComponentDescriptor* const compDesc = ioDescriptor->NewComponentDescriptor ();
+	if (!compDesc)
+		err = AAX_ERROR_NULL_OBJECT;
+
+	// Register MIDI nodes. To avoid context corruption, register small blocks of private data for fields where a node is not needed
+	AAX_CFieldIndex globalNodeID = AAX_FIELD_INDEX(AAX_SInstrumentRenderInfo, mGlobalNode);
+	AAX_CFieldIndex localInputNodeID = AAX_FIELD_INDEX(AAX_SInstrumentRenderInfo, mInputNode);
+	AAX_CFieldIndex transportNodeID = AAX_FIELD_INDEX(AAX_SInstrumentRenderInfo, mTransportNode);
+
+	if (setupInfo.mNeedsGlobalMIDI)
+		err = compDesc->AddMIDINode ( globalNodeID, AAX_eMIDINodeType_Global, setupInfo.mGlobalMIDINodeName, setupInfo.mGlobalMIDIEventMask );
+	else
+		err = compDesc->AddPrivateData( globalNodeID, sizeof(float), AAX_ePrivateDataOptions_DefaultOptions ); //Just here to fill the port.  Not used.
+
+	if (setupInfo.mNeedsInputMIDI)
+		err = compDesc->AddMIDINode ( localInputNodeID, AAX_eMIDINodeType_LocalInput, setupInfo.mInputMIDINodeName, setupInfo.mInputMIDIChannelMask );
+	else
+		err = compDesc->AddPrivateData( localInputNodeID, sizeof(float), AAX_ePrivateDataOptions_DefaultOptions );     //Just here to fill the port.  Not used.
+
+	if (setupInfo.mNeedsTransport)
+		err = compDesc->AddMIDINode ( transportNodeID, AAX_eMIDINodeType_Transport, "Transport", 0xffff );
+	else
+		err = compDesc->AddPrivateData( transportNodeID, sizeof(float), AAX_ePrivateDataOptions_DefaultOptions );	//Just here to fill the port.  Not used.
+	
+    AAX_ASSERT(setupInfo.mNumAdditionalInputMIDINodes <= kMaxAdditionalMIDINodes);
+    for (int32_t index = 0; index < kMaxAdditionalMIDINodes; index++)
+    {
+        AAX_CFieldIndex nodeID = index + ((AAX_CFieldIndex) (offsetof (AAX_SInstrumentRenderInfo, mAdditionalInputMIDINodes) / sizeof (void *)));
+        AAX_CString nodeName(setupInfo.mInputMIDINodeName);
+
+        if (index < setupInfo.mNumAdditionalInputMIDINodes)
+            err = compDesc->AddMIDINode ( nodeID, AAX_eMIDINodeType_LocalInput, nodeName.CString(), setupInfo.mInputMIDIChannelMask );
+        else
+            err = compDesc->AddPrivateData( nodeID, sizeof(float), AAX_ePrivateDataOptions_DefaultOptions );	//Just here to fill the port.  Not used.
+    }
+    
+	//Add outputs, meters, info, etc
+	err = compDesc->AddAudioIn( AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mAudioInputs) );
+	err = compDesc->AddAudioOut( AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mAudioOutputs) );
+	err = compDesc->AddAudioBufferLength( AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mNumSamples) );
+    err = compDesc->AddClock( AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mClock) );
+	if (setupInfo.mNumMeters > 0)
+		err = compDesc->AddMeters( AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mMeters), setupInfo.mMeterIDs, static_cast<uint32_t>(setupInfo.mNumMeters) );
+	else
+		err = compDesc->AddPrivateData( AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mMeters), sizeof(float), AAX_ePrivateDataOptions_DefaultOptions );	//Just here to fill the port.  Not used.
+	
+    //Add optional aux output stems.
+	// NOTE: This will throw for hosts that do not support AOS, which will result in the
+	// Effect not being registered. An alternative would be to detect the lack of AOS
+	// support and to communicate this to the effect so that it could adjust its
+	// algorithm logic accordingly.
+    AAX_ASSERT(setupInfo.mNumAuxOutputStems <= kMaxAuxOutputStems);
+	for (int32_t index=0; index < setupInfo.mNumAuxOutputStems; index++)
+	{
+		err = compDesc->AddAuxOutputStem (0 /*not used*/, static_cast<int32_t>(setupInfo.mAuxOutputStemFormats[index]), setupInfo.mAuxOutputStemNames[index] );
+	}
+	
+	//Add pointer to the data model instance and other interesting information.
+	err = compDesc->AddPrivateData( AAX_FIELD_INDEX (AAX_SInstrumentRenderInfo, mPrivateData), sizeof(AAX_SInstrumentPrivateData), AAX_ePrivateDataOptions_DefaultOptions );
+	
+	//Add a "state number" counter for deferred parameter updates
+	err = compDesc->AddDataInPort ( AAX_FIELD_INDEX(AAX_SInstrumentRenderInfo, mCurrentStateNum), sizeof(uint64_t));
+	
+	//Additional properties on the algorithm
+	AAX_IPropertyMap* const properties = compDesc->NewPropertyMap ();
+	if (!properties)
+		err = AAX_ERROR_NULL_OBJECT;
+
+    // Host generated GUI or not.
+    if (setupInfo.mUseHostGeneratedGUI)
+        err = properties->AddProperty ( AAX_eProperty_UsesClientGUI, true );
+	
+	// AAX Hybrid
+	AAX_ASSERT((AAX_eStemFormat_None != setupInfo.mHybridInputStemFormat) == (AAX_eStemFormat_None != setupInfo.mHybridOutputStemFormat));
+	if ((AAX_eStemFormat_None != setupInfo.mHybridInputStemFormat) && (AAX_eStemFormat_None != setupInfo.mHybridOutputStemFormat))
+	{
+		err = properties->AddProperty(AAX_eProperty_HybridInputStemFormat, static_cast<int32_t>(setupInfo.mHybridInputStemFormat));
+		err = properties->AddProperty(AAX_eProperty_HybridOutputStemFormat, static_cast<int32_t>(setupInfo.mHybridOutputStemFormat));
+	}
+	
+	err = properties->AddProperty ( AAX_eProperty_InputStemFormat, static_cast<int32_t>(setupInfo.mInputStemFormat) );		// maybe this should be none?
+	err = properties->AddProperty ( AAX_eProperty_OutputStemFormat, static_cast<int32_t>(setupInfo.mOutputStemFormat) );
+	err = properties->AddProperty ( AAX_eProperty_CanBypass, setupInfo.mCanBypass );
+	err = properties->AddProperty ( AAX_eProperty_Constraint_Location, 0x0 | AAX_eConstraintLocationMask_DataModel ); // The alg proc must be co-located with the effect data model
+	if (setupInfo.mNeedsTransport) {
+		err = properties->AddProperty ( AAX_eProperty_UsesTransport, true);
+	}
+	err = properties->AddProperty ( AAX_eProperty_ManufacturerID, static_cast<int32_t>(setupInfo.mManufacturerID) );
+	err = properties->AddProperty ( AAX_eProperty_ProductID, static_cast<int32_t>(setupInfo.mProductID) );
+	err = properties->AddProperty ( AAX_eProperty_PlugInID_RTAS, static_cast<int32_t>(setupInfo.mPluginID) );				//This is a native only convenience layer, so there is no need for a DSP type.
+	if (setupInfo.mAudiosuiteID != 'none')
+		err = properties->AddProperty ( AAX_eProperty_PlugInID_AudioSuite, static_cast<int32_t>(setupInfo.mAudiosuiteID) );
+	if (!setupInfo.mMultiMonoSupport)
+		err = properties->AddProperty(AAX_eProperty_Constraint_MultiMonoSupport, 0);
+	err = compDesc->AddProcessProc_Native( AAX_CMonolithicParameters::StaticRenderAudio, properties );
+	err = ioDescriptor->AddComponent( compDesc );			
+	
+	return err;
+}	
+
+//Static RenderAudio  ( This version would only work for non-distributed algorithms. )
+void	AAX_CALLBACK	AAX_CMonolithicParameters::StaticRenderAudio(AAX_SInstrumentRenderInfo* const	inInstancesBegin [], const void* inInstancesEnd)
+{
+	for (AAX_SInstrumentRenderInfo * const * instanceRenderInfoPtr = inInstancesBegin; instanceRenderInfoPtr != inInstancesEnd; ++instanceRenderInfoPtr)
+	{
+		AAX_SInstrumentPrivateData*	privateData = (*instanceRenderInfoPtr)->mPrivateData;
+		if (privateData != 0)
+		{
+			//Grab the object pointer from the Context
+			AAX_CMonolithicParameters*	parameters = privateData->mMonolithicParametersPtr;
+			if (parameters != 0)
+			{
+				// Update synchronized parameters to the target state num and get a queue of parameter value changes
+				SParamValList paramValList = parameters->GetUpdatesForState(*(*instanceRenderInfoPtr)->mCurrentStateNum);
+				
+				// Call RenderAudio
+				parameters->RenderAudio(*instanceRenderInfoPtr, (const TParamValPair**)paramValList.mElem, paramValList.mSize);
+				
+				// Queue the parameter value pairs for later deletion
+				for (int32_t i = 0; i < paramValList.mSize; ++i)
+				{
+					const AAX_IContainer::EStatus pushResult = parameters->mFinishedParameterValues.Push(paramValList.mElem[i]);
+					AAX_ASSERT(AAX_IContainer::eStatus_Success == pushResult);
+				}
+			}
+		}
+	}
+}
+
+AAX_CMonolithicParameters::SParamValList AAX_CMonolithicParameters::GetUpdatesForState(int64_t inTargetStateNum)
+{
+	SParamValList paramValList;
+	TNumberedStateListQueue stateLists;
+	
+	for (// Initialization
+		 TNumberedParamStateList* numberedStateList = mQueuedParameterChanges.Peek();
+		 
+		 // Condition
+		 (NULL != numberedStateList) && // there is an element in the queue
+		 (	(numberedStateList->first <= inTargetStateNum) || // next queued state is before or equal to target state
+		  ((-0xFFFF > inTargetStateNum) && (0xFFFF < numberedStateList->first)) // target state counter has wrapped around
+		  );
+		 
+		 // Increment
+		 numberedStateList = mQueuedParameterChanges.Peek()
+		 )
+	{
+		// We'll use this state, so pop it from the queue
+		const TNumberedParamStateList* const poppedPair = mQueuedParameterChanges.Pop();
+		AAX_ASSERT(poppedPair == numberedStateList); // We can trust that this will match because there is only one thread calling Pop() on mQueuedParameterChanges
+		const AAX_IContainer::EStatus pushResult = stateLists.Push(numberedStateList);
+		AAX_ASSERT(AAX_IContainer::eStatus_Success == pushResult);
+		numberedStateList = mQueuedParameterChanges.Peek();
+	}
+	
+	// Transfer all parameter states into the single SParamValList
+	for (TNumberedParamStateList* numberedStateList = stateLists.Pop(); NULL != numberedStateList; numberedStateList = stateLists.Pop())
+	{
+		paramValList.Append(numberedStateList->second);
+		numberedStateList->second.clear(); // Ownership of all elements has been transferred to paramValList
+		
+		// Queue the now-empty container for later deletion
+		mFinishedParameterChanges.Push(numberedStateList);
+	}
+	
+	return paramValList;
+}
+
+void AAX_CMonolithicParameters::DeleteUsedParameterChanges()
+{
+	// Deep-delete all elements from the used parameter change queue
+	for (TNumberedParamStateList* numberedStateList = mFinishedParameterChanges.Pop(); NULL != numberedStateList; numberedStateList = mFinishedParameterChanges.Pop())
+	{
+		TNumberedParamStateList::second_type& curStateList = numberedStateList->second;
+		for (std::list<TParamValPair*>::const_iterator iter = curStateList.begin(); iter != curStateList.end(); ++iter)
+		{
+			if (*iter) { delete *iter; }
+		}
+		delete numberedStateList;
+	}
+	
+	// Delete all used parameter values
+	for (const TParamValPair* paramVal = mFinishedParameterValues.Pop(); NULL != paramVal; paramVal = mFinishedParameterValues.Pop())
+	{
+		if (paramVal) { delete paramVal; }
+	}
+}

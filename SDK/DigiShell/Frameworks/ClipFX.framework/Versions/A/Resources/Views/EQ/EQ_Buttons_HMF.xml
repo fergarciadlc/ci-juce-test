@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View"  id="EQ Buttons HF View">
+    <bounds x="0" y="81" width="245" height="21"/>
+    <intercepts_mouse value="false"/>
+    
+    <view type="Button" id="EQ High-Mid Band In/Out">
+        <parameter id="EQ High-Mid In/Out"/>
+        <bounds x="0" y="0" width="32" height="15"/>
+        <image_list id="state">
+            <image id="" src="Buttons/btn_eq_HMF_off.png"/>
+            <image id="" src="Buttons/btn_eq_HMF_on.png"/>
+        </image_list>
+        <toggles value="1"/>
+	  	<highlight thickness="1">
+	  		<color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+		</highlight>
+   </view>
+    
+    <view type="View"  id="EQ Edit 1 View">
+        <bounds x="101" y="2" width="160" height="100"/>
+        <intercepts_mouse value="false"/>
+        
+        <view type="EditText" id="EQ High-Mid Band Freq Text">
+            <parameter id="EQ High-Mid Frequency"/>
+            <bounds x="0" y="0" width="50" height="17"/>
+            <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+            <justification horizontal="left" vertical="center"/>
+            <color id="text" red="198" green="198" blue="198" alpha="255"/>
+            <inset top="2" left="2" bottom="2" right="2"/>
+	    	<highlight thickness="1">
+	    		<color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    	</highlight>
+       </view>
+        
+        <view type="EditText" id="EQ High-Mid Band Gain Text">
+            <parameter id="EQ High-Mid Gain"/>
+            <tracking fine="481"/>
+            <bounds x="55" y="0" width="45" height="17"/>
+            <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+            <justification horizontal="left" vertical="center"/>
+            <color id="text" red="198" green="198" blue="198" alpha="255"/>
+            <inset top="2" left="2" bottom="2" right="2"/>
+	    	<highlight thickness="1">
+	    		<color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    	</highlight>
+        </view>
+        
+        <view type="EditText" id="EQ High-Mid Band Q Text">
+            <parameter id="EQ High-Mid Q"/>
+            <bounds x="105" y="0" width="38" height="17"/>
+            <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+            <justification horizontal="left" vertical="center"/>
+            <color id="text" red="198" green="198" blue="198" alpha="255"/>
+            <inset top="2" left="2" bottom="2" right="2"/>
+	    	<highlight thickness="1">
+	    		<color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    	</highlight>
+        </view>
+        
+    </view>
+    
+</view>

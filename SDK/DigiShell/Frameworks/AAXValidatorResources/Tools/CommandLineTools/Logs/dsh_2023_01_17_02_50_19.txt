@@ -1,0 +1,41 @@
+
+
+*** Refreshing session trace for:	/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0xabc, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+DTF_CORE_ENGINE_SETTINGS@DTP_LOWEST(0e0c)
+DTF_AAXH_CLIENT@DTP_LOWEST(0f0a)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+317137.274169,00103,0034: execute succeeded
+317137.274191,00103,0034: before writing message
+317137.274424,00103,0034: writing message completed
+317137.274431,00103,0034: waiting for command
+317137.275991,00103,0034: cmd: "load_dish"
+317137.276009,00103,0034: got: "---"
+317137.276015,00103,0034: got: "- aaxh"
+317137.276020,00103,0034: got: "..."
+317137.276038,00103,0034: yaml parsing succeeded
+317137.276126,00103,0034: parsed params:
+---
+- aaxh
+317137.276142,00103,0034: got command
+317137.276146,00103,0034: before check input parameters
+317137.276150,00103,0034: before calling execute
+317137.276848,00103,0034: dish directory doesn't exist "Macintosh HD:Library:Application Support:Avid:Audio:dishes:"
+317137.278181,00103,0034: processing dish "Macintosh HD:Users:username:Documents:GitHub:Personal:ci-juce-test:SDK:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:aaxh.dish:"
+317137.345155,00103,0034: handle signal: 2
+
+
+ *** DigiTrace Log Complete ***

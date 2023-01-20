@@ -1,0 +1,11 @@
+//
+//  AAXLibrary_common.xcconfig
+//  AAXLibrary
+//
+
+// Common config
+#include "AAXLibrary_common.xcconfig"
+
+
+//:configuration = Release
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym

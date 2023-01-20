@@ -1,0 +1,9 @@
+COMPUTER_NAME: Jesuss-MacBook-Pro
+IP_ADDR: 192.168.31.133
+OS: Mac OS X
+OS_VERSION: 12.6.1 (Build 21G217)
+MEMORY: 16 GB
+CPU_TYPE: Unknown
+NUM_PROCS: 1
+CPU_SPEED: 2.4 GHz
+VOLUMES: Macintosh HD (/Volumes/Macintosh HD, /494.4 GB)

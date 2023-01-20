@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View" id="Dynamics Graph Area">
+	<bounds x="137" y="21" width="164" height="154"/>
+
+	<view type="Dynamics Graph" id="Dynamics Graph">
+		<bounds x="19" y="0" width="145" height="139"/>
+
+		<cursor id="cmp ratio"      src="Cursors/cmp_ratio.png"      x="12" y="7"/>
+		<cursor id="cmp knee"       src="Cursors/cmp_knee.png"       x="12" y="7"/>
+		<cursor id="cmp threshold"  src="Cursors/cmp_threshold.png"  x="12" y="7"/>
+		<cursor id="cmp depth"      src="Cursors/cmp_depth.png"      x="12" y="7"/>
+
+		<cursor id="exp ratio"      src="Cursors/exp_ratio.png"      x="12" y="7"/>
+		<cursor id="exp knee"	    src="Cursors/exp_knee.png"       x="12" y="7"/>
+		<cursor id="exp threshold"  src="Cursors/exp_threshold.png"  x="12" y="7"/>
+		<cursor id="exp depth"      src="Cursors/exp_depth.png"      x="12" y="7"/>
+		<cursor id="exp hysteresis" src="Cursors/exp_hysteresis.png" x="12" y="7"/>
+
+		<field id="bypass"			parameter="Dynamics On/Off"/>
+
+		<field id="cmp in/out"     parameter="Cmp In/Out"/>
+		<field id="cmp ratio"      parameter="Cmp Ratio"/>
+		<field id="cmp knee"       parameter="Cmp Knee"/>
+		<field id="cmp threshold"  parameter="Cmp Threshold"/>
+		<field id="cmp depth"      parameter="Cmp Depth"/>
+		<tab_view id="Compressor Tab" type="cmp"/>
+
+		<field id="exp in/out"     parameter="Exp In/Out"/>
+		<field id="exp ratio"      parameter="Exp Ratio"/>
+		<field id="exp knee"	   parameter="Exp Knee"/>
+		<field id="exp threshold"  parameter="Exp Threshold"/>
+		<field id="exp depth"      parameter="Exp Depth"/>
+		<field id="exp hysteresis" parameter="Exp Hysteresis"/>
+		<tab_view id="Expander Tab" type="exp"/>
+
+		<dots value="6" min="0.1" max="0.4"/>
+
+		<taper_delegate id="threshold" type="linear">
+			<taper input="-80.0" output="1.0"/>
+			<taper input=  "0.0" output="144.0"/>
+		</taper_delegate>
+
+
+		<layout_if parameter="Dynamics Range" operator="=" value="0">
+			<taper_delegate id="gain" type="linear">
+				<taper input=  "0.0" output=  "1.0"/>
+				<taper input="-18.0" output="138.0"/>
+			</taper_delegate>
+		</layout_if>
+
+		<layout_if parameter="Dynamics Range" operator="=" value="1">
+			<taper_delegate id="gain" type="linear">
+				<taper input=  "0.0" output=  "1.0"/>
+				<taper input="-36.0" output="138.0"/>
+			</taper_delegate>
+		</layout_if>
+        
+        <color id="fill" red="109" green="241" blue="255" alpha="255">
+            <color red="109" green="241" blue="255" alpha="55" x="0" y ="26"/>
+            <color red="109" green="241" blue="255" alpha="35" x="0" y ="203"/>
+        </color>
+
+		<color id="threshold" red="213" green="129" blue="54" alpha="255"/>
+
+	</view>
+
+</view>
+
+
+

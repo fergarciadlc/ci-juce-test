@@ -1,0 +1,10 @@
+package simple;
+
+message Test1 {
+  optional string test_field = 1;
+};
+
+message Foo {}
+message Bar {
+  optional Foo foo = 1;
+};

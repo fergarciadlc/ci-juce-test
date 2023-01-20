@@ -1,0 +1,55 @@
+process {
+	id: "process_parameter_test"
+	name: "Parameter Test Process"
+	arguments {
+		elem: "--bundle_path=\"$AAXVAL_PARAM_AAXPLUGIN$\""
+		elem: "--uniq_id=$AAXVAL_PARAM_UNIQ_ID$"
+		elem: "--port=$AAXVAL_TCP_PORT$"
+    }
+	platform_process {
+		platform: E_PLATFORM_OSX
+		invocation: "$AAXVAL_DIR_TOOLS$/CommandLineTools/aaxval_test_parameter"
+	}
+	platform_process {
+		platform: E_PLATFORM_WIN
+		invocation: "$AAXVAL_DIR_TOOLS$\\aaxval.test.parameter.exe"
+	}
+}
+
+test {
+	id: "test.parameters"
+	name: "Parameter Test"
+	arguments {
+		elem: "--max_steps_value=2048"
+	}
+	
+	description: "Validates the behavior of parameters registered by each variant of the plug-in"
+
+	condition {
+		id: "condition.no_parameters_exist"
+		type: E_CONDITIONTYPE_PASS
+		description: "Effect has no parameters"
+	}
+	condition {
+		id: "condition.zero_steps"
+		type: E_CONDITIONTYPE_FAIL
+		description: "Number of parameter steps is zero"
+	}
+	condition {
+		id: "condition.too_many_steps"
+		type: E_CONDITIONTYPE_FAIL
+		description: "Number of parameter steps exceeds limit (2048)"
+	}
+	condition {
+		id: "condition.too_many_steps_discrete"
+		type: E_CONDITIONTYPE_WARN
+		description: "Number of steps is high for a discrete parameter"
+	}
+
+	module_id: "mod_tests_plat_any"
+	module_id: "mod_tests_component_datamodel"
+	module_id: "mod_tests_fast"
+	category_id: "cat_reliability"
+	
+	process_id: "process_parameter_test"
+}

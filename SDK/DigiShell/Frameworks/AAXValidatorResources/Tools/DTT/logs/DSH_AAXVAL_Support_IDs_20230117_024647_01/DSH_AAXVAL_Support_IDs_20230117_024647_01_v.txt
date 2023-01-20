@@ -1,0 +1,67 @@
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Test Log: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Support_IDs_20230117_024647_01/DSH_AAXVAL_Support_IDs_20230117_024647_01_l.txt
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Tester: root
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Start time: 2023-01-17 02:46:47 -0600
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] ======
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Send: delete_pt_prefs, {}
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Recv: true
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] bundle_path: /Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] uniq_id: 7287733707518618537
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Send: exist_on_target?, "/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin"
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Recv: true
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Send: perform_on_target, {:obj=>#<Pathname:/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin>, :method=>:realpath, :args=>nil, :block=>nil}
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] obj: /Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin (Pathname)
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] method: realpath (Symbol)
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] args:  (NilClass)
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] block:  (NilClass)
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Recv: #<Pathname:/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin>
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Send: launch_app, {:app_class=>DishTestTool::PipeApp, :app_name=>"dsh", :app_options=>"-a", :local_target=>true}
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh -a
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Recv: true
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] launch_app true
+[Tue Jan 17 02:46:47 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007f9082853a58 @cmd="clear_trace_config", @params=nil>
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeConnection.rb:54:in `readline'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeConnection.rb:54:in `send_command'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DTTMonitor.rb:187:in `send_command_to_app'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:363:in `block in do_transaction'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:90:in `block in timeout'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `block in catch'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `catch'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `catch'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:105:in `timeout'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:362:in `do_transaction'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:327:in `do_transaction'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:164:in `send_command_to_app'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeApp.rb:19:in `execute'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:139:in `execute'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:184:in `method_missing'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:105:in `enable_logging'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:54:in `initialize'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/scripts/DSH_AAXVAL_Support_IDs.rb:24:in `new'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/scripts/DSH_AAXVAL_Support_IDs.rb:24:in `run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:159:in `run_a_script'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:65:in `block in run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `times'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:165:in `block in run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `each'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/bin/runsuite.rb:227:in `<main>'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/scripts/DSH_AAXVAL_Support_IDs.rb:53:in `rescue in run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/scripts/DSH_AAXVAL_Support_IDs.rb:18:in `run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:159:in `run_a_script'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:65:in `block in run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `times'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:165:in `block in run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `each'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `run'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/bin/runsuite.rb:227:in `<main>'
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] Send: dsh_running?, {}
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] Recv: true
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] Send: kill_dsh, {:timeout=>60}
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] Recv: true
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] WARNING: dsh killed.
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] DSH_AAXVAL_Support_IDs ABORTED: undefined method `close' for nil:NilClass
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] WARNINGS:
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] dsh killed.
+[Tue Jan 17 02:46:53 2023] [00:00:00:05] Elapsed time: 5 seconds.

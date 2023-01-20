@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View" id="Header">
+    <layout_if parameter="Dynamics Reveal" operator="=" value="0">
+        <bounds x="0" y="0" width="614" height="50"/>
+    </layout_if>
+    <layout_if parameter="Dynamics Reveal" operator="=" value="1">
+        <bounds x="0" y="0" width="22" height="188"/>
+    </layout_if>
+  <intercepts_mouse value="true"/>
+  
+  <view type="AltClickButton" id="Dyn On/Off">
+      <parameter id="Dynamics On/Off"/>
+	  <altclick_parameter id="EQ On/Off"/>
+	  <altclick_parameter id="Filters On/Off"/>
+      <bounds x="5" y="2" width="12" height="13"/>
+      <image_list id="state">
+          <image id="" src="Icons/icn_power_off.png"/>
+          <image id="" src="Icons/icn_power_on_green.png"/>
+      </image_list>
+      <toggles value="1"/>
+	  <highlight thickness="1">
+	      <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  </highlight>
+  </view>
+  
+  <view type="View" id="Text">
+      <layout_if parameter="Dynamics Reveal" operator="=" value="0">
+          <bounds x="20" y="5" width="52" height="10"/>
+          <image id="background" src="WindowText/grphc_text_dynamics_horiz.png" stretch="false" x="0" y="0"/>
+      </layout_if>
+      <layout_if parameter="Dynamics Reveal" operator="=" value="1">
+          <bounds x="8" y="20" width="10" height="52"/>
+          <image id="background" src="WindowText/grphc_text_dynamics_vert.png" stretch="false" x="0" y="0"/>
+      </layout_if>
+      <intercepts_mouse value="false"/>   
+  </view>
+  
+  <view type="Button" id="Dynamics Range Button">
+      <parameter id="Dynamics Range"/>
+      <bounds x="599" y="2" width="12" height="12"/>
+      <image_list id="background"src="option_sml.png"/>
+      <toggles value="1"/>
+	  <highlight thickness="1">
+	      <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  </highlight>
+  </view>
+</view>

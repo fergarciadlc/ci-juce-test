@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View" id="Compressor Section">
+  <bounds x="132" y="0" width="110" height="167"/>
+  <intercepts_mouse value="false"/>
+  
+  <view type="Button" id="Cmp In/Out">
+      <parameter id="Cmp In/Out"/>
+      <bounds x="0" y="5" width="61" height="15"/>
+      <image_list id="state">
+          <image id="" src="Buttons/btn_dyn_CMP_off.png"/>
+          <image id="" src="Buttons/btn_dyn_CMP_on.png"/>
+      </image_list>
+      <toggles value="1"/>
+	  <highlight thickness="1">
+	     <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  </highlight>
+  </view>
+  
+  <view type="View" id="Compressor Paremeters Section">
+      <bounds x="0" y="25" width="110" height="140"/>
+      <intercepts_mouse value="false"/>
+      
+      <view type="StaticText" id="ThresholdStaticText">
+          <bounds x="0" y="3" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Threshold:"/>
+      </view>
+      
+      <view type="EditText" id="Cmp Threshold Text">
+          <parameter id="Cmp Threshold"/>
+          <tracking fine="600"/>
+          <bounds x="60" y="0" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	     	 <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="RatioStaticText">
+          <bounds x="0" y="21" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Ratio:"/>
+      </view>
+      
+      <view type="EditText" id="Cmp Ratio Text">
+          <parameter id="Cmp Ratio"/>
+          <bounds x="60" y="18" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="AttackStaticText">
+          <bounds x="0" y="39" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Attack:"/>
+      </view>
+      
+      <view type="EditText" id="Cmp Attack Text">
+          <parameter id="Cmp Attack Time"/>
+          <bounds x="60" y="36" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	     	 <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="ReleaseStaticText">
+          <bounds x="0" y="57" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Release:"/>
+      </view>
+      
+      <view type="EditText" id="Cmp Release Text">
+          <parameter id="Cmp Release Time"/>
+          <bounds x="60" y="54" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	     	 <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="KneeStaticText">
+          <bounds x="0" y="75" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Knee:"/>
+      </view>
+      
+      <view type="EditText" id="Cmp Knee Text">
+          <parameter id="Cmp Knee"/>
+          <tracking fine="300"/>
+          <bounds x="60" y="72" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+ 	  	  <highlight thickness="1">
+	     	 <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+     </view>
+      
+      <view type="StaticText" id="DepthStaticText">
+          <bounds x="0" y="93" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Depth:"/>
+      </view>
+      
+      <view type="EditText" id="Cmp Depth Text">
+          <parameter id="Cmp Depth"/>
+          <tracking fine="1080"/>
+          <bounds x="60" y="90" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	     	 <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="GainStaticText">
+          <bounds x="0" y="111" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Gain:"/>
+      </view>
+      
+      <view type="EditText" id="Cmp Gain Text">
+          <parameter id="Cmp Gain Makeup"/>
+          <tracking fine="300"/>
+          <bounds x="60" y="108" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	     	 <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+  </view>
+
+</view>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View" id="Expander Section">
+  <bounds x="15" y="16" width="110" height="167"/>
+  <intercepts_mouse value="false"/>
+  
+  <view type="Button" id="Exp In/Out">
+      <parameter id="Exp In/Out"/>
+      <bounds x="0" y="5" width="61" height="15"/>
+      <image_list id="state">
+          <image id="" src="Buttons/btn_dyn_EXP_off.png"/>
+          <image id="" src="Buttons/btn_dyn_EXP_on.png"/>
+      </image_list>
+      <toggles value="1"/>
+	  <highlight thickness="1">
+	     <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  </highlight>
+  </view>
+  
+  <view type="View" id="Expander Paremeters Section">
+      <bounds x="0" y="25" width="110" height="140"/>
+      <intercepts_mouse value="false"/>
+      
+      <view type="StaticText" id="ThresholdStaticText">
+          <bounds x="0" y="3" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Threshold:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Threshold Text">
+          <parameter id="Exp Threshold"/>
+          <tracking fine="700"/>
+          <bounds x="60" y="0" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="RatioStaticText">
+          <bounds x="0" y="19" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Ratio:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Ratio Text">
+          <parameter id="Exp Ratio"/>
+          <bounds x="60" y="16" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+  	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+    </view>
+      
+      <view type="StaticText" id="AttackStaticText">
+          <bounds x="0" y="35" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Attack:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Attack Text">
+          <parameter id="Exp Attack Time"/>
+          <bounds x="60" y="32" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="ReleaseStaticText">
+          <bounds x="0" y="51" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Release:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Release Text">
+          <parameter id="Exp Release Time"/>
+          <bounds x="60" y="48" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="HoldStaticText">
+          <bounds x="0" y="67" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Hold:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Hold Text">
+          <parameter id="Exp Hold Time"/>
+          <bounds x="60" y="64" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="KneeStaticText">
+          <bounds x="0" y="83" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Knee:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Knee Text">
+          <parameter id="Exp Knee"/>
+          <tracking fine="300"/>
+          <bounds x="60" y="80" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <layout_if parameter="Exp Ratio" operator="!=" string="GATE">
+              <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          </layout_if>
+          <layout_if parameter="Exp Ratio" operator="=" string="GATE">
+              <color id="text" red="100" green="100" blue="100" alpha="255"/>
+          </layout_if>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="DepthStaticText">
+          <bounds x="0" y="99" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Depth:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Depth Text">
+          <parameter id="Exp Depth"/>
+          <tracking fine="1080"/>
+          <bounds x="60" y="96" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+      
+      <view type="StaticText" id="HysteresisText">
+          <bounds x="0" y="115" width="60" height="12"/>
+          <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+          <color id="text" red="131" green="131" blue="131" alpha="255"/>
+          <justification horizontal="right" vertical="center"/>
+          <text string="Hysteresis:"/>
+      </view>
+      
+      <view type="EditText" id="Exp Hysteresis Enabled Text">
+          <parameter id="Exp Hysteresis"/>
+          <tracking fine="300"/>
+          <bounds x="60" y="112" width="50" height="17"/>
+          <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+          <justification horizontal="left" vertical="center"/>
+          <layout_if parameter="Exp Ratio" operator="=" string="GATE">
+              <color id="text" red="198" green="198" blue="198" alpha="255"/>
+          </layout_if>
+          <layout_if parameter="Exp Ratio" operator="!=" string="GATE">
+              <color id="text" red="100" green="100" blue="100" alpha="255"/>
+          </layout_if>
+          <inset top="3" left="3" bottom="3" right="3"/>
+	  	  <highlight thickness="1">
+	          <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	  	  </highlight>
+      </view>
+    
+  </view>
+
+</view>

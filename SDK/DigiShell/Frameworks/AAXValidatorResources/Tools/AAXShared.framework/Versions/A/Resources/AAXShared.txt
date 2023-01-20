@@ -1,0 +1,9 @@
+AAXShared DLL
+-------------
+
+DPA hosting-layer implementation classes that are shared between the DPA host and 
+lower-level ECAL / TI classes.  Should not contain any TI-specific code, as this 
+may be used in native-only builds.
+
+-Paul Vercellotti
+ 12/06/2010

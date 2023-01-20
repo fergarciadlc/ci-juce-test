@@ -1,0 +1,10 @@
+test {
+	id: "test.load_unload.script"
+	name: "Plug-In load/unload"
+	description: "(deprecated) Loads/unloads plug-in binary 1000 times"
+	
+	process_id: "process_dtt"
+	arguments {
+		elem: "--script=DSH_AAXVAL_Load_Unload"
+	}
+}

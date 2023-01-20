@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Libs\Debug">
+      <UniqueIdentifier>{090867e4-916d-4cb8-ad22-65cd432cf74d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Release">
+      <UniqueIdentifier>{5aa73f96-76db-4c56-b7cf-3f87ce1b7192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Debug64">
+      <UniqueIdentifier>{d5b1153e-d005-49aa-a885-4bb9c634a4b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\Release64">
+      <UniqueIdentifier>{c7222b65-1725-42f6-baee-56c5afc0ce79}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\UnitTests\AllAAXLibUnitTests.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\UnitTests\UnitTestAutomationDelegate.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\external\UnitTestPP_1.5\Digi_UnitTest\Digi_UT_Main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\UnitTests\AllAAXLibUnitTests.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\DisplayDelegateTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\EffectParametersChunkTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\ParameterManagerTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\SizeTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\StringTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\TaperDelegateTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\TypedParameterTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\UnitTestAutomationDelegate.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\InterfaceSizeTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\ChunkDataParserTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\AAX_CTestThread.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\AtomicOperationsTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\UnitTests\AtomicQueueTest.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\Debug\AAXLibrary_D.lib">
+      <Filter>Libs\Debug</Filter>
+    </Library>
+    <Library Include="..\..\..\..\..\WinBag\Debug\lib\UnitTestPP.lib">
+      <Filter>Libs\Debug</Filter>
+    </Library>
+    <Library Include="..\..\..\..\..\WinBag\x64\Debug\lib\UnitTestPP.lib">
+      <Filter>Libs\Debug64</Filter>
+    </Library>
+    <Library Include="..\..\..\Debug\AAXLibrary_x64_D.lib">
+      <Filter>Libs\Debug64</Filter>
+    </Library>
+    <Library Include="..\..\..\Release\AAXLibrary.lib">
+      <Filter>Libs\Release</Filter>
+    </Library>
+    <Library Include="..\..\..\Release\AAXLibrary_x64.lib">
+      <Filter>Libs\Release64</Filter>
+    </Library>
+    <Library Include="..\..\..\..\..\WinBag\Release\lib\UnitTestPP.lib">
+      <Filter>Libs\Release</Filter>
+    </Library>
+    <Library Include="..\..\..\..\..\WinBag\x64\Release\lib\UnitTestPP.lib">
+      <Filter>Libs\Release64</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

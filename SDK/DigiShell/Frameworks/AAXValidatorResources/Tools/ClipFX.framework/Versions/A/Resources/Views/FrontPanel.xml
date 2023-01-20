@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View" id="FrontPanel">
+	<bounds x="0" y="0" width="69" height="188"/>
+    <intercepts_mouse value="false"/>
+    <image_list id="background" src="UIGraphics/grphc_pane2.png" stretch="true" x="0" y="0"/>
+    
+    <view type="StaticText" id="InputTrimText" disabled="true">
+        <bounds x="7" y="16" width="55" height="13"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <color id="text" red="131" green="131" blue="131" alpha="255"/>
+        <justification horizontal="center" vertical="center"/>
+        <text string="Input Trim:"/>
+    </view>
+    
+    <view type="EditText" id="Input Trim Text">
+        <parameter id="Input Trim"/>
+        <bounds x="7" y="38" width="55" height="15"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <justification horizontal="center" vertical="center"/>
+        <color id="text" red="198" green="198" blue="198" alpha="255"/>
+        <inset top="2" left="2" bottom="2" right="2"/>
+	    <highlight thickness="1">
+	        <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    </highlight>
+    </view>
+    
+    <view type="View" id="Horiz line 1 View">
+        <bounds x="7" y="61" width="55" height="2"/>
+        <intercepts_mouse value="false"/>
+        <image_list id="background" src="UIGraphics/grphc_line_horiz.png" stretch="true" x="0" y="0"/>
+    </view>
+    
+    <view type="StaticText" id="PolarityText" disabled="true">
+        <bounds x="7" y="73" width="55" height="13"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <color id="text" red="131" green="131" blue="131" alpha="255"/>
+        <justification horizontal="center" vertical="center"/>
+        <text string="Polarity:"/>
+    </view>
+    
+    <view type="Button" id="Phase Switch In/Out">
+        <parameter id="Phase Switch In/Out"/>
+        <bounds x="22" y="91" width="21" height="17"/>
+        <justification horizontal="center" vertical="center"/>
+
+        <image_list id="state">
+            <image id="" src="Buttons/btn_polarity_OFF.png"/>
+            <image id="" src="Buttons/btn_polarity_ON.png"/>
+        </image_list>
+        
+        <toggles value="1"/>
+	    <highlight thickness="1">
+	        <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    </highlight>
+    </view>
+
+</view>

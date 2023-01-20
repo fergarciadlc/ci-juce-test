@@ -1,0 +1,31 @@
+
+
+*** Refreshing session trace for:	/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0x9c3, version=22.9.0)
+*** DigiTrace Config File:		/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_GOLDSMITH@DTP_LOW(0034)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+316946.717158,00103,0034: execute succeeded
+316946.717191,00103,0034: before writing message
+316946.717555,00103,0034: writing message completed
+316946.717567,00103,0034: waiting for command
+316946.720206,00103,0034: cmd: "enable_trace_facility"
+316946.720224,00103,0034: got: "---"
+316946.720237,00103,0034: got: "- DTF_COREAUDIO"
+316946.720245,00103,0034: got: "- DTP_NORMAL"
+316946.720252,00103,0034: got: "..."
+316946.720285,00103,0034: yaml parsing succeeded
+316946.720576,00103,0034: parsed params:
+---
+- DTF_COREAUDIO
+- DTP_NORMAL
+316946.720624,00103,0034: got command
+316946.720633,00103,0034: before check input parameters
+316946.720639,00103,0034: before calling execute

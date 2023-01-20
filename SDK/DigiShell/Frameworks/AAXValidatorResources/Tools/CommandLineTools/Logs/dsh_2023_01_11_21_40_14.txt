@@ -1,0 +1,53 @@
+
+
+*** Digidesign Session Trace for:	/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0x1758a, version=22.9.0)
+*** Build Details:			Build: Desktop (2022-r3-aax-toolkit); Branch: ProTools_2022.R3.X; InternalVersion: 2022.R3.0; Target: Debug(1); Build: n/a 
+*** Starting Timestamp:		Wednesday, 11 January 2023, 9:40:14 p.m. Central Standard Time (122957393492 uS)
+*** System Details:			OS Version: 12.6,1, CPU Speed:  2.4 gHz, Architecture: Intel 64 bit, Num Processors: 8 logical 8 physical, Memory: 16384 MB
+*** Build Date:				Sep 27 2022
+*** Expected Release Date:		2022-09-28
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+DTF_CORE_ENGINE_SETTINGS@DTP_LOWEST(0e0c)
+DTF_AAXH_CLIENT@DTP_LOWEST(0f0a)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+122957.445901,00103,0034: register handler for signal: 2
+122957.445904,00103,0034: register handler for signal: 15
+122957.445906,00103,0034: register handler for signal: 11
+122957.445908,00103,0034: register handler for signal: 6
+122957.445910,00103,0034: register handler for signal: 4
+122957.445912,00103,0034: register handler for signal: 8
+122957.445914,00103,0034: register handler for signal: 3
+122957.445916,00103,0034: register handler for signal: 1
+122957.445917,00103,0034: register handler for signal: 13
+122957.445919,00103,0034: register handler for signal: 10
+122957.445921,00103,0034: register handler for signal: 12
+122957.446455,00103,0034: yaml parsing succeeded
+122957.446635,00103,0034: yaml parsing succeeded
+122957.446703,00103,0034: yaml parsing succeeded
+122957.446772,00103,0034: yaml parsing succeeded
+122957.447118,00103,0034: yaml parsing succeeded
+122957.447688,00103,0034: yaml parsing succeeded
+122957.448211,00103,0034: yaml parsing succeeded
+122957.448270,00103,0034: yaml parsing succeeded
+122957.448509,00103,0034: yaml parsing succeeded
+122957.448588,00103,0034: waiting for command
+122957.448601,00103,0034: cmd: "clear_trace_config"
+122957.448603,00103,0034: got: "--- "
+122957.448604,00103,0034: got: "..."
+122957.448608,00103,0034: yaml parsing succeeded
+122957.448610,00103,0034: parsed params:
+--- ~
+122957.448613,00103,0034: got command
+122957.448615,00103,0034: before check input parameters
+122957.448617,00103,0034: before calling execute
+
+
+ *** DigiTrace Log Complete ***

@@ -1,0 +1,48 @@
+
+
+*** Refreshing session trace for:	/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0x177bf, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+DTF_CORE_ENGINE_SETTINGS@DTP_LOWEST(0e0c)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+123128.341352,00103,0034: execute succeeded
+123128.341381,00103,0034: before writing message
+123128.341651,00103,0034: writing message completed
+123128.341658,00103,0034: waiting for command
+123128.343498,00103,0034: cmd: "info"
+123128.343507,00103,0034: got: "--- "
+123128.343514,00103,0034: got: "..."
+123128.343545,00103,0034: yaml parsing succeeded
+123128.343555,00103,0034: parsed params:
+--- ~
+123128.343568,00103,0034: got command
+123128.343573,00103,0034: before check input parameters
+123128.343576,00103,0034: before calling execute
+123128.343596,00103,0034: execute succeeded
+123128.343604,00103,0034: before writing message
+123128.343974,00103,0034: writing message completed
+123128.343978,00103,0034: waiting for command
+123128.345721,00103,0034: cmd: "enable_trace_facility"
+123128.345740,00103,0034: got: "---"
+123128.345749,00103,0034: got: "- DTF_AAXH_CLIENT"
+123128.345756,00103,0034: got: "- DTP_LOWEST"
+123128.345761,00103,0034: got: "..."
+123128.345777,00103,0034: yaml parsing succeeded
+123128.345938,00103,0034: parsed params:
+---
+- DTF_AAXH_CLIENT
+- DTP_LOWEST
+123128.345953,00103,0034: got command
+123128.345957,00103,0034: before check input parameters
+123128.345960,00103,0034: before calling execute

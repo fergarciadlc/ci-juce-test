@@ -1,0 +1,14 @@
+.rvmrc
+.yardoc/
+/*.d
+/*.pb.rb
+/*.proto
+Gemfile.lock
+coverage
+d/*
+doc/*
+pkg
+prof
+rdoc
+tests
+tmp

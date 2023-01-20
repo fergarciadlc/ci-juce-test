@@ -1,0 +1,9 @@
+[00:00:00:00] Test Log: /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Cycle_Counts_20230111_214613_01/DSH_AAXVAL_Cycle_Counts_20230111_214613_01_l.txt
+[00:00:00:00] ======
+[00:00:00:00] WARNING: Factory Presets were NOT found
+[00:00:00:02] WARNING: dsh killed.
+[00:00:00:02] DSH_AAXVAL_Cycle_Counts ABORTED: end of file reached
+[00:00:00:02] WARNINGS:
+[00:00:00:02] Factory Presets were NOT found
+[00:00:00:02] dsh killed.
+[00:00:00:02] Elapsed time: 2 seconds.

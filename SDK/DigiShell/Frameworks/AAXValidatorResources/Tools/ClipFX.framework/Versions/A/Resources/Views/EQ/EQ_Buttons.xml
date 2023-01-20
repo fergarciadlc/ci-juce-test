@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="View"  id="EQ Buttons View">
+    <bounds x="306" y="-10" width="254" height="197"/>
+    <intercepts_mouse value="false"/>
+    
+    <view type="View"  id="EQ Buttons HF Header">
+        <bounds x="101" y="33" width="175" height="11"/>
+        <intercepts_mouse value="false"/>
+        
+        <view type="StaticText" id="FreqName">
+            <bounds x="0" y="0" width="50" height="11"/>
+            <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+            <color id="text" red="198" green="198" blue="198" alpha="255"/>
+            <justification horizontal="left" vertical="center"/>
+            <text string="Freq:"/>
+        </view>
+        
+        <view type="StaticText" id="GainName">
+            <bounds x="55" y="0" width="40" height="11"/>
+            <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+            <color id="text" red="198" green="198" blue="198" alpha="255"/>
+            <justification horizontal="left" vertical="center"/>
+            <text string="Gain:"/>
+        </view>
+        
+        <view type="StaticText" id="QName">
+            <bounds x="105" y="0" width="40" height="11"/>
+            <font typeface="Arial" height="11" bold="0" italic="0" underlined="0"/>
+            <color id="text" red="198" green="198" blue="198" alpha="255"/>
+            <justification horizontal="left" vertical="center"/>
+            <text string="Q:"/>
+        </view>
+    </view>
+    
+    <include src="./EQ_Buttons_HF.xml"/>
+    
+    <view type="View" id="Horiz line 1 View">
+        <bounds x="0" y="73" width="244" height="2"/>
+        <intercepts_mouse value="false"/>
+        <image_list id="background" src="UIGraphics/grphc_line_horiz.png" stretch="true"/>
+    </view>
+    
+    <include src="./EQ_Buttons_HMF.xml"/>
+    
+    <view type="View" id="Horiz line 2 View">
+        <bounds x="0" y="106" width="244" height="2"/>
+        <intercepts_mouse value="false"/>
+        <image_list id="background" src="UIGraphics/grphc_line_horiz.png" stretch="true"/>
+    </view>
+    
+    <include src="./EQ_Buttons_LMF.xml"/>
+    
+    <view type="View" id="Horiz line 3 View">
+        <bounds x="0" y="137" width="244" height="2"/>
+        <intercepts_mouse value="false"/>
+        <image_list id="background" src="UIGraphics/grphc_line_horiz.png" stretch="true"/>
+    </view>
+    
+    <include src="./EQ_Buttons_LF.xml"/>
+    
+  
+</view>

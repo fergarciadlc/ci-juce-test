@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "AAX Library">
+      <FileRef
+         location = "group:../Libs/AAXLibrary/MacBuild/AAXLibrary.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Example Plug-Ins">
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoDelay/MacBuild/xcode4/DemoDelay.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoDelay_DynamicLatencyComp/MacBuild/xcode4/DemoDelay_DynamicLatencyComp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoDelay_HostProcessor/MacBuild/xcode4/DemoDelay_HostProcessor.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoDelay_Hybrid/MacBuild/xcode4/DemoDelay_Hybrid.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoDist/MacBuild/xcode4/DemoDist.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoDist_GenCoef/MacBuild/xcode4/DemoDist_GenCoef.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain/MacBuild/xcode4/DemoGain.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain_Background/MacBuild/xcode4/DemoGain_Background.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain_DMA/MacBuild/xcode4/DemoGain_DMA.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain_LinkedParameters/MacBuild/xcode4/DemoGain_LinkedParameters.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain_Multichannel/MacBuild/xcode4/DemoGain_Multichannel.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain_ParamValueInfo/MacBuild/xcode4/DemoGain_ParamValueInfo.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain_Smoothed/MacBuild/xcode4/DemoGain_Smoothed.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoGain_UpMixer/MacBuild/xcode4/DemoGain_UpMixer.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoMIDI_NoteOn/MacBuild/xcode4/DemoMIDI_NoteOn.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoMIDI_Sampler/MacBuild/xcode4/DemoMIDI_Sampler.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoMIDI_Synth/MacBuild/xcode4/DemoMIDI_Synth.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/DemoMIDI_Synth_AuxOutput/MacBuild/xcode4/DemoMIDI_Synth_AuxOutput.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../ExamplePlugIns/RectiFi/MacBuild/xcode4/RectiFi.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "GUI Extensions">
+      <Group
+         location = "container:"
+         name = "Cocoa">
+         <FileRef
+            location = "group:../ExamplePlugIns/DemoGain_GUIExtensions/MacBuild/xcode4/DemoGain_Cocoa.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Juce">
+         <FileRef
+            location = "group:../ExamplePlugIns/DemoGain_GUIExtensions/MacBuild/xcode4/DemoGain_Juce.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Extensions/GUI/MacBuild/Juce.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "VSTGUI">
+         <FileRef
+            location = "group:../ExamplePlugIns/DemoGain_GUIExtensions/MacBuild/xcode4/DemoGain_VST.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Extensions/GUI/MacBuild/VST.xcodeproj">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D2CE28FF-63B8-48BC-936D-33F365B4053F}</ProjectGuid>
+    <RootNamespace>PlugInLib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">int\$(Configuration)\$(ProjectName)\$(PlatformName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">int\$(Configuration)\$(ProjectName)\$(PlatformName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AAXLibrary_x64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AAXLibrary_x64_D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\..\Interfaces;..\..\..\..\Interfaces\ACF</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;I18N_LIB;PLUGIN_SDK_BUILD;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;AAX_PLUGIN_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>4820;4514;4710;4625;4626;4668;4986;4987;4127;4711;4350</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <OutputFile>..\..\..\..\WinBag\x64\$(Configuration)\bsc\$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\..\Interfaces;..\..\..\..\Interfaces\ACF</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;I18N_LIB;PLUGIN_SDK_BUILD;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;AAX_PLUGIN_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <BrowseInformation>false</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>Default</CompileAs>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>4820;4514;4710;4625;4626;4668;4986;4987;4350</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <OutputFile>..\..\..\..\WinBag\x64\$(Configuration)\bsc\$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\AAX_CAutoreleasePool.Win.cpp" />
+    <ClCompile Include="..\..\source\AAX_CChunkDataParser.cpp" />
+    <ClCompile Include="..\..\source\AAX_CEffectDirectData.cpp" />
+    <ClCompile Include="..\..\source\AAX_CEffectGUI.cpp" />
+    <ClCompile Include="..\..\source\AAX_CEffectParameters.cpp" />
+    <ClCompile Include="..\..\source\AAX_CHostProcessor.cpp" />
+    <ClCompile Include="..\..\source\AAX_CHostServices.cpp" />
+    <ClCompile Include="..\..\source\AAX_CMutex.cpp" />
+    <ClCompile Include="..\..\source\AAX_CommonConversions.cpp" />
+    <ClCompile Include="..\..\source\AAX_CPacketDispatcher.cpp" />
+    <ClCompile Include="..\..\source\AAX_CParameter.cpp" />
+    <ClCompile Include="..\..\source\AAX_CParameterManager.cpp" />
+    <ClCompile Include="..\..\source\AAX_CString.cpp" />
+    <ClCompile Include="..\..\source\AAX_IEffectDirectData.cpp" />
+    <ClCompile Include="..\..\source\AAX_IEffectGUI.cpp" />
+    <ClCompile Include="..\..\source\AAX_IEffectParameters.cpp" />
+    <ClCompile Include="..\..\source\AAX_IHostProcessor.cpp" />
+    <ClCompile Include="..\..\source\AAX_Init.cpp" />
+    <ClCompile Include="..\..\source\AAX_Properties.cpp" />
+    <ClCompile Include="..\..\source\AAX_SliderConversions.cpp" />
+    <ClCompile Include="..\..\source\AAX_VAutomationDelegate.cpp" />
+    <ClCompile Include="..\..\source\AAX_VCollection.cpp" />
+    <ClCompile Include="..\..\source\AAX_VComponentDescriptor.cpp" />
+    <ClCompile Include="..\..\source\AAX_VController.cpp" />
+    <ClCompile Include="..\..\source\AAX_VDescriptionHost.cpp" />
+    <ClCompile Include="..\..\source\AAX_VEffectDescriptor.cpp" />
+    <ClCompile Include="..\..\source\AAX_VFeatureInfo.cpp" />
+    <ClCompile Include="..\..\source\AAX_VHostProcessorDelegate.cpp" />
+    <ClCompile Include="..\..\source\AAX_VHostServices.cpp" />
+    <ClCompile Include="..\..\source\AAX_VPageTable.cpp" />
+    <ClCompile Include="..\..\source\AAX_VPrivateDataAccess.cpp" />
+    <ClCompile Include="..\..\source\AAX_VPropertyMap.cpp" />
+    <ClCompile Include="..\..\source\AAX_VTransport.cpp" />
+    <ClCompile Include="..\..\source\AAX_VViewContainer.cpp" />
+    <ClCompile Include="..\..\source\AAX_CACFUnknown.cpp" />
+    <ClCompile Include="..\..\source\AAX_CUIDs.cpp" />
+    <ClCompile Include="..\..\..\..\Interfaces\ACF\CACFClassFactory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Callbacks.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CAutoreleasePool.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CHostServices.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CLogTaperDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CPacketDispatcher.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CPercentDisplayDelegateDecorator.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CPieceWiseLinearTaperDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CRangeTaperDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CStateDisplayDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CStateTaperDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_EndianSwap.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Exception.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Enums.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_GUITypes.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFAutomationDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFCollection.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFComponentDescriptor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFController.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFDescriptionHost.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFEffectDescriptor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFHostProcessor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFHostProcessorDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFHostServices.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFPageTable.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFPageTableController.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFPrivateDataAccess.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFPropertyMap.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFTransport.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFViewContainer.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IComponentDescriptor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IDma.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IHostProcessor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IHostProcessorDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IHostServices.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IPageTable.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IMIDINode.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Init.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IPropertyMap.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IViewContainer.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_PageTableUtilities.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Push4ByteStructAlignment.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Push8ByteStructAlignment.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_TransportTypes.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_UIDs.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_UtilsNative.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_UtilsNative.hpp" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Version.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfassert.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfbaseapi.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfbasetypes.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfcheckm.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfextras.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\ACFPtr.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfresult.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfuids.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\acfunknown.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\CACFClassFactory.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\CACFUnknown.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CBinaryDisplayDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CBinaryTaperDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CChunkDataParser.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CDecibelDisplayDelegateDecorator.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CEffectDirectData.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CEffectGUI.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CEffectParameters.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CHostProcessor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CLinearTaperDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CMutex.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CNumberDisplayDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CommonConversions.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CParameter.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CParameterManager.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CString.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CStringDisplayDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CUnitDisplayDelegateDecorator.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_CUnitPrefixDisplayDelegateDecorator.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Errors.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFEffectDirectData.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFEffectGUI.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFEffectParameters.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IACFFeatureInfo.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IAutomationDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IDisplayDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IDisplayDelegateDecorator.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IEffectDirectData.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IEffectGUI.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IEffectParameters.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IFeatureInfo.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IParameter.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IString.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_ITaperDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_ITransport.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_PopStructAlignment.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Properties.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Push2ByteStructAlignment.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_SliderConversions.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\defineacfuid.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\ACF\initacfuid.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_StringUtilities.h" />
+    <ClInclude Include="..\..\include\AAX_TimeUtilities.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VAutomationDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VCollection.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VComponentDescriptor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VController.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VDescriptionHost.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VHostProcessorDelegate.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VHostServices.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VPageTable.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VEffectDescriptor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VFeatureInfo.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VPrivateDataAccess.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VPropertyMap.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VTransport.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_VViewContainer.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_Assert.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_ICollection.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IController.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IDescriptionHost.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IEffectDescriptor.h" />
+    <ClInclude Include="..\..\..\..\Interfaces\AAX_IPrivateDataAccess.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,29 @@
+process {
+	id: "process_page_table_cpp"
+	name: "Page Table Name Test CPP"
+	arguments {
+		elem: "--bundle_path=\"$AAXVAL_PARAM_AAXPLUGIN$\""
+		elem: "--uniq_id=$AAXVAL_PARAM_UNIQ_ID$"
+		elem: "--port=$AAXVAL_TCP_PORT$"
+    }
+	platform_process {
+		platform: E_PLATFORM_OSX
+		invocation: "$AAXVAL_DIR_TOOLS$/CommandLineTools/aaxval_test_page_table_load"
+	}
+	platform_process {
+		platform: E_PLATFORM_WIN
+		invocation: "$AAXVAL_DIR_TOOLS$\\aaxval.test.page_table.load.exe"
+	}
+}
+
+test {
+	id: "test.page_table.load"
+	name: "Plug-in page table loading test"
+	description: "Plug-in validator module to test parsing and loading a plug-in's page table XML"
+	
+	module_id: "mod_tests_plat_any"
+	module_id: "mod_tests_fast"
+	category_id: "cat_reliability"
+	
+	process_id: "process_page_table_cpp"
+}

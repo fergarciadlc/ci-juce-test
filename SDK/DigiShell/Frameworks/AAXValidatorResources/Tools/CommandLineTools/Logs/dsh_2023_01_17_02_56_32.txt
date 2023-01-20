@@ -1,0 +1,33 @@
+
+
+*** Refreshing session trace for:	/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0xca2, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+317510.721917,00103,0034: execute succeeded
+317510.721961,00103,0034: before writing message
+317510.722362,00103,0034: writing message completed
+317510.722370,00103,0034: waiting for command
+317510.724877,00103,0034: cmd: "enable_trace_facility"
+317510.724888,00103,0034: got: "---"
+317510.724897,00103,0034: got: "- DTF_CORE_ENGINE_SETTINGS"
+317510.724901,00103,0034: got: "- DTP_LOWEST"
+317510.724905,00103,0034: got: "..."
+317510.724950,00103,0034: yaml parsing succeeded
+317510.725162,00103,0034: parsed params:
+---
+- DTF_CORE_ENGINE_SETTINGS
+- DTP_LOWEST
+317510.725194,00103,0034: got command
+317510.725199,00103,0034: before check input parameters
+317510.725202,00103,0034: before calling execute

@@ -1,0 +1,79 @@
+name: CI-Projucer
+
+on:
+  push:
+    branches:
+    - none
+  pull_request:
+    branches:
+    - none
+
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '[ci skip]') == false && contains(toJson(github.event.commits), '[skip ci]') == false
+    name: Build plugin with Projucer on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false # show all errors for each platform (vs. cancel jobs on error)
+      matrix:
+        include:
+          - os: macos-latest
+            jucer: "modules/JUCE/extras/Projucer/Builds/MacOSX/build/Debug/Projucer.app/Contents/MacOS/Projucer"
+          - os: windows-2019
+            jucer: "modules/JUCE/extras/Projucer/Builds/VisualStudio2019/x64/Debug/App/Projucer.exe"
+    
+    steps:    
+    - name: Add msbuild to PATH
+      if: runner.os == 'Windows'
+      uses: microsoft/setup-msbuild@v1.0.3
+
+    - name: Set up Xcode
+      if: runner.os == 'MacOS'
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Build Projucer (MacOS)
+      if: runner.os == 'MacOS'
+      shell: bash
+      run: xcodebuild -project Projucer.xcodeproj -jobs 4 | xcpretty
+      working-directory: modules/JUCE/extras/Projucer/Builds/MacOSX
+    
+    - name: Build Projucer (Windows)
+      if: runner.os == 'Windows'
+      shell: bash
+      run: msbuild.exe -v:normal -m:4 Projucer.sln
+      working-directory: modules/JUCE/extras/Projucer/Builds/VisualStudio2019
+
+    - name: Resave jucer
+      shell: bash
+      run: $PROJUCER --resave CI_Test.jucer
+      env:
+        PROJUCER: ${{ matrix.jucer }}
+
+    - name: Build Plugin (MacOS)
+      if: runner.os == 'MacOS'
+      shell: bash
+      run: xcodebuild -project CI_Test.xcodeproj -configuration Release -jobs 4 | xcpretty
+      working-directory: Builds/MacOSX
+
+    - name: Build Plugin (Windows)
+      if: runner.os == 'Windows'
+      shell: bash
+      run: msbuild.exe -v:normal -m:4 -t:rebuild -verbosity:diag -property:Configuration=Release CI_Test.sln
+      working-directory: Builds/VisualStudio2019
+
+    - name: Validate (Windows)
+      if: runner.os == 'Windows'
+      run: bash scripts/validate.sh
+
+    - name: Validate (MacOS)
+      if: runner.os == 'MacOS'
+      run: sh scripts/validate.sh

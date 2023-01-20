@@ -1,0 +1,108 @@
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Test Log: /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Cycle_Counts_20230111_214354_01/DSH_AAXVAL_Cycle_Counts_20230111_214354_01_l.txt
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Tester: jsvaldezv
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Start time: 2023-01-11 21:43:54 -0600
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] ======
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Send: delete_pt_prefs, {}
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Recv: true
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] bundle_path: /Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] uniq_id: 13117739472772543853
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Send: exist_on_target?, "/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin"
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Recv: true
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Send: perform_on_target, {:obj=>#<Pathname:/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin>, :method=>:realpath, :args=>nil, :block=>nil}
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] obj: /Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin (Pathname)
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] method: realpath (Symbol)
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] args:  (NilClass)
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] block:  (NilClass)
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Recv: #<Pathname:/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin>
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] WARNING: Factory Presets were NOT found
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Send: launch_app, {:app_class=>DishTestTool::PipeApp, :app_name=>"dsh", :app_options=>"-a", :local_target=>true}
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh -a
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Recv: true
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] launch_app true
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe273552168 @cmd="clear_trace_config", @params=nil>
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2735439b0 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2735421c8 @cmd="enable_trace_facility", @params=["DTF_GOLDSMITH", "DTP_LOW"]>
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe27353ad60 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:54 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe27353a0b8 @cmd="enable_trace_facility", @params=["DTF_DSI", "DTP_NORMAL"]>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe273532728 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe273531968 @cmd="enable_trace_facility", @params=["DTF_COREAUDIO", "DTP_NORMAL"]>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe273528cc8 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2735232f0 @cmd="enable_trace_facility", @params=["DTF_CORE_ENGINE_SETTINGS", "DTP_LOWEST"]>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe27351a650 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe273519ac0 @cmd="info", @params=nil>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2735121a8 @result={"cmd_result"=>{"build"=>"release", "trace_path"=>"/Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/Logs/dsh_2023_01_11_21_43_55.txt"}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe273510bf0 @cmd="enable_trace_facility", @params=["DTF_AAXH_CLIENT", "DTP_LOWEST"]>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2734fbbb0 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2734faa80 @cmd="load_dish", @params=["aaxh"]>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2734f2600 @result={"cmd_result"=>{"loaded_dishes_count"=>1}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2734f1980 @cmd="teardown", @params=nil>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2734ea3d8 @result={"cmd_result"=>{"initialized"=>false}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2734e9398 @cmd="init", @params="debug_max">
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2734e1990 @result={"cmd_result"=>{"debugLevel"=>15, "initialized"=>true}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2734e08b0 @cmd="loadpi", @params="/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin">
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2734c9340 @result={"cmd_result"=>{"pluginID"=>0, "pluginPath"=>"/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin/"}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2734af4b8 @cmd="listeffects", @params=0>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe27349fc98 @result={"cmd_result"=>{"effectIDs"=>[{"effectID"=>"com.earCandyTech.ci-cmake-juce", "effectIdx"=>0}], "pluginID"=>0, "pluginPath"=>"/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin/"}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe27349e898 @cmd="getdescription", @params={"plugin"=>0, "effect"=>0, "stringformat"=>"yaml"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe2734460a8 @result={"cmd_result"=>{"effectDescription"=>{"plugin_descriptor"=>{"bypass_category"=>{"bypass_category_mask"=>0}, "category_mask"=>0, "components"=>{"component_descriptor"=>[{"procs"=>{"proc_set"=>{"proc_descriptor"=>[{"dll"=>"/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin/Contents/MacOS/ci-cmake-juce", "properties"=>{"property_map"=>{"property"=>[{"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ManufacturerID", "val_formatted"=>"'Ects'", "val_literal"=>1164145779}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ProductID", "val_formatted"=>"'ci01'", "val_literal"=>1667838001}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_Native", "val_formatted"=>"'jccc'", "val_literal"=>1784898403}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_AudioSuite", "val_formatted"=>"'jycc'", "val_literal"=>1786340195}, {"cat"=>"general", "key"=>"AAX_eProperty_InputStemFormat", "val_literal"=>65538}, {"cat"=>"general", "key"=>"AAX_eProperty_OutputStemFormat", "val_literal"=>65538}, {"cat"=>"general", "key"=>"AAX_eProperty_CanBypass", "val_literal"=>1}, {"cat"=>"constraints", "key"=>"AAX_eProperty_Constraint_MultiMonoSupport", "val_literal"=>1}, {"cat"=>"features", "key"=>"309_AAX_EProperty", "val_literal"=>1}]}}, "type"=>"AAX_CProcessProc"}, {"type"=>"AAX_CInstanceInitProc"}, {"type"=>"AAX_CBackgroundProc"}]}}}, {"procs"=>{"proc_set"=>{"proc_descriptor"=>[{"dll"=>"/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin/Contents/MacOS/ci-cmake-juce", "properties"=>{"property_map"=>{"property"=>[{"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ManufacturerID", "val_formatted"=>"'Ects'", "val_literal"=>1164145779}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_ProductID", "val_formatted"=>"'ci01'", "val_literal"=>1667838001}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_Native", "val_formatted"=>"'jcbb'", "val_literal"=>1784898146}, {"cat"=>"plug-in spec", "key"=>"AAX_eProperty_PlugInID_AudioSuite", "val_formatted"=>"'jybb'", "val_literal"=>1786339938}, {"cat"=>"general", "key"=>"AAX_eProperty_InputStemFormat", "val_literal"=>1}, {"cat"=>"general", "key"=>"AAX_eProperty_OutputStemFormat", "val_literal"=>1}, {"cat"=>"general", "key"=>"AAX_eProperty_CanBypass", "val_literal"=>1}, {"cat"=>"constraints", "key"=>"AAX_eProperty_Constraint_MultiMonoSupport", "val_literal"=>1}, {"cat"=>"features", "key"=>"309_AAX_EProperty", "val_literal"=>1}]}}, "type"=>"AAX_CProcessProc"}, {"type"=>"AAX_CInstanceInitProc"}, {"type"=>"AAX_CBackgroundProc"}]}}}]}, "name"=>"ci-cmake-juce", "proc_ptrs"=>{"proc_ptr"=>[{"id"=>"kAAX_ProcPtrID_Create_EffectParameters"}, {"id"=>"kAAX_ProcPtrID_Create_EffectGUI"}]}}}, "effectIdx"=>0, "pluginID"=>0}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] name: ci-cmake-juce
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] category: 
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] 	None
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] native_types: 
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] 	{:manu_id=>"Ects", :prod_id=>"ci01", :native_id=>"jccc", :as_id=>"jycc", :input_sf=>"stereo", :out_sf=>"stereo", :sample_rate=>[44100, 48000, 88200, 96000, 176400, 192000]}
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] 	{:manu_id=>"Ects", :prod_id=>"ci01", :native_id=>"jcbb", :as_id=>"jybb", :input_sf=>"mono", :out_sf=>"mono", :sample_rate=>[44100, 48000, 88200, 96000, 176400, 192000]}
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe27342f0b0 @cmd="exit", @params=nil>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: #<DishTestTool::AppCmdResult:0x007fe27342c400 @result={"cmd_result"=>"exiting", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: close_app, nil
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: nil
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: launch_app, {:app_class=>DishTestTool::PipeApp, :app_name=>"dsh", :app_options=>"-a", :local_target=>true}
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh -a
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Recv: true
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] launch_app true
+[Wed Jan 11 21:43:55 2023] [00:00:00:00] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe27341ff70 @cmd="clear_trace_config", @params=nil>
+[Wed Jan 11 21:43:55 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fe27341d310 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe27341c500 @cmd="enable_trace_facility", @params=["DTF_GOLDSMITH", "DTP_LOW"]>
+[Wed Jan 11 21:43:55 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fe2734152f0 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe273414468 @cmd="enable_trace_facility", @params=["DTF_DSI", "DTP_NORMAL"]>
+[Wed Jan 11 21:43:55 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fe27340c1a0 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:55 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe273405dc8 @cmd="enable_trace_facility", @params=["DTF_COREAUDIO", "DTP_NORMAL"]>
+[Wed Jan 11 21:43:56 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fe2733fdb00 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:56 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2733fce30 @cmd="enable_trace_facility", @params=["DTF_CORE_ENGINE_SETTINGS", "DTP_LOWEST"]>
+[Wed Jan 11 21:43:56 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fe2733eda98 @result={"cmd_result"=>"", "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:56 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2733ecff8 @cmd="info", @params=nil>
+[Wed Jan 11 21:43:56 2023] [00:00:00:01] Recv: #<DishTestTool::AppCmdResult:0x007fe2733e49c0 @result={"cmd_result"=>{"build"=>"release", "trace_path"=>"/Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/Logs/dsh_2023_01_11_21_43_56.txt"}, "message_type"=>"cmd_result"}>
+[Wed Jan 11 21:43:56 2023] [00:00:00:01] Send: send_command_to_app, #<DishTestTool::AppCmd:0x007fe2733dbb40 @cmd="load_dish", @params=["DAE"]>
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeConnection.rb:54:in `readline'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeConnection.rb:54:in `send_command'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DTTMonitor.rb:187:in `send_command_to_app'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:363:in `block in do_transaction'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:90:in `block in timeout'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `block in catch'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `catch'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `catch'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:105:in `timeout'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:362:in `do_transaction'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:327:in `do_transaction'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:164:in `send_command_to_app'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeApp.rb:19:in `execute'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:139:in `execute'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:119:in `load_dish'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/scripts/DSH_AAXVAL_Cycle_Counts.rb:67:in `run'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:159:in `run_a_script'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:65:in `block in run'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `times'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `run'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:165:in `block in run'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `each'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `run'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/bin/runsuite.rb:227:in `<main>'
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] Send: dsh_running?, {}
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] Recv: true
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] Send: kill_dsh, {:timeout=>60}
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] Recv: true
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] WARNING: dsh killed.
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] DSH_AAXVAL_Cycle_Counts ABORTED: end of file reached
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] WARNINGS:
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] Factory Presets were NOT found
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] dsh killed.
+[Wed Jan 11 21:43:57 2023] [00:00:00:02] Elapsed time: 2 seconds.

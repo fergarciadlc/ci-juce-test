@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Libs/AAXLibrary/source/AAX_VPropertyMap.cpp \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_VPropertyMap.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_IPropertyMap.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_Properties.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_Version.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_Enums.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_Errors.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_PreStructAlignmentHelper.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_Push8ByteStructAlignment.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_PostStructAlignmentHelper.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_PopStructAlignment.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_IACFPropertyMap.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/acfunknown.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/acfbasetypes.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/defineacfuid.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/ACFPtr.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/acfresult.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/acfassert.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_VDescriptionHost.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_IDescriptionHost.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_VComponentDescriptor.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_IComponentDescriptor.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_IDma.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_Callbacks.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_IACFComponentDescriptor.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_IACFDescriptionHost.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/acfbaseapi.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/AAX_UIDs.h \
+  /Users/jsvaldezv/Documents/Programming/SDK/aax-sdk-2-4-0/Interfaces/ACF/acfuids.h

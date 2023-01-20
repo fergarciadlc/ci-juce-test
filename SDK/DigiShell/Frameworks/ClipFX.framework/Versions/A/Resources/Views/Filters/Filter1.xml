@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<view type="View" id="Filter1 Parameters View">
+    <bounds x="10" y="26" width="158" height="102"/>
+    <intercepts_mouse value="false"/>
+    
+    <view type="Button" id="Filter 1 In/Out">
+        <parameter id="Filter 1 In/Out"/>
+        <bounds x="0" y="7" width="19" height="15"/>
+        <image_list id="state">
+            <image id="" src="Buttons/btn_filter_1_off.png"/>
+            <image id="" src="Buttons/btn_filter_1_on.png"/>
+        </image_list>
+        <toggles value="1"/>
+	    <highlight thickness="1">
+	        <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    </highlight>
+    </view>
+    
+    <view type="StaticText" id="TypeText">
+        <bounds x="20" y="10" width="40" height="13"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <color id="text" red="131" green="131" blue="131" alpha="255"/>
+        <justification horizontal="right" vertical="center"/>
+        <text string="Type:"/>
+    </view>
+    
+    <view type="Button" id="Filter 1 Type Button">
+        <parameter id="Filter 1 Type"/>
+        <bounds x="60" y="7" width="88" height="17"/>
+        <image_list id="state">
+            <image id="" src="Buttons/btn_fltr_high_shelf_on.png"/>
+            <image id="" src="Buttons/btn_fltr_hlow_shelf_on.png"/>
+            <image id="" src="Buttons/btn_fltr_band_pass_on.png"/>
+            <image id="" src="Buttons/btn_fltr_band_reject_on.png"/>
+        </image_list>
+        <segments range="4"/>
+	    <highlight thickness="1">
+	        <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    </highlight>
+    </view>
+    
+    <view type="StaticText" id="FreqText">
+        <bounds x="20" y="27" width="40" height="13"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <color id="text" red="131" green="131" blue="131" alpha="255"/>
+        <justification horizontal="right" vertical="center"/>
+        <text string="Freq:"/>
+    </view>
+    
+    <view type="EditText" id="Filter 1 Freq Text">
+        <parameter id="Filter 1 Frequency"/>
+        <bounds x="62" y="27" width="61" height="15"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <justification horizontal="left" vertical="center"/>
+        <color id="text" red="198" green="198" blue="198" alpha="255"/>
+        <inset top="2" left="2" bottom="2" right="2"/>
+	    <highlight thickness="1">
+	        <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    </highlight>
+    </view>
+    
+    <view type="StaticText" id="QText">
+        <show_if parameter="Filter 1 Type" operator="=" value="2"/>
+        <show_if parameter="Filter 1 Type" operator="=" value="3"/>
+        <bounds x="20" y="44" width="40" height="13"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <color id="text" red="131" green="131" blue="131" alpha="255"/>
+        <justification horizontal="right" vertical="center"/>
+        <text string="Q:"/>
+    </view>
+    
+    <view type="EditText" id="Filter 1 Q Text">
+        <show_if parameter="Filter 1 Type" operator="=" value="2"/>
+        <show_if parameter="Filter 1 Type" operator="=" value="3"/>
+        <parameter id="Filter 1 Q"/>
+        <bounds x="62" y="44" width="40" height="15"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <justification horizontal="left" vertical="center"/>
+        <color id="text" red="198" green="198" blue="198" alpha="255"/>
+        <inset top="2" left="2" bottom="2" right="2"/>
+	    <highlight thickness="1">
+	        <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    </highlight>
+    </view>
+    
+    <view type="StaticText" id="SlopeText">
+        <show_if parameter="Filter 1 Type" operator="=" value="0"/>
+        <show_if parameter="Filter 1 Type" operator="=" value="1"/>
+        <bounds x="20" y="44" width="40" height="13"/>
+        <font typeface="Arial" height="11" bold="1" italic="0" underlined="0"/>
+        <color id="text" red="131" green="131" blue="131" alpha="255"/>
+        <justification horizontal="left" vertical="center"/>
+        <text string="Slope:"/>
+    </view>
+    
+    <view type="Popup" id="Filter 1 Slope Popup">
+        <show_if parameter="Filter 1 Type" operator="=" value="0"/>
+        <show_if parameter="Filter 1 Type" operator="=" value="1"/>
+        <parameter id="Filter 1 Slope 12/24dB"/>
+        <image_list id="background" src="popup_dark.png" stretch="true" x="0" y="0"/>
+        <bounds x="62" y="42" width="69" height="18"/>
+        <font typeface="Arial" height="9" bold="1" italic="0" underlined="0"/>
+        <justification horizontal="left" vertical="center"/>
+        <color id="text" red="207" green="216" blue="223" alpha="255"/>
+        <inset top="2" left="2" bottom="2" right="2"/>
+	    <highlight thickness="1">
+	        <color id="blue" red="0" green="100" blue="255" alpha="255"/> 
+	    </highlight>
+    </view>
+    
+</view>
+
+
+
+
+
+
+
+
+
+

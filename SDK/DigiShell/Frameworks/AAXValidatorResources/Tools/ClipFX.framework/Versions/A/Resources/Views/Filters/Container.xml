@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="Reveal" id="Filters Section">
+    <reveal id="Reveal Filters Button" width="22" height="188"/>
+    <parameter id="Filters Reveal"/>
+	<bounds x="74" y="0" width="168" height="188"/>
+    <image id="open" src="UIGraphics/grphc_pane.png" stretch="true" x="0" y="0"/>
+    <image id="closed" src="UIGraphics/grphc_pane.png" stretch="true" x="0" y="0"/>
+    
+    <intercepts_mouse value="true"/>
+    <include src="./Header.xml"/>
+    
+    <view type="Button" id="Reveal Filters Button">
+        <layout_if parameter="Filters Reveal" operator="=" value="0">
+            <bounds x="152" y="172" width="16" height="15"/>
+        </layout_if>
+        <layout_if parameter="Filters Reveal" operator="=" value="1">
+            <bounds x="6" y="172" width="16" height="15"/>
+        </layout_if>
+        <parameter id="Filters Reveal"/>
+        <image_list id="state">
+            <image id="" src="Buttons/show_pane_locations_hide.png"/>
+            <image id="" src="Buttons/show_pane_locations.png"/>
+        </image_list>
+        <toggles value="true"/>
+    </view>
+    
+    <view type="View" id="FiltersMainContent">
+        <bounds x="0" y="0" width="614" height="188"/>
+        <intercepts_mouse value="false"/>
+        <show_if parameter="Filters Reveal" operator="=" value="0"/>
+        
+        <include src="./Filter1.xml"/>
+        <include src="./Filter2.xml"/>
+    </view>
+</view>

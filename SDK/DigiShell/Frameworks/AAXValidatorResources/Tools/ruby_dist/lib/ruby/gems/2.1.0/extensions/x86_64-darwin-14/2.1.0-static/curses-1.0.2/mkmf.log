@@ -1,0 +1,2193 @@
+have_library: checking for tgetent() in -ltinfo... -------------------- no
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector     -lruby-static -framework CoreFoundation -ltinfo  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'tgetent'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector     -lruby-static -framework CoreFoundation -ltinfo  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'tgetent' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { tgetent(); return 0; }
+              ^
+1 warning generated.
+ld: library not found for -ltinfo
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { tgetent(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for tgetent() in -ltermcap... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector     -lruby-static -framework CoreFoundation -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'tgetent'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetent; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector     -lruby-static -framework CoreFoundation -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'tgetent' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { tgetent(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { tgetent(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for ncurses.h... -------------------- yes
+
+"clang -E -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+/* end */
+
+--------------------
+
+have_library: checking for initscr() in -lncursesw... -------------------- no
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -ltermcap  -lruby-static -framework CoreFoundation -lncursesw -ltermcap  -lpthread -ldl -lobjc "
+ld: library not found for -lncursesw
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))initscr; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -ltermcap  -lruby-static -framework CoreFoundation -lncursesw -ltermcap  -lpthread -ldl -lobjc "
+ld: library not found for -lncursesw
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { initscr(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for initscr() in -lncurses... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))initscr; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for beep()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'beep'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))beep; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))beep; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'beep' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { beep(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { beep(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for bkgd()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'bkgd'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgd; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgd; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'bkgd' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { bkgd(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { bkgd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for bkgdset()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'bkgdset'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgdset; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))bkgdset; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'bkgdset' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { bkgdset(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { bkgdset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for curs_set()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'curs_set'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))curs_set; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))curs_set; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'curs_set' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { curs_set(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { curs_set(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for deleteln()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'deleteln'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))deleteln; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))deleteln; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'deleteln' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { deleteln(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { deleteln(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for doupdate()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'doupdate'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))doupdate; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))doupdate; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'doupdate' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { doupdate(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { doupdate(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for flash()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'flash'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))flash; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))flash; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'flash' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { flash(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { flash(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getbkgd()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'getbkgd'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))getbkgd; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))getbkgd; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'getbkgd' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { getbkgd(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { getbkgd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getnstr()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'getnstr'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))getnstr; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))getnstr; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'getnstr' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { getnstr(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { getnstr(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for init()... -------------------- no
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'init'; did you mean 'int'?
+int t(void) { void ((*volatile p)()); p = (void ((*)()))init; return 0; }
+                                                        ^~~~
+                                                        int
+conftest.c:13:57: error: expected expression
+2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))init; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'init' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { init(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_init", referenced from:
+      _t in conftest-b9de21.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { init(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for init in ncurses.h... -------------------- no
+
+"clang -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe   -c conftest.c"
+conftest.c:6:3: error: 
+# error
+  ^
+conftest.c:7:1: error: expected identifier or '('
+|:/ === init undefined === /:|
+^
+2 errors generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef init
+6: # error
+7: |:/ === init undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for isendwin()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'isendwin'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))isendwin; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))isendwin; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'isendwin' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { isendwin(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { isendwin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for keyname()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'keyname'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))keyname; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))keyname; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'keyname' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { keyname(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { keyname(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for keypad()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'keypad'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))keypad; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))keypad; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'keypad' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { keypad(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { keypad(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for resizeterm()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'resizeterm'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))resizeterm; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))resizeterm; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'resizeterm' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { resizeterm(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { resizeterm(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for scrl()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'scrl'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))scrl; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))scrl; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'scrl' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { scrl(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { scrl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for set()... -------------------- no
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'set'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))set; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))set; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'set' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { set(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_set", referenced from:
+      _t in conftest-652b79.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { set(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for set in ncurses.h... -------------------- no
+
+"clang -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe   -c conftest.c"
+conftest.c:6:3: error: 
+# error
+  ^
+conftest.c:7:1: error: expected identifier or '('
+|:/ === set undefined === /:|
+^
+2 errors generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4: /*top*/
+5: #ifndef set
+6: # error
+7: |:/ === set undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for setscrreg()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'setscrreg'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))setscrreg; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))setscrreg; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'setscrreg' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { setscrreg(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { setscrreg(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ungetch()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'ungetch'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))ungetch; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ungetch; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'ungetch' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { ungetch(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ungetch(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wattroff()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wattroff'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wattroff; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wattroff; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wattroff' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wattroff(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wattroff(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wattron()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wattron'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wattron; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wattron; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wattron' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wattron(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wattron(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wattrset()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wattrset'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wattrset; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wattrset; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wattrset' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wattrset(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wattrset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wbkgd()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wbkgd'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgd; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgd; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wbkgd' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wbkgd(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wbkgd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wbkgdset()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wbkgdset'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgdset; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wbkgdset; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wbkgdset' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wbkgdset(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wbkgdset(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wdeleteln()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wdeleteln'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wdeleteln; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wdeleteln; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wdeleteln' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wdeleteln(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wdeleteln(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wgetnstr()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wgetnstr'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wgetnstr; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wgetnstr; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wgetnstr' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wgetnstr(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wgetnstr(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wresize()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wresize'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wresize; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wresize; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wresize' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wresize(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wresize(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wscrl()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wscrl'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wscrl; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wscrl; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wscrl' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wscrl(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wscrl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wsetscrreg()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wsetscrreg'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wsetscrreg; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wsetscrreg; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wsetscrreg' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wsetscrreg(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wsetscrreg(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for def_prog_mode()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'def_prog_mode'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))def_prog_mode; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))def_prog_mode; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'def_prog_mode' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { def_prog_mode(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { def_prog_mode(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for reset_prog_mode()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'reset_prog_mode'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))reset_prog_mode; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))reset_prog_mode; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'reset_prog_mode' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { reset_prog_mode(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { reset_prog_mode(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for timeout()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'timeout'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))timeout; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))timeout; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'timeout' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { timeout(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { timeout(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wtimeout()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wtimeout'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wtimeout; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wtimeout; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wtimeout' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wtimeout(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wtimeout(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for nodelay()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'nodelay'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))nodelay; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))nodelay; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'nodelay' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { nodelay(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { nodelay(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for init_color()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'init_color'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))init_color; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))init_color; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'init_color' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { init_color(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { init_color(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for wcolor_set()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'wcolor_set'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))wcolor_set; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))wcolor_set; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'wcolor_set' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { wcolor_set(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { wcolor_set(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for use_default_colors()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'use_default_colors'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))use_default_colors; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))use_default_colors; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'use_default_colors' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { use_default_colors(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { use_default_colors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for newpad()... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'newpad'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))newpad; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))newpad; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation -lncurses -ltermcap  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'newpad' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { newpad(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { newpad(); return 0; }
+/* end */
+
+--------------------
+
+"clang -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe  -D_XOPEN_SOURCE_EXTENDED -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <stdio.h>
+4: #include <stdlib.h>
+5: #include <ncurses.h>
+6: 
+7: /*top*/
+8: int conftest_const[(sizeof(char*)>sizeof(int)) ? 1 : -1];
+/* end */
+
+have_var: checking for ESCDELAY in ncurses.h... -------------------- yes
+
+"clang -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&ESCDELAY)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for TABSIZE in ncurses.h... -------------------- yes
+
+"clang -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&TABSIZE)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for COLORS in ncurses.h... -------------------- yes
+
+"clang -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&COLORS)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for COLOR_PAIRS in ncurses.h... -------------------- yes
+
+"clang -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { const volatile void *volatile p; p = &(&COLOR_PAIRS)[0]; return 0; }
+/* end */
+
+--------------------
+
+checking for function curses_version in ncurses.h... -------------------- yes
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+4:       int main(int argc, char *argv[])
+5:       {
+6:           curses_version();
+7:           return EXIT_SUCCESS;
+8:       }
+/* end */
+
+./conftest
+--------------------
+
+checking for variable curses_version in ncurses.h... -------------------- no
+
+"clang -o conftest -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/x86_64-darwin14.0 -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0/ruby/backward -I/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/include/ruby-2.1.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wextra-tokens  -pipe conftest.c  -L. -L/Users/oleksandra/dev.ws.ohrebenn_mac.aax_tools/external/ruby_2.1.2/archive/osx/ruby_dist/lib -L. -fstack-protector    -lncurses -ltermcap  -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:4:20: error: redefinition of 'curses_version' as different kind of symbol
+      extern char *curses_version;
+                   ^
+/usr/include/curses.h:838:37: note: previous definition is here
+extern NCURSES_EXPORT(const char *) curses_version (void);
+                                    ^
+conftest.c:9:19: error: subscript of pointer to function type 'const char *(void)'
+              if (curses_version[i] == 0)
+                  ^~~~~~~~~~~~~~
+conftest.c:11:19: error: subscript of pointer to function type 'const char *(void)'
+              if (curses_version[i] & 0x80)
+                  ^~~~~~~~~~~~~~
+3 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ncurses.h>
+ 4:       extern char *curses_version;
+ 5:       int main(int argc, char *argv[])
+ 6:       {
+ 7:           int i = 0;
+ 8:           for (i = 0; i < 100; i++) {
+ 9:               if (curses_version[i] == 0)
+10:                   return 0 < i ? EXIT_SUCCESS : EXIT_FAILURE;
+11:               if (curses_version[i] & 0x80)
+12:                   return EXIT_FAILURE;
+13:           }
+14:           return EXIT_FAILURE;
+15:       }
+/* end */
+
+--------------------
+

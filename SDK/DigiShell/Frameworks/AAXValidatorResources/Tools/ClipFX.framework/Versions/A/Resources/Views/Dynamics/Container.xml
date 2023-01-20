@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view type="Reveal" id="Dynamics Section">
+    <reveal id="Reveal Dynamics Button" width="22" height="188"/>
+    <parameter id="Dynamics Reveal"/>
+    <bounds x="812" y="0" width="614" height="188"/>
+    <image id="open" src="UIGraphics/grphc_pane.png" stretch="true" x="0" y="0"/>
+    <image id="closed" src="UIGraphics/grphc_pane.png" stretch="true" x="0" y="0"/>
+    
+	<intercepts_mouse value="true"/>
+    <include src="./Header.xml"/>
+    
+    <view type="Button" id="Reveal Dynamics Button">
+        <layout_if parameter="Dynamics Reveal" operator="=" value="0">
+            <bounds x="597" y="172" width="16" height="15"/>
+        </layout_if>
+        <layout_if parameter="Dynamics Reveal" operator="=" value="1">
+            <bounds x="6" y="172" width="16" height="15"/>
+        </layout_if>
+        <parameter id="Dynamics Reveal"/>
+        <image_list id="state">
+            <image id="" src="Buttons/show_pane_locations_hide.png"/>
+            <image id="" src="Buttons/show_pane_locations.png"/>
+        </image_list>
+        <toggles value="true"/>
+    </view>
+    
+    <view type="View" id="DynMainContent">
+        <bounds x="0" y="0" width="614" height="180"/>
+        <intercepts_mouse value="false"/>
+        <show_if parameter="Dynamics Reveal" operator="=" value="0"/>
+        
+        <include src="./Expander.xml"/>
+        
+        <view type="View" id="Vert line 1 View">
+            <bounds x="127" y="21" width="2" height="172"/>
+            <intercepts_mouse value="false"/>
+            <image_list id="background" src="UIGraphics/grphc_line_vert.png" stretch="true"/>
+        </view>
+        
+        <view type="View" id="Dynamics Background">
+            <bounds x="137" y="21" width="164" height="154"/>
+            
+            <layout_if>
+                <layout_if parameter="Dynamics On/Off" operator="=" value="0"/>
+                <layout_if parameter="Dynamics Range" operator="=" value="0"/>
+                <image_list id="background" src="Graph_Backgrounds/grphc_dyn_18dB_OFF.png"/>
+            </layout_if>
+            
+            <layout_if>
+                <layout_if parameter="Dynamics On/Off" operator="=" value="0"/>
+                <layout_if parameter="Dynamics Range" operator="=" value="1"/>
+                <image_list id="background" src="Graph_Backgrounds/grphc_dyn_36dB_OFF.png"/>
+            </layout_if>
+            
+            <layout_if>
+                <layout_if parameter="Dynamics On/Off" operator="=" value="1"/>
+                <layout_if parameter="Dynamics Range" operator="=" value="0"/>
+                <image_list id="background" src="Graph_Backgrounds/grphc_dyn_18dB_ON.png"/>
+            </layout_if>
+            
+            <layout_if>
+                <layout_if parameter="Dynamics On/Off" operator="=" value="1"/>
+                <layout_if parameter="Dynamics Range" operator="=" value="1"/>
+                <image_list id="background" src="Graph_Backgrounds/grphc_dyn_36dB_ON.png"/>
+            </layout_if>
+            
+            <intercepts_mouse value="false"/>
+        </view>
+        
+        <include src="./Dynamics_Graph.xml"/>
+        
+        <view type="View" id="Vert line 3 View">
+            <bounds x="309" y="21" width="2" height="172"/>
+            <intercepts_mouse value="false"/>
+            <image_list id="background" src="UIGraphics/grphc_line_vert.png" stretch="true"/>
+        </view>
+        
+        <view type="View" id="Parameters Section">
+            <bounds x="189" y="16" width="496" height="172"/>
+            <intercepts_mouse value="false"/>
+            
+            <include src="./Compressor.xml"/>
+            
+            <view type="View" id="Vert line 2 View">
+                <bounds x="252" y="5" width="2" height="172"/>
+                <intercepts_mouse value="false"/>
+                <image_list id="background" src="UIGraphics/grphc_line_vert.png" stretch="true"/>
+            </view>
+            
+            <include src="./SideChain.xml"/>
+            
+        </view>
+    </view>
+</view>

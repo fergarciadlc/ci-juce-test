@@ -1,0 +1,72 @@
+name: CI-Cmake
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+  workflow_dispatch:
+
+jobs:
+
+  unit-test:
+    if: contains(toJson(github.event.commits), '/ut')
+    name: Unit Testing on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, macOS-latest]
+
+    steps:
+    - name: Run Unit Testing
+      run: echo "unit testing"
+
+  build-and-validate:
+    if: contains(toJson(github.event.commits), '/no-ci') == false
+    name: Test plugin on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macOS-latest]
+        # os: [windows-2022, macOS-latest]
+
+    steps:
+    - name: Get latest CMake
+      uses: lukka/get-cmake@latest
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Configure Cmake
+      shell: bash
+      run: cmake -Bbuild
+
+    - name: Build for MacOS
+      if: runner.os == 'MacOS'
+      shell: bash
+      run: sudo cmake --build build --config Release
+    
+    - name: Build for Windows
+      if: runner.os == 'Windows'
+      shell: bash
+      run: cmake --build build --config Release --parallel 4
+
+    - name: Log Plug-Ins Folder
+      run: find /Users/runner/Library/Audio/Plug-Ins/
+
+    - name: Killall Component Registrar
+      run: killall -9 AudioComponentRegistrar
+
+    - name: Validate std formats
+      run: bash scripts/validate_std.sh
+
+    - name: Validate AAX
+      run: bash scripts/validate_aax.sh "/Users/runner/work/ci-juce-test/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"
+      

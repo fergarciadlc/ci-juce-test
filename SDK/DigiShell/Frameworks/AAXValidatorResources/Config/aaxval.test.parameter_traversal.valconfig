@@ -1,0 +1,66 @@
+process {
+	id: "process_parametertraversal"
+	name: "Parameter Traversal Test Process"
+	arguments {
+		elem: "--bundle_path=\"$AAXVAL_PARAM_AAXPLUGIN$\""
+		elem: "--uniq_id=$AAXVAL_PARAM_UNIQ_ID$"
+		elem: "--port=$AAXVAL_TCP_PORT$"
+    }
+	platform_process {
+		platform: E_PLATFORM_OSX
+		invocation: "$AAXVAL_DIR_TOOLS$/CommandLineTools/aaxval_test_parameter_traversal"
+	}
+	platform_process {
+		platform: E_PLATFORM_WIN
+		invocation: "$AAXVAL_DIR_TOOLS$\\aaxval.test.parameter_traversal.exe"
+	}
+}
+
+test {
+	id: "test.parameter_traversal.linear"
+	name: "Parameter Traversal Test (linear)"
+	description: "Linear test of the plug-in's parameter space. Maximum 5-minute execution per Effect."
+	
+	module_id: "mod_tests_component_datamodel"
+	module_id: "mod_tests_plat_any"
+	category_id: "cat_reliability"
+	
+	process_id: "process_parametertraversal"
+    arguments {
+		elem: "--traversal_type=linear"
+		elem: "--max_duration=300"
+	}
+}
+
+test {
+	id: "test.parameter_traversal.random"
+	name: "Parameter Traversal Test (random)"
+	description: "Random test of the plug-in's parameter space. 30-second execution per Effect."
+	
+	module_id: "mod_tests_component_datamodel"
+	module_id: "mod_tests_plat_any"
+	category_id: "cat_reliability"
+	
+	process_id: "process_parametertraversal"
+    arguments {
+		elem: "--traversal_type=random"
+		elem: "--max_duration=30"
+	}
+}
+
+test {
+	id: "test.parameter_traversal.random.fast"
+	name: "Parameter Traversal Test (fast)"
+	description: "Random test of the plug-in's parameter space. 3-second execution per Effect."
+	
+	module_id: "mod_tests_component_datamodel"
+	module_id: "mod_tests_plat_any"
+	module_id: "mod_tests_fast"
+	category_id: "cat_reliability"
+	
+	process_id: "process_parametertraversal"
+    arguments {
+		elem: "--traversal_type=random"
+		elem: "--max_duration=3"
+	}
+}

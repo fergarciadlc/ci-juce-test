@@ -1,0 +1,68 @@
+> clear_trace_config
+> --- 
+> ...
+# ---
+< cmd_result: ""
+< message_type: cmd_result
+< ...
+> enable_trace_facility
+> ---
+> - DTF_GOLDSMITH
+> - DTP_LOW
+> ...
+# ---
+< cmd_result: ""
+< message_type: cmd_result
+< ...
+> enable_trace_facility
+> ---
+> - DTF_DSI
+> - DTP_NORMAL
+> ...
+# ---
+< cmd_result: ""
+< message_type: cmd_result
+< ...
+> enable_trace_facility
+> ---
+> - DTF_COREAUDIO
+> - DTP_NORMAL
+> ...
+# ---
+< cmd_result: ""
+< message_type: cmd_result
+< ...
+> enable_trace_facility
+> ---
+> - DTF_CORE_ENGINE_SETTINGS
+> - DTP_LOWEST
+> ...
+# ---
+< cmd_result: ""
+< message_type: cmd_result
+< ...
+> info
+> --- 
+> ...
+# ---
+< cmd_result:
+<   build: release
+<   trace_path: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/Logs/dsh_2023_01_17_02_50_19.txt
+< message_type: cmd_result
+< ...
+> enable_trace_facility
+> ---
+> - DTF_AAXH_CLIENT
+> - DTP_LOWEST
+> ...
+# ---
+< cmd_result: ""
+< message_type: cmd_result
+< ...
+> load_dish
+> ---
+> - aaxh
+> ...
+> exit
+> --- 
+> ...

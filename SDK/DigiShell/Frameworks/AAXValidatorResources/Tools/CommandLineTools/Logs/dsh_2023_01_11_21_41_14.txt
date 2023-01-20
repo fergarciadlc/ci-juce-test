@@ -1,0 +1,211 @@
+
+
+*** Refreshing session trace for:	/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0x1762e, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+DTF_CORE_ENGINE_SETTINGS@DTP_LOWEST(0e0c)
+DTF_AAXH_CLIENT@DTP_LOWEST(0f0a)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+123016.824353,00103,0034: execute succeeded
+123016.824386,00103,0034: before writing message
+123016.824800,00103,0034: writing message completed
+123016.824811,00103,0034: waiting for command
+123016.827631,00103,0034: cmd: "load_dish"
+123016.827642,00103,0034: got: "---"
+123016.827647,00103,0034: got: "- aaxh"
+123016.827651,00103,0034: got: "..."
+123016.827680,00103,0034: yaml parsing succeeded
+123016.827791,00103,0034: parsed params:
+---
+- aaxh
+123016.827816,00103,0034: got command
+123016.827822,00103,0034: before check input parameters
+123016.827827,00103,0034: before calling execute
+123016.828698,00103,0034: dish directory doesn't exist "Macintosh HD:Library:Application Support:Avid:Audio:dishes:"
+123016.830421,00103,0034: processing dish "Macintosh HD:Users:username:Downloads:aax-developer-tools-mac-x86_64-beta-2022-09-01:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:aaxh.dish:"
+123016.900291,00103,0f0a: Initialize: enter
+123016.900304,00103,0f0a: Initialize: exit (13 us)
+123016.900358,00103,0034: AAXDishCommon::CSharedData created
+123016.900461,00103,0034: yaml parsing succeeded
+123016.900715,00103,0034: yaml parsing succeeded
+123016.901541,00103,0034: yaml parsing succeeded
+123016.901632,00103,0034: yaml parsing succeeded
+123016.901719,00103,0034: yaml parsing succeeded
+123016.901799,00103,0034: yaml parsing succeeded
+123016.901927,00103,0034: yaml parsing succeeded
+123016.902366,00103,0034: yaml parsing succeeded
+123016.902498,00103,0034: yaml parsing succeeded
+123016.903223,00103,0034: yaml parsing succeeded
+123016.904674,00103,0034: yaml parsing succeeded
+123016.905131,00103,0034: yaml parsing succeeded
+123016.906583,00103,0034: yaml parsing succeeded
+123016.906925,00103,0034: yaml parsing succeeded
+123016.907283,00103,0034: yaml parsing succeeded
+123016.907899,00103,0034: yaml parsing succeeded
+123016.908318,00103,0034: yaml parsing succeeded
+123016.908648,00103,0034: yaml parsing succeeded
+123016.909063,00103,0034: dish loaded
+123016.909072,00103,0034: processing dish "Macintosh HD:Users:username:Downloads:aax-developer-tools-mac-x86_64-beta-2022-09-01:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:DAE.dish:"
+123016.909074,00103,0034: dish ignored
+123016.909081,00103,0034: execute succeeded
+123016.909083,00103,0034: before writing message
+123016.909180,00103,0034: writing message completed
+123016.909182,00103,0034: waiting for command
+123016.910008,00103,0034: cmd: "init"
+123016.910012,00103,0034: got: "--- debug_max"
+123016.910014,00103,0034: got: "..."
+123016.910020,00103,0034: yaml parsing succeeded
+123016.910048,00103,0034: parsed params:
+--- debug_max
+123016.910051,00103,0034: got command
+123016.910053,00103,0034: before check input parameters
+123016.910054,00103,0034: cmd: init
+123016.910076,00103,0034: 
+failed sequence '""', user input 'debug_max', failure reason - got non empty input when expected empty element
+123016.910104,00103,0034: before calling execute
+123016.910122,00103,0034: DSH_TParameter::SetFromAny - set parameter "debuglevel" to "15"
+123016.910130,00103,0f0a: AAXHShell_SetDebugLevel: returning true
+123016.910138,00103,0f0a: AAXHShell_GetDebugLevel: returning true
+123016.910153,00103,0034: execute succeeded
+123016.910157,00103,0034: before writing message
+123016.910275,00103,0034: writing message completed
+123016.910278,00103,0034: waiting for command
+123016.911034,00103,0034: cmd: "loadpi"
+123016.911042,00103,0034: got: "--- "/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin""
+123016.911043,00103,0034: got: "..."
+123016.911048,00103,0034: yaml parsing succeeded
+123016.911089,00103,0034: parsed params:
+--- /Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin
+123016.911093,00103,0034: got command
+123016.911094,00103,0034: before check input parameters
+123016.911095,00103,0034: cmd: loadpi
+123016.911117,00103,0034: before calling execute
+123016.911126,00103,0034: DSH_TParameter::SetFromAny - set parameter "path" to "/Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin"
+123016.911148,00103,0f0a: AAXHShell_CCommandManager::CreateList - created command list id: 0
+123016.911150,00103,0f0a: AAXHShell_CreateCommandList: returning true
+123016.911158,00103,0f0a: AAXHShell_AddCommandListData: returning true
+123016.911159,00103,0f0a: AAXHShell_AddCommandListData: returning true
+123016.911164,00103,0f0a: AAXHShell_CCommandManager::Push - pushed command to command list id: 0
+123016.911165,00103,0f0a: AAXHShell_PushCommandLoadPlugIn: returning true
+123016.911167,00103,0f0a: AAXHShell_CCommandManager::DoActionOnList - executing action: 0, command list id: 0
+123016.911170,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Execute: enter
+123016.911171,00103,0f0a: LoadPlugIn: enter
+123016.911172,00103,0f0a:   path: /Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin
+123016.920405,00103,0f0a: AAXHShell_CPlugInManager::LoadPlugIn succeeded - id: 0, collection: 0x600002f01500, plug-in: /Library/Application Support/Avid/Audio/Plug-Ins/ci-cmake-juce.aaxplugin
+123016.920416,00103,0f0a: LoadPlugIn: exit (9244 us)
+123016.920417,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Execute: exit (9246 us)
+123016.920421,00103,0f0a: AAXHShell_ExecuteCommandList: returning true
+123016.920429,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.920445,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.920454,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.920464,00103,0f0a: AAXHShell_GetPlugInPath: returning true
+123016.920473,00103,0034: execute succeeded
+123016.920476,00103,0034: before writing message
+123016.920618,00103,0034: writing message completed
+123016.920621,00103,0034: waiting for command
+123016.921108,00103,0034: cmd: "listeffects"
+123016.921116,00103,0034: got: "--- 0"
+123016.921117,00103,0034: got: "..."
+123016.921123,00103,0034: yaml parsing succeeded
+123016.921149,00103,0034: parsed params:
+--- 0
+123016.921152,00103,0034: got command
+123016.921154,00103,0034: before check input parameters
+123016.921155,00103,0034: cmd: listeffects
+123016.921175,00103,0034: 
+failed sequence '""', user input '0', failure reason - got non empty input when expected empty element
+123016.921200,00103,0034: before calling execute
+123016.921212,00103,0034: DSH_TParameter::SetFromAny - set parameter "plugin" to "0"
+123016.921217,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.921221,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.921225,00103,0f0a: AAXHShell_GetPlugInPath: returning true
+123016.921227,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.921229,00103,0f0a: AAXHShell_GetNumberOfEffects: returning true
+123016.921230,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.921234,00103,0f0a: AAXHShell_GetEffectIDByIndex: returning true
+123016.921266,00103,0034: execute succeeded
+123016.921271,00103,0034: before writing message
+123016.921486,00103,0034: writing message completed
+123016.921490,00103,0034: waiting for command
+123016.922626,00103,0034: cmd: "getdescription"
+123016.922630,00103,0034: got: "---"
+123016.922632,00103,0034: got: "plugin: 0"
+123016.922634,00103,0034: got: "effect: 0"
+123016.922636,00103,0034: got: "stringformat: yaml"
+123016.922637,00103,0034: got: "..."
+123016.922642,00103,0034: yaml parsing succeeded
+123016.922769,00103,0034: parsed params:
+---
+effect: 0
+plugin: 0
+stringformat: yaml
+123016.922776,00103,0034: got command
+123016.922777,00103,0034: before check input parameters
+123016.922778,00103,0034: cmd: getdescription
+123016.922979,00103,0034: 
+failed sequence '"[plugin_listval, effect_listval]"' matching element '[plugin_listval, effect_listval]' with user input '{effect: 0, plugin: 0, stringformat: yaml}', failure reason - not a list
+123016.923122,00103,0034: before calling execute
+123016.923136,00103,0034: DSH_TParameter::SetFromAny - set parameter "effect" to "0"
+123016.923140,00103,0034: DSH_TParameter::SetFromAny - set parameter "plugin" to "0"
+123016.923145,00103,0034: DSH_TParameter::SetFromAny - set parameter "stringformat" to "2"
+123016.923152,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.923375,00103,0f0a: AAXHShell_GetEffectDescriptionSize: returning true
+123016.923377,00103,0f0a: AAXHShell_GetCommandListData: returning true
+123016.923380,00103,0f0a: AAXHShell_GetEffectDescription: returning true
+123016.926876,00103,0034: execute succeeded
+123016.926933,00103,0034: before writing message
+123016.929638,00103,0034: writing message completed
+123016.929671,00103,0034: waiting for command
+123016.932437,00103,0034: cmd: "teardown"
+123016.932441,00103,0034: got: "--- "
+123016.932442,00103,0034: got: "..."
+123016.932448,00103,0034: yaml parsing succeeded
+123016.932451,00103,0034: parsed params:
+--- ~
+123016.932453,00103,0034: got command
+123016.932455,00103,0034: before check input parameters
+123016.932456,00103,0034: before calling execute
+123016.932463,00103,0f0a: AAXHShell_CCommandManager::DoActionOnList - executing action: 1, command list id: 0
+123016.932465,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Undo: enter
+123016.932466,00103,0f0a: UnloadPlugIn: enter
+123016.932467,00103,0f0a:   pi: 0
+123016.932505,00103,0f0a: UnloadPlugIn: exit (38 us)
+123016.932506,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Undo: exit (41 us)
+123016.932509,00103,0f0a: AAXHShell_UndoCommandList: returning true
+123016.932513,00103,0f0a: AAXHShell_DeleteCommandList: returning true
+123016.932514,00103,0f0a: AAXHShell_UndoAndDeleteCommandList: returning true
+123016.932648,00103,0f0a: Teardown: enter
+123016.932654,00103,0f0a: Teardown: exit (6 us)
+123016.932712,00103,0034: execute succeeded
+123016.932715,00103,0034: before writing message
+123016.932801,00103,0034: writing message completed
+123016.932803,00103,0034: waiting for command
+123016.933070,00103,0034: cmd: "exit"
+123016.933074,00103,0034: got: "--- "
+123016.933076,00103,0034: got: "..."
+123016.933080,00103,0034: yaml parsing succeeded
+123016.933082,00103,0034: parsed params:
+--- ~
+123016.933085,00103,0034: got command
+123016.933086,00103,0034: before check input parameters
+123016.933087,00103,0034: before calling execute
+123016.933089,00103,0034: execute succeeded
+123016.933090,00103,0034: before writing message
+123016.933155,00103,0034: writing message completed
+123016.933345,00103,0034: AAXDishCommon::CSharedData deleted
+123016.933348,00103,0034: dish finalized
+
+
+ *** DigiTrace Log Complete ***

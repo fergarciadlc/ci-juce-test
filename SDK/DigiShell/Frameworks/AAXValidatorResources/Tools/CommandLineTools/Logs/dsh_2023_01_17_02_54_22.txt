@@ -1,0 +1,109 @@
+
+
+*** Refreshing session trace for:	/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh (pid=0xbfb, version=22.9.0)
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** DigiTrace Config File:		/Users/username/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/CommandLineTools/dsh.digitrace
+*** Machine UUID:			9E61.6EC0.89B3.A499
+*** Facilities to trace:
+
+DTF_DSI@DTP_NORMAL(0001)
+DTF_COREAUDIO@DTP_NORMAL(0006)
+DTF_GOLDSMITH@DTP_LOW(0034)
+DTF_CORE_ENGINE_SETTINGS@DTP_LOWEST(0e0c)
+DTF_AAXH_CLIENT@DTP_LOWEST(0f0a)
+
+Time(s),Tid,Facility : Debug Message
+---------------------------------------------------------------------------
+317379.898538,00103,0034: execute succeeded
+317379.898556,00103,0034: before writing message
+317379.898879,00103,0034: writing message completed
+317379.898886,00103,0034: waiting for command
+317379.900271,00103,0034: cmd: "load_dish"
+317379.900294,00103,0034: got: "---"
+317379.900300,00103,0034: got: "- aaxh"
+317379.900305,00103,0034: got: "..."
+317379.900320,00103,0034: yaml parsing succeeded
+317379.900401,00103,0034: parsed params:
+---
+- aaxh
+317379.900414,00103,0034: got command
+317379.900419,00103,0034: before check input parameters
+317379.900422,00103,0034: before calling execute
+317379.901528,00103,0034: dish directory doesn't exist "Macintosh HD:Library:Application Support:Avid:Audio:dishes:"
+317379.903210,00103,0034: processing dish "Macintosh HD:Users:username:Documents:GitHub:Personal:ci-juce-test:SDK:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:aaxh.dish:"
+317379.996970,00103,0f0a: Initialize: enter
+317379.997018,00103,0f0a: Initialize: exit (47 us)
+317379.997187,00103,0034: AAXDishCommon::CSharedData created
+317379.997468,00103,0034: yaml parsing succeeded
+317379.997669,00103,0034: yaml parsing succeeded
+317379.998398,00103,0034: yaml parsing succeeded
+317379.998483,00103,0034: yaml parsing succeeded
+317379.998554,00103,0034: yaml parsing succeeded
+317379.998623,00103,0034: yaml parsing succeeded
+317379.998737,00103,0034: yaml parsing succeeded
+317379.999114,00103,0034: yaml parsing succeeded
+317379.999227,00103,0034: yaml parsing succeeded
+317379.999858,00103,0034: yaml parsing succeeded
+317380.001072,00103,0034: yaml parsing succeeded
+317380.001451,00103,0034: yaml parsing succeeded
+317380.002670,00103,0034: yaml parsing succeeded
+317380.002958,00103,0034: yaml parsing succeeded
+317380.003255,00103,0034: yaml parsing succeeded
+317380.003771,00103,0034: yaml parsing succeeded
+317380.004139,00103,0034: yaml parsing succeeded
+317380.004437,00103,0034: yaml parsing succeeded
+317380.004808,00103,0034: dish loaded
+317380.004816,00103,0034: processing dish "Macintosh HD:Users:username:Documents:GitHub:Personal:ci-juce-test:SDK:DigiShell:Frameworks:AAXValidatorResources:Tools:CommandLineTools:Dishes:DAE.dish:"
+317380.004818,00103,0034: dish ignored
+317380.004825,00103,0034: execute succeeded
+317380.004827,00103,0034: before writing message
+317380.004909,00103,0034: writing message completed
+317380.004911,00103,0034: waiting for command
+317380.005646,00103,0034: cmd: "init"
+317380.005650,00103,0034: got: "--- debug_max"
+317380.005651,00103,0034: got: "..."
+317380.005657,00103,0034: yaml parsing succeeded
+317380.005683,00103,0034: parsed params:
+--- debug_max
+317380.005686,00103,0034: got command
+317380.005687,00103,0034: before check input parameters
+317380.005689,00103,0034: cmd: init
+317380.005709,00103,0034: 
+failed sequence '""', user input 'debug_max', failure reason - got non empty input when expected empty element
+317380.005735,00103,0034: before calling execute
+317380.005751,00103,0034: DSH_TParameter::SetFromAny - set parameter "debuglevel" to "15"
+317380.005759,00103,0f0a: AAXHShell_SetDebugLevel: returning true
+317380.005765,00103,0f0a: AAXHShell_GetDebugLevel: returning true
+317380.005836,00103,0034: execute succeeded
+317380.005839,00103,0034: before writing message
+317380.005961,00103,0034: writing message completed
+317380.005964,00103,0034: waiting for command
+317380.006620,00103,0034: cmd: "loadpi"
+317380.006628,00103,0034: got: "--- "/Users/username/Documents/GitHub/Personal/ci-juce-test/Plug-Ins/ci-cmake-juce.aaxplugin""
+317380.006629,00103,0034: got: "..."
+317380.006633,00103,0034: yaml parsing succeeded
+317380.006673,00103,0034: parsed params:
+--- /Users/username/Documents/GitHub/Personal/ci-juce-test/Plug-Ins/ci-cmake-juce.aaxplugin
+317380.006676,00103,0034: got command
+317380.006677,00103,0034: before check input parameters
+317380.006678,00103,0034: cmd: loadpi
+317380.006697,00103,0034: before calling execute
+317380.006705,00103,0034: DSH_TParameter::SetFromAny - set parameter "path" to "/Users/username/Documents/GitHub/Personal/ci-juce-test/Plug-Ins/ci-cmake-juce.aaxplugin"
+317380.007046,00103,0f0a: AAXHShell_CCommandManager::CreateList - created command list id: 0
+317380.007049,00103,0f0a: AAXHShell_CreateCommandList: returning true
+317380.007095,00103,0f0a: AAXHShell_AddCommandListData: returning true
+317380.007098,00103,0f0a: AAXHShell_AddCommandListData: returning true
+317380.007131,00103,0f0a: AAXHShell_CCommandManager::Push - pushed command to command list id: 0
+317380.007133,00103,0f0a: AAXHShell_PushCommandLoadPlugIn: returning true
+317380.007134,00103,0f0a: AAXHShell_CCommandManager::DoActionOnList - executing action: 0, command list id: 0
+317380.007137,00103,0f0a: AAXHShell_CCommandLoadPlugIn::Execute: enter
+317380.007139,00103,0f0a: LoadPlugIn: enter
+317380.007140,00103,0f0a:   path: /Users/username/Documents/GitHub/Personal/ci-juce-test/Plug-Ins/ci-cmake-juce.aaxplugin
+317380.409885,00103,0034: handle signal: 2
+
+
+ *** DigiTrace Log Complete ***

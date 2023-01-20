@@ -1,0 +1,34 @@
+[00:00:00:00] Test Log: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Support_General_20230117_024656_01/DSH_AAXVAL_Support_General_20230117_024656_01_l.txt
+[00:00:00:00] ======
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeConnection.rb:54:in `readline'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeConnection.rb:54:in `send_command'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DTTMonitor.rb:187:in `send_command_to_app'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:363:in `block in do_transaction'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:90:in `block in timeout'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `block in catch'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `catch'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:33:in `catch'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/ruby_dist/lib/ruby/2.1.0/timeout.rb:105:in `timeout'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:362:in `do_transaction'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:327:in `do_transaction'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/Target.rb:164:in `send_command_to_app'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/PipeApp.rb:19:in `execute'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:139:in `execute'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:184:in `method_missing'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:105:in `enable_logging'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/DigiShell.rb:54:in `initialize'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/scripts/DSH_AAXVAL_Support_General.rb:24:in `new'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/scripts/DSH_AAXVAL_Support_General.rb:24:in `run'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:159:in `run_a_script'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:65:in `block in run'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `times'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/ScriptRunner.rb:60:in `run'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:165:in `block in run'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `each'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/classes/RunSuite.rb:162:in `run'
+[00:00:00:02] /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/sources/bin/runsuite.rb:227:in `<main>'
+[00:00:00:02] WARNING: dsh killed.
+[00:00:00:02] DSH_AAXVAL_Support_General ABORTED: undefined method `close' for nil:NilClass
+[00:00:00:02] WARNINGS:
+[00:00:00:02] dsh killed.
+[00:00:00:02] Elapsed time: 2 seconds.
