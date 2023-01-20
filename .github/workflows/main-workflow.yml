@@ -11,6 +11,7 @@ on:
 
 jobs:
   matrix_prep:
+    if: contains(toJson(github.event.commits), '/no-ci') == false
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -26,7 +27,7 @@ jobs:
 
 
   unit-test:
-    # if: contains(toJson(github.event.commits), '/ut')
+    if: contains(toJson(github.event.commits), '/no-ci') == false 
     name: Unit Testing on ${{ matrix.runs_on }}
     needs: matrix_prep
     strategy:      
@@ -34,13 +35,26 @@ jobs:
     runs-on: ${{ matrix.runs_on }}
 
     steps:
-    - name: Run Unit Testing on ${{ matrix.runs_on }}
-      run: |
-        if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
-          echo "/no-ut in commit message, skipping unit tests"
-        else
-          echo "running uts"
-        fi
+    - name: Run Unit Testing on MacOs
+    if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
+    run: |
+      if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
+        echo "/no-ut in commit message, skipping unit tests"
+      else
+        echo "running uts"
+      fi
+
+    - name: Run Unit Testing on WinOs
+    if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
+    run: |
+      if( ${{ contains(toJson(github.event.commit ), '/no-ut') }} )
+      {
+        echo "/no-ut in commit message, skipping unit tests"
+      } 
+      else 
+      {
+        echo "running uts"
+      }
 
   # build-and-validate:
   #   # if: contains(toJson(github.event.commits), '/no-ci') == false

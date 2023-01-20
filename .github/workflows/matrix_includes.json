@@ -1,5 +1,9 @@
 [
     {
+        "runs_on":"macOS-latest",        
+        "runOnBranch":"main"
+    },
+    {
         "runs_on":"ubuntu-latest",        
         "runOnBranch":"main"
     },
