@@ -1,0 +1,68 @@
+name: CI Mac Pipeline
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+
+jobs:
+  matrix_prep:
+    if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      # Required as the JSON input file needs to be read
+      - uses: actions/checkout@v2      
+      - id: set-matrix
+        uses: JoshuaTheMiller/conditional-build-matrix@main        
+        with:
+          # inputFile: '.github/workflows/matrix_includes.json' # Default input file path
+          filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
+          # addInclude: true
+
+
+  unit-test:
+    name: Unit Testing
+    needs: matrix_prep
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+    - name: Run Unit Testing on ${{ matrix.runs_on }}
+      if: runner.os == 'MacOS'
+      run: |
+        if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
+          echo "/no-ut in commit message, skipping unit tests"
+        else
+          echo "running uts"
+        fi
+
+
+  build:
+    name: Build on ${{ matrix.runs_on }}
+    needs: [matrix_prep, unit-test]
+    if: contains(toJson(github.event.commits), '/no-build') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+    - name: Get latest CMake
+      uses: lukka/get-cmake@latest
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Build for MacOS
+      if: runner.os == 'MacOS'
+      shell: bash
+      run: sudo cmake --build build --config Release
+    

@@ -1,6 +1,10 @@
 [
     {
-        "runs_on":"macOS-latest",        
+        "runs_on":"macos-12",        
+        "runOnBranch":"main"
+    },
+    {
+        "runs_on":"windows-2022",        
         "runOnBranch":"main"
     }
 ]
