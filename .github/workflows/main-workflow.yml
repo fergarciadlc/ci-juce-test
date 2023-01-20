@@ -1,0 +1,93 @@
+name: CI main workflow
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+  workflow_dispatch:
+
+jobs:
+  matrix_prep:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      # Required as the JSON input file needs to be read
+      - uses: actions/checkout@v2      
+      - id: set-matrix
+        uses: JoshuaTheMiller/conditional-build-matrix@main        
+        with:
+          # inputFile: '.github/workflows/matrix_includes.json' # Default input file path
+          filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
+          # addInclude: true
+
+
+  unit-test:
+    # if: contains(toJson(github.event.commits), '/ut')
+    name: Unit Testing on ${{ matrix.os }}
+    needs: matrix_prep
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    name: Build
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+    - name: Run Unit Testing
+      run: |
+        echo ${{ vars.REPOSITORY_VAR }}
+        if [[ ${{ contains(toJson(github.event.commits), '/no-ut') }} ]]; then
+          echo "/no-ut in commit message, skipping unit tests"
+        else
+          echo "running uts"
+        fi
+
+  # build-and-validate:
+  #   # if: contains(toJson(github.event.commits), '/no-ci') == false
+  #   needs: [unit-test]
+  #   name: Build and test on ${{ matrix.os }}
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       os: [macOS-latest]
+  #       # os: [windows-2022, macOS-latest]
+
+  #   steps:
+  #   - name: Get latest CMake
+  #     uses: lukka/get-cmake@latest
+
+  #   - name: Checkout code
+  #     uses: actions/checkout@v2
+  #     with:
+  #       submodules: recursive
+
+  #   - name: Configure Cmake
+  #     shell: bash
+  #     run: cmake -Bbuild
+
+  #   - name: Build for MacOS
+  #     if: runner.os == 'MacOS'
+  #     shell: bash
+  #     run: sudo cmake --build build --config Release
+    
+  #   - name: Build for Windows
+  #     if: runner.os == 'Windows'
+  #     shell: bash
+  #     run: cmake --build build --config Release --parallel 4
+
+  #   - name: Log Plug-Ins Folder
+  #     run: find /Users/runner/Library/Audio/Plug-Ins/
+
+  #   - name: Killall Component Registrar
+  #     run: killall -9 AudioComponentRegistrar
+
+  #   - name: Validate std formats
+  #     run: bash scripts/validate_std.sh
+
+  #   - name: Validate AAX
+  #     run: bash scripts/validate_aax.sh "/Users/runner/work/ci-juce-test/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"
+

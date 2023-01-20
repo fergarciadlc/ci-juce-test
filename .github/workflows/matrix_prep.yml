@@ -1,6 +1,14 @@
 name: Sample Conditional Matrix Build
 
-on: push
+on:
+  push:
+    branches:
+    - mainn
+  pull_request:
+    branches:
+    - mainn
+
+  workflow_dispatch:
 
 jobs:
   matrix_prep:
