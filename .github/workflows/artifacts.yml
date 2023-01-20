@@ -6,7 +6,8 @@ on:
     - main
 
   workflow_dispatch:
-
+env:
+  OS_LIST: ['ubuntu-latest', 'windows-latest', 'macos-latest']
 jobs:
 
   stage-1:
@@ -16,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+        os: ${{ env.OS_LIST }}
 
     steps:
     - uses: actions/checkout@master
