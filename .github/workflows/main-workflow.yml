@@ -84,7 +84,7 @@ jobs:
     
 
   build-win:
-    if: contains(toJson(github.event.commits), '/no-win') == false
+    if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
     name: build ${{ matrix.runs_on }}
     needs: [matrix_prep, unit-test]
     strategy:      
@@ -102,7 +102,6 @@ jobs:
 
     - name: Configure Cmake
       shell: bash
-      run: cmake -Bbuild
       run: cmake -Bbuild
     
     - name: Build for Windows
