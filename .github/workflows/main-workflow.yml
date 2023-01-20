@@ -89,6 +89,8 @@ jobs:
       run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix) }}"
     - name: echo 2
       run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix).runs_on }}"
+    - name: echo 3
+      run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix.runs_on) }}"
 
   build-win:
     if: contains(toJson(github.event.commits), '/no-win') == false
