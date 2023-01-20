@@ -44,10 +44,10 @@ jobs:
           echo "running uts"
         fi
 
-    - name: Run Unit Testing on WinOs
+    - name: Run Unit Testing on Windows
       if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
       run: |
-        if( ${{ contains(toJson(github.event.commit ), '/no-ut') }} == "false" )
+        if( "${{ toJson(github.event.commit ) }}" -contains "/no-ut" )
         {
           echo "/no-ut in commit message, skipping unit tests"
         } 
