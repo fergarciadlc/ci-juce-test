@@ -36,7 +36,7 @@ jobs:
     steps:
     - name: Run Unit Testing on ${{ matrix.runs_on }}
       run: |
-        if ${{ contains(toJson(github.event.commits), '/no-ut') }}; then
+        if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
           echo "/no-ut in commit message, skipping unit tests"
         else
           echo "running uts"
