@@ -55,6 +55,28 @@ jobs:
           echo "running uts"
         }
 
+      
+  build:
+    name: Build on ${{ matrix.runs_on }}
+    needs: unit-test
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+      uses: lukka/get-cmake@latest
+      with:
+        submodules: recursive
+      
+    - name: Build for MacOS
+      if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
+      run: sudo cmake --build build --config Release
+    
+    - name: Build for Windows
+      if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
+      run: cmake --build build --config Release --parallel 4
+    
+
   # build-and-validate:
   #   # if: contains(toJson(github.event.commits), '/no-ci') == false
   #   needs: [unit-test]
