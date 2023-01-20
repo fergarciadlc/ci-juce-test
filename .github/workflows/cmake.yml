@@ -13,7 +13,7 @@ on:
 jobs:
 
   unit-test:
-    if: contains(toJson(github.event.commits), '/ut')
+    # if: contains(toJson(github.event.commits), '/ut')
     name: Unit Testing on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
