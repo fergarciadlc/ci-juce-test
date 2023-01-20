@@ -26,7 +26,7 @@ jobs:
       run: echo "unit testing"
 
   build-and-validate:
-    if: contains(toJson(github.event.commits), '/no-ci') == false
+    # if: contains(toJson(github.event.commits), '/no-ci') == false
     needs: [unit-test]
     name: Test plugin on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
