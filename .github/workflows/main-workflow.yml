@@ -58,7 +58,7 @@ jobs:
       
   build:
     name: build ${{ matrix.runs_on }}
-    needs: unit-test
+    needs: [matrix_prep, unit-test]
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
