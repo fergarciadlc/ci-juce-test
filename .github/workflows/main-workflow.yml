@@ -64,10 +64,28 @@ jobs:
     runs-on: ${{ matrix.runs_on }}
 
     steps:
-    - name: Build for MacOS
+    - name: Get latest CMake
+      uses: lukka/get-cmake@latest
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Configure Cmake
+      shell: bash
+      run: cmake -Bbuild
+
+    - name: Build for MacOS && contains(toJson(github.event.commits), '/no-mac') == false
       if: runner.os == 'MacOS'
       shell: bash
-      run: echo ok
+      run: sudo cmake --build build --config Release
+    
+    - name: Build for Windows
+      if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
+      shell: bash
+      run: cmake --build build --config Release --parallel 4
+
     
 
   # build-and-validate:
