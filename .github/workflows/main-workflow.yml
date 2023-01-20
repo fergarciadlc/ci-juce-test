@@ -36,25 +36,25 @@ jobs:
 
     steps:
     - name: Run Unit Testing on MacOs
-    if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
-    run: |
-      if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
-        echo "/no-ut in commit message, skipping unit tests"
-      else
-        echo "running uts"
-      fi
+      if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
+      run: |
+        if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
+          echo "/no-ut in commit message, skipping unit tests"
+        else
+          echo "running uts"
+        fi
 
     - name: Run Unit Testing on WinOs
-    if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
-    run: |
-      if( ${{ contains(toJson(github.event.commit ), '/no-ut') }} )
-      {
-        echo "/no-ut in commit message, skipping unit tests"
-      } 
-      else 
-      {
-        echo "running uts"
-      }
+      if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
+      run: |
+        if( ${{ contains(toJson(github.event.commit ), '/no-ut') }} )
+        {
+          echo "/no-ut in commit message, skipping unit tests"
+        } 
+        else 
+        {
+          echo "running uts"
+        }
 
   # build-and-validate:
   #   # if: contains(toJson(github.event.commits), '/no-ci') == false
