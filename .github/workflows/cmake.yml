@@ -70,3 +70,4 @@ jobs:
 
     - name: Validate AAX
       run: bash scripts/validate_aax.sh "/Users/runner/work/ci-juce-test/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"
+
