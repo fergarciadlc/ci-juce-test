@@ -8,7 +8,6 @@ on:
     branches:
     - main
 
-  workflow_dispatch:
 
 jobs:
   matrix_prep:
@@ -32,7 +31,7 @@ jobs:
     needs: matrix_prep
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    name: Build
+    name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.runs_on }}
 
     steps:
