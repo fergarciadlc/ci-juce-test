@@ -43,7 +43,6 @@ jobs:
           echo "running uts"
         fi
 
-
   build:
     name: Build on ${{ matrix.runs_on }}
     needs: [matrix_prep, unit-test]
@@ -67,4 +66,88 @@ jobs:
     - name: Build for MacOS
       if: runner.os == 'MacOS'
       run: sudo cmake --build build --config Release
+
+  validate:
+    name: Validate on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build]
+    if: contains(toJson(github.event.commits), '/no-validate') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+    - name: Prepare pluginval 
+      if: runner.os == 'MacOS'
+      run: |
+        curl -L "https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_macOS.zip" -o pluginval.zip
+        unzip pluginval > /dev/null
+        echo "pluginval.app/Contents/MacOS/pluginval"
+  
+    - name: Prepare aaxval 
+      if: runner.os == 'MacOS'
+      run: |
+        echo "aqui bajas el aax"
+
+    - name: Log Plug-Ins Folder
+      run: find /Users/runner/Library/Audio/Plug-Ins/
+
+    - name: Killall Component Registrar
+      run: killall -9 AudioComponentRegistrar
+
+    - name: Validate AU
+      run: echo "bash scripts/validate_std.sh PLUGIN_NAME component"
+
+    - name: Validate VST
+      run: echo "bash scripts/validate_std.sh PLUGIN_NAME vst"
+
+    - name: Validate VST3
+      run: echo "bash scripts/validate_std.sh PLUGIN_NAME vst3"
+
+    - name: Validate AAX
+      run: echo 'bash scripts/validate_aax.sh /Users/runner/work/ci-juce-test/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"'
+
+
+  sign:
+    name: Signing on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build]
+    if: contains(toJson(github.event.commits), '/no-sign') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+    - name: Sign AAX
+      if: runner.os == 'MacOS'
+      run: echo "validar aax"
+
+    - name: Sign AU
+      if: runner.os == 'MacOS'
+      run: echo "validar AU"
+
+    - name: Sign VST
+      if: runner.os == 'MacOS'
+      run: echo "validar vst"
+
+    - name: Sign VST3
+      if: runner.os == 'MacOS'
+      run: echo "validar vst3"
+
+  packaging:
+    name: Packaging on ${{ matrix.runs_on }}
+    needs: [matrix_prep, sign]
+    if: contains(toJson(github.event.commits), '/no-packaging') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+    - name: Packaging Plug-In formats
+      if: runner.os == 'MacOS'
+      run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
+
+    - name: Packaging Plug-In formats
+      if: runner.os == 'MacOS'
+      run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
+
     
+

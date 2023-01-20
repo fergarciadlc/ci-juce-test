@@ -11,6 +11,8 @@ echo '
                                              |___/   
 '
 
+PLUGIN_NAME={1}
+FORMAT={2}
 
 # install functions
 install_pluginval_mac()
@@ -52,6 +54,11 @@ for plugin in "${plugins[@]}"; do
     echo "------------------------------------------------------------------------------------------------------------------------------"
     echo ""
 
+    if format in plugin name
+      validalo
+    else
+      siguiente iteracion
+
     if $pluginval --strictness-level 5 --validate-in-process --validate $plugin --output-dir pluginval-logs --timeout-ms 500000;
     then
       echo "------------------------------------------------------------------------------------------------------------------------------"
@@ -68,3 +75,5 @@ done
 
 # clean up
 rm -Rf pluginval*
+
+bash validate_std.sh [pugin-name] [format]
