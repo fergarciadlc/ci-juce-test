@@ -64,7 +64,10 @@ jobs:
     runs-on: ${{ matrix.runs_on }}
 
     steps:
-    run: echo ok
+    - name: Build for MacOS
+      if: runner.os == 'MacOS'
+      shell: bash
+      run: echo ok
     
 
   # build-and-validate:
