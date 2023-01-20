@@ -57,7 +57,7 @@ jobs:
 
       
   build-mac:
-    if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
+    if: contains(toJson(github.event.commits), '/no-mac') == false
     name: build ${{ matrix.runs_on }}
     needs: [matrix_prep, unit-test]
     strategy:      
@@ -66,6 +66,7 @@ jobs:
 
     steps:
     - name: Get latest CMake
+      if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
       uses: lukka/get-cmake@latest
 
     - name: Checkout code
@@ -74,6 +75,7 @@ jobs:
         submodules: recursive
 
     - name: Configure Cmake
+      if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
       shell: bash
       run: cmake -Bbuild
 
@@ -84,7 +86,7 @@ jobs:
     
 
   build-win:
-    if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
+    if: contains(toJson(github.event.commits), '/no-win') == false
     name: build ${{ matrix.runs_on }}
     needs: [matrix_prep, unit-test]
     strategy:      
