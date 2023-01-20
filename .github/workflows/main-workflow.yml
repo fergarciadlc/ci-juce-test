@@ -62,7 +62,7 @@ jobs:
     needs: [matrix_prep, unit-test]
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
+    runs-on: MacOs
 
     steps:
     - name: Get latest CMake
