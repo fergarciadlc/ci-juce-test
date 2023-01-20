@@ -57,8 +57,8 @@ jobs:
 
       
   build-mac:
-    if: contains(toJson(github.event.commits), '/no-mac') == false
-    name: build ${{ matrix.runs_on }}
+    if: contains(toJson(github.event.commits), '/no-mac') == false && contains(fromJson(needs.matrix_prep.outputs.matrix), "mac")
+    name: Mac build ${{ matrix.runs_on }}
     needs: [matrix_prep, unit-test]
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
@@ -70,6 +70,7 @@ jobs:
       uses: lukka/get-cmake@latest
 
     - name: Checkout code
+      if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
       uses: actions/checkout@v2
       with:
         submodules: recursive
@@ -87,7 +88,7 @@ jobs:
 
   build-win:
     if: contains(toJson(github.event.commits), '/no-win') == false
-    name: build ${{ matrix.runs_on }}
+    name: Win build ${{ matrix.runs_on }}
     needs: [matrix_prep, unit-test]
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
