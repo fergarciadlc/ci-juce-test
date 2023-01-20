@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
+      os: ${{ steps.set-matrix.outputs.matrix.runs_on }}
     steps:
       # Required as the JSON input file needs to be read
       - uses: actions/checkout@v2      
@@ -90,7 +91,7 @@ jobs:
     - name: echo 2
       run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix).runs_on }}"
     - name: echo 3
-      run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix.runs_on) }}"
+      run: echo "${{ fromJson(needs.matrix_prep.outputs.os) }}"
 
   build-win:
     if: contains(toJson(github.event.commits), '/no-win') == false
