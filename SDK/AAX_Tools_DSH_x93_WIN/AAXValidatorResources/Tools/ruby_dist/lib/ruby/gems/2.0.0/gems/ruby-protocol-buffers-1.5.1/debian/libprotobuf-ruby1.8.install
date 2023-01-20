@@ -1,0 +1,7 @@
+debian/protocol_buffers.rb /usr/lib/ruby/1.8/
+bin/ruby-protoc            /usr/bin
+VERSION                    /usr/lib/ruby/1.8/protocol_buffers
+LICENSE                    /usr/lib/ruby/1.8/protocol_buffers
+README                     /usr/lib/ruby/1.8/protocol_buffers
+examples                   /usr/lib/ruby/1.8/protocol_buffers
+lib                        /usr/lib/ruby/1.8/protocol_buffers

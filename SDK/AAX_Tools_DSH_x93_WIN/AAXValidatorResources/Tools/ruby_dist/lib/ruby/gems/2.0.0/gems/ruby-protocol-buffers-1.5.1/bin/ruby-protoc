@@ -1,0 +1,59 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'rubygems'
+rescue LoadError
+end
+
+require 'optparse'
+require 'tempfile'
+
+ruby_out = "."
+include_dirs = []
+
+require 'protocol_buffers'
+require 'protocol_buffers/compiler'
+
+opts = OptionParser.new
+opts.banner = <<BANNER
+Usage: #{opts.program_name} [OPTION] PROTO_FILES
+Parse PROTO_FILES and generate output based on the options given:
+BANNER
+opts.version = ProtocolBuffers::VERSION
+
+opts.on("-o", "--ruby_out", "=OUT_DIR",
+        "generates ruby code in OUT_DIR", "[defaults to pwd]",
+        String) { |val| ruby_out = val }
+opts.on("-I", "--proto_path", "=PATH",
+        "Specify a directory to search for includes/imports.") { |val| include_dirs << val }
+opts.on_tail("-h", "--help") { puts opts; exit }
+
+rest = opts.parse(ARGV)
+filenames = rest
+
+(puts "Missing input file.\n\n"; puts opts; exit) if filenames.empty?
+
+protocfile = Tempfile.new("ruby-protoc")
+protocfile.binmode
+ProtocolBuffers::Compiler.compile(protocfile.path, filenames, :include_dirs => include_dirs)
+descriptor_set = Google::Protobuf::FileDescriptorSet.parse(protocfile)
+protocfile.close(true)
+
+if ruby_out
+  require 'protocol_buffers/compiler/file_descriptor_to_ruby'
+end
+
+descriptor_set.file.each do |file_descriptor|
+
+  fullpath = filenames[filenames.index{|path| path.include? file_descriptor.name}]
+
+  if ruby_out
+    path = File.join(ruby_out,File.dirname(fullpath),File.basename(file_descriptor.name, ".proto") + ".pb.rb")
+    FileUtils.mkpath(File.dirname(path)) unless File.directory?(File.dirname(path))
+    File.open(path, "wb") do |file|
+      dumper = FileDescriptorToRuby.new(file_descriptor)
+      dumper.write(file)
+    end
+  end
+
+end

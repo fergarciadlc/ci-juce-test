@@ -1,0 +1,12 @@
+test {
+	id: "info.support.host_context"
+	name: "Host Context Support"
+	description: "Checks whether the plug-in supports every host context"
+	
+	module_id: "mod_info_debug"
+	
+	process_id: "process_dtt"
+	arguments {
+		elem: "DSH_AAXH_HostContextSupport"
+	}
+}

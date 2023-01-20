@@ -1,0 +1,14 @@
+test {
+	id: "test.data_model"
+	name: "Effect instantiation/de-instantiation"
+	description: "Instantiates and de-instantiates each Effect in a plug-in using all supported host contexts"
+	
+	module_id: "mod_tests_component_datamodel"
+	module_id: "mod_tests_plat_any"
+	category_id: "cat_reliability"
+	
+	process_id: "process_dtt"
+	arguments {
+		elem: "DSH_AAXH_Data_Model"
+	}
+}
