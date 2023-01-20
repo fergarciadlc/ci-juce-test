@@ -3,10 +3,10 @@ name: CI-Cmake
 on:
   push:
     branches:
-    - main
+    - mainn
   pull_request:
     branches:
-    - main
+    - mainn
 
   workflow_dispatch:
 
@@ -28,7 +28,7 @@ jobs:
   build-and-validate:
     # if: contains(toJson(github.event.commits), '/no-ci') == false
     needs: [unit-test]
-    name: Test plugin on ${{ matrix.os }}
+    name: Build and test on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
