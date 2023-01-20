@@ -85,8 +85,10 @@ jobs:
     #   if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
     #   shell: bash
     #   run: sudo cmake --build build --config Release
-    run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix) }}"
-    run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix).runs_on }}"
+    - name: echo 1
+      run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix) }}"
+    - name: echo 2
+      run: echo "${{ fromJson(needs.matrix_prep.outputs.matrix).runs_on }}"
 
   build-win:
     if: contains(toJson(github.event.commits), '/no-win') == false
