@@ -21,7 +21,7 @@ jobs:
       - id: set-matrix
         uses: JoshuaTheMiller/conditional-build-matrix@main        
         with:
-          # inputFile: '.github/workflows/matrix_includes.json' # Default input file path
+          inputFile: '.github/workflows/mac_matrix.json' # Default input file path
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
           # addInclude: true
 
@@ -61,8 +61,10 @@ jobs:
       with:
         submodules: recursive
 
+    - name: Configure Cmake
+      run: cmake -Bbuild
+
     - name: Build for MacOS
       if: runner.os == 'MacOS'
-      shell: bash
       run: sudo cmake --build build --config Release
     

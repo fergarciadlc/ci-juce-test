@@ -1,0 +1,6 @@
+[
+    {
+        "runs_on":"macos-12",        
+        "runOnBranch":"main"
+    }
+]
