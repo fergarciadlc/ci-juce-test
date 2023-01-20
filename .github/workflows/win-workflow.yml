@@ -1,4 +1,4 @@
-name: CI Windows Pipeline
+name: Windows Pipeline
 
 on:
   push:
@@ -70,3 +70,4 @@ jobs:
     - name: Build for Windows
       if: runner.os == 'Windows'
       run: cmake --build build --config Release --parallel 4
+

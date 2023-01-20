@@ -1,4 +1,4 @@
-name: CI Mac Pipeline
+name: Mac Pipeline
 
 on:
   push:
