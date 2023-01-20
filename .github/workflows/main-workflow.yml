@@ -76,8 +76,8 @@ jobs:
       shell: bash
       run: cmake -Bbuild
 
-    - name: Build for MacOS && contains(toJson(github.event.commits), '/no-mac') == false
-      if: runner.os == 'MacOS'
+    - name: Build for MacOS
+      if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
       shell: bash
       run: sudo cmake --build build --config Release
     
