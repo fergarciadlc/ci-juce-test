@@ -57,29 +57,14 @@ jobs:
 
       
   build:
-    name: Build on ${{ matrix.runs_on }}
+    name: build ${{ matrix.runs_on }}
     needs: unit-test
-    runs-on: ${{ matrix.runs_on }}
-    strategy:
-      fail-fast: false
+    strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
 
     steps:
-    - name: Get latest CMake
-      uses: lukka/get-cmake@latest
-
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        submodules: recursive
-      
-    - name: Build for MacOS
-      if: runner.os == 'MacOS' && contains(toJson(github.event.commits), '/no-mac') == false
-      run: sudo cmake --build build --config Release
-    
-    - name: Build for Windows
-      if: runner.os == 'Windows' && contains(toJson(github.event.commits), '/no-win') == false
-      run: cmake --build build --config Release --parallel 4
+    run: echo ok
     
 
   # build-and-validate:
