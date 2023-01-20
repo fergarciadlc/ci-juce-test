@@ -59,9 +59,10 @@ jobs:
   build:
     name: Build on ${{ matrix.runs_on }}
     needs: unit-test
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
+    strategy:
+      fail-fast: false
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
 
     steps:
     - name: Get latest CMake
