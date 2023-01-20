@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ${{ env.OS_LIST }}
+        os: $env.OS_LIST
 
     steps:
     - uses: actions/checkout@master
