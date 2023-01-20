@@ -27,7 +27,6 @@ jobs:
 
 
   unit-test:
-    if: contains(toJson(github.event.commits), '/no-ci') == false 
     name: Unit Testing on ${{ matrix.runs_on }}
     needs: matrix_prep
     strategy:      
