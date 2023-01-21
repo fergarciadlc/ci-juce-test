@@ -93,14 +93,13 @@ jobs:
       PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
       AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
 
-
+    steps:
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
         name: plugins-folder-artifact
         path: ${PLUGINS_FOLDER}
 
-    steps:
     - name: Prepare pluginval 
       run: |
         curl -L "${PLUGINVAL_MAC_URL}" -o pluginval.zip
