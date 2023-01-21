@@ -6,11 +6,7 @@ jobs:
   secrets:
     # if: contains(toJson(github.event.commits), '/ut')
     name: cast secrets
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Run Unit Testing
