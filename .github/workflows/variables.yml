@@ -6,8 +6,21 @@ jobs:
   test:
     name: testing
     runs-on: ubuntu-latest
+    env:
+      AAX_VAL_URL: https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/SDK%2Faax-sdk-2-4-0.zip?alt=media
+      AAX_VAL_TOKEN: ${{ secrets.AAX_VAL_MAC_TOKEN }}
+      PLUGINVAL_URL: https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_macOS.zip
 
     steps:
-    - name: Run Unit Testing
-      run: echo "${{ secrets.VALIDATORS }}"
+    - name: Prepare pluginval 
+      run: |
+        curl -L "$PLUGINVAL_URL" -o pluginval.zip
+        unzip pluginval > /dev/null
+        echo "pluginval.app/Contents/MacOS/pluginval"
+  
+    - name: Prepare aaxval 
+      run: |
+        curl -L "${AAX_VAL_URL}&token=${AAX_VAL_TOKEN}" -o aax-sdk-2-4-0.zip
+        ls
+
 
