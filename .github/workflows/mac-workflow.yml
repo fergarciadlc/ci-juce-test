@@ -120,13 +120,13 @@ jobs:
       run: killall -9 AudioComponentRegistrar
 
     - name: Validate AU
-      run: echo "bash scripts/validate_std.sh '${{PLUGINS_FOLDER}}/${{ PLUGIN_NAME }}'.component"
+      run: echo "bash scripts/validate_std.sh '${PLUGINS_FOLDER}/${PLUGIN_NAME}'.component"
 
     - name: Validate VST
-      run: echo "bash scripts/validate_std.sh '${{PLUGINS_FOLDER}}/${{ PLUGIN_NAME }}'.vst"
+      run: echo "bash scripts/validate_std.sh '${PLUGINS_FOLDER}/${PLUGIN_NAME}'.vst"
 
     - name: Validate VST3
-      run: echo "bash scripts/validate_std.sh '${{PLUGINS_FOLDER}}/${{ PLUGIN_NAME }}'.vst3"
+      run: echo "bash scripts/validate_std.sh '${PLUGINS_FOLDER}/${PLUGIN_NAME}'.vst3"
 
     - name: Validate AAX
       run: echo 'bash scripts/validate_aax.sh /Users/runner/work/ci-juce-test/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"'
