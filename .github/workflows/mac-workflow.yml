@@ -74,22 +74,21 @@ jobs:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
     env:
-      AAX_VAL_URL: https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/SDK%2Faax-sdk-2-4-0.zip?alt=media
-      AAX_VAL_TOKEN: ${{ secrets.AAX_VAL_MAC_TOKEN }}
-      PLUGINVAL_URL: https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_macOS.zip
+      PLUGINVAL_MAC_URL: {{ secrets.PLUGINVAL_MAC_URL }}
+      AAXVAL_MAC_URL: {{ secrets.AAXVAL_MAC_URL }}
 
     steps:
     - name: Prepare pluginval 
       run: |
-        curl -L "$PLUGINVAL_URL" -o pluginval.zip
+        curl -L "${PLUGINVAL_MAC_URL}" -o pluginval.zip
         unzip pluginval > /dev/null
         echo "pluginval.app/Contents/MacOS/pluginval"
   
     - name: Prepare aaxval 
       run: |
-        curl -L "${AAX_VAL_URL}&token=${AAX_VAL_TOKEN}" -o aax-sdk-2-4-0.zip
-        unzip aax-sdk-2-4-0 > /dev/null
-        ls
+        curl -L "${AAXVAL_MAC_URL}" -o aaxval_mac.zip
+        unzip aaxval_mac > /dev/null
+        ls -la
 
     - name: Log Plug-Ins Folder
       run: find /Users/runner/Library/Audio/Plug-Ins/
