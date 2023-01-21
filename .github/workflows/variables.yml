@@ -4,15 +4,13 @@ on: push
 
 jobs:
 
-  env:
-    GLOBAL_VAR: global_var
-    PLUGIN_NAME: ci-juce-test
-    PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
-
-
   test:
     name: testing
     runs-on: ubuntu-latest
+    outputs:
+      GLOBAL_VAR: global_var
+      PLUGIN_NAME: ci-juce-test
+      PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
     env:
       PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
       AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}

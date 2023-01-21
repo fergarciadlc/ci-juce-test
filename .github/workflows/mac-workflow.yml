@@ -11,11 +11,6 @@ on:
 
 jobs:
 
-  env:
-    PLUGIN_NAME: ci-juce-test
-    PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
-
-
   matrix_prep:
     if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false
     runs-on: ubuntu-latest
@@ -55,6 +50,16 @@ jobs:
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
+    outputs:
+      GLOBAL_VAR: global_var
+      PLUGIN_NAME: ci-juce-test
+      PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
+
+    env:
+      GLOBAL_VAR: global_var
+      PLUGIN_NAME: ci-juce-test
+      PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
+
 
     steps:
     - name: Get latest CMake
