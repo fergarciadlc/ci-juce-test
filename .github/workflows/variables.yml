@@ -4,8 +4,7 @@ on: push
 
 jobs:
   test:
-    # if: contains(toJson(github.event.commits), '/ut')
-    name: cast secrets
+    name: testing
     runs-on: ubuntu-latest
 
     steps:
