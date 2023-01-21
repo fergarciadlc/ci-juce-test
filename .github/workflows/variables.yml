@@ -5,6 +5,7 @@ on: push
 jobs:
 
   test:
+    if: contains(toJson(github.event.commits), '/no-var-test') == false
     name: testing
     runs-on: ubuntu-latest
     outputs:

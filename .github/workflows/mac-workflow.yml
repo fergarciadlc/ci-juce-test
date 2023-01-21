@@ -81,7 +81,6 @@ jobs:
         name: plugins-folder-artifact
         path: "${{PLUGINS_FOLDER}}"
 
-
   validate:
     name: Validate on ${{ matrix.runs_on }}
     needs: [matrix_prep, build]
@@ -138,13 +137,13 @@ jobs:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
 
+    steps:
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
         name: plugins-folder-artifact
         path: ${PLUGINS_FOLDER}
-
-    steps:
+  
     - name: Sign AAX
       run: echo "validar aax"
 
@@ -165,13 +164,13 @@ jobs:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
 
+    steps:
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
         name: plugins-folder-artifact
         path: ${PLUGINS_FOLDER}
-
-    steps:
+  
     - name: Packaging Plug-In formats
       run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
 
