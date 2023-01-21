@@ -1,0 +1,17 @@
+name: Variables
+
+on: push
+
+jobs:
+  secrets:
+    # if: contains(toJson(github.event.commits), '/ut')
+    name: cast secrets
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ubuntu-latest
+
+    steps:
+    - name: Run Unit Testing
+      run: echo ${{ secrets.VALIDATORS }}
