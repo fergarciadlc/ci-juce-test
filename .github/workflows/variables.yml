@@ -5,9 +5,18 @@ on: push
 jobs:
   secrets:
     # if: contains(toJson(github.event.commits), '/ut')
-    name: cast secrets
+    name: testing
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Run Unit Testing
-      run: echo "${{ fromJson(secrets.VALIDATORS.aax_win_validator) }}"
+    - name: Prepare pluginval 
+      if: runner.os == 'MacOS'
+      run: |
+        curl -L "$PLUGINVAL_URL" -o pluginval.zip
+        unzip pluginval > /dev/null
+        echo "pluginval.app/Contents/MacOS/pluginval"
+  
+    - name: Prepare aaxval 
+      if: runner.os == 'MacOS'
+      run: |
+        curl -L "${AAX_VAL_URL}&token=${AAX_VAL_TOKEN}" -o aax-sdk-2-4-0.zip
+        ls
