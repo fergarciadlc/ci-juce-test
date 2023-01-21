@@ -10,4 +10,4 @@ jobs:
 
     steps:
     - name: Run Unit Testing
-      run: echo "${{ secrets.VALIDATORS.aax_win_validator }}"
+      run: echo "${{ secrets.VALIDATORS.aax_win_validator.url }}"
