@@ -7,8 +7,8 @@ jobs:
     name: testing
     runs-on: ubuntu-latest
     env:
-      PLUGINVAL_MAC_URL: {{ secrets.PLUGINVAL_MAC_URL }}
-      AAXVAL_MAC_URL: {{ secrets.AAXVAL_MAC_URL }}
+      PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
+      AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
 
     steps:
     - name: Prepare pluginval 
