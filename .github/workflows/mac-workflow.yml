@@ -60,7 +60,6 @@ jobs:
       PLUGIN_NAME: ci-juce-test
       PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
 
-
     steps:
     - name: Get latest CMake
       uses: lukka/get-cmake@latest
@@ -80,7 +79,8 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: plugins-folder-artifact
-        path: ${PLUGINS_FOLDER}
+        path: "${{PLUGINS_FOLDER}}"
+
 
   validate:
     name: Validate on ${{ matrix.runs_on }}
