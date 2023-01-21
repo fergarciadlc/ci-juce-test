@@ -89,6 +89,8 @@ jobs:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
     env:
+      PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+      PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
       PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
       AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
 
@@ -118,24 +120,27 @@ jobs:
       run: killall -9 AudioComponentRegistrar
 
     - name: Validate AU
-      run: echo "bash scripts/validate_std.sh PLUGIN_NAME component"
+      run: echo "bash scripts/validate_std.sh '${{PLUGINS_FOLDER}}/${{ PLUGIN_NAME }}'.component"
 
     - name: Validate VST
-      run: echo "bash scripts/validate_std.sh PLUGIN_NAME vst"
+      run: echo "bash scripts/validate_std.sh '${{PLUGINS_FOLDER}}/${{ PLUGIN_NAME }}'.vst"
 
     - name: Validate VST3
-      run: echo "bash scripts/validate_std.sh PLUGIN_NAME vst3"
+      run: echo "bash scripts/validate_std.sh '${{PLUGINS_FOLDER}}/${{ PLUGIN_NAME }}'.vst3"
 
     - name: Validate AAX
       run: echo 'bash scripts/validate_aax.sh /Users/runner/work/ci-juce-test/ci-juce-test/plugins/ci-cmake-juce.aaxplugin"'
 
   sign:
     name: Signing on ${{ matrix.runs_on }}
-    needs: [matrix_prep, validate]
+    needs: [matrix_prep, build, validate]
     if: contains(toJson(github.event.commits), '/no-sign') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
+    env:
+      PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+      PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
 
     steps:
     - uses: actions/checkout@master
@@ -158,11 +163,14 @@ jobs:
 
   packaging:
     name: Packaging on ${{ matrix.runs_on }}
-    needs: [matrix_prep, sign]
+    needs: [matrix_prep, build, sign]
     if: contains(toJson(github.event.commits), '/no-packaging') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
+    env:
+      PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+      PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
 
     steps:
     - uses: actions/checkout@master
