@@ -80,19 +80,16 @@ jobs:
 
     steps:
     - name: Prepare pluginval 
-      if: runner.os == 'MacOS'
       run: |
         curl -L "$PLUGINVAL_URL" -o pluginval.zip
         unzip pluginval > /dev/null
         echo "pluginval.app/Contents/MacOS/pluginval"
   
     - name: Prepare aaxval 
-      if: runner.os == 'MacOS'
       run: |
         curl -L "${AAX_VAL_URL}&token=${AAX_VAL_TOKEN}" -o aax-sdk-2-4-0.zip
+        unzip aax-sdk-2-4-0 > /dev/null
         ls
-        # unzip pluginval > /dev/null
-        # echo "pluginval.app/Contents/MacOS/pluginval"
 
     - name: Log Plug-Ins Folder
       run: find /Users/runner/Library/Audio/Plug-Ins/
@@ -114,7 +111,7 @@ jobs:
 
   sign:
     name: Signing on ${{ matrix.runs_on }}
-    needs: [matrix_prep, build]
+    needs: [matrix_prep, validate]
     if: contains(toJson(github.event.commits), '/no-sign') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
@@ -122,19 +119,15 @@ jobs:
 
     steps:
     - name: Sign AAX
-      if: runner.os == 'MacOS'
       run: echo "validar aax"
 
     - name: Sign AU
-      if: runner.os == 'MacOS'
       run: echo "validar AU"
 
     - name: Sign VST
-      if: runner.os == 'MacOS'
       run: echo "validar vst"
 
     - name: Sign VST3
-      if: runner.os == 'MacOS'
       run: echo "validar vst3"
 
   packaging:
@@ -147,11 +140,9 @@ jobs:
 
     steps:
     - name: Packaging Plug-In formats
-      if: runner.os == 'MacOS'
       run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
 
     - name: Packaging Plug-In formats
-      if: runner.os == 'MacOS'
       run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
 
     
