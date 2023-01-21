@@ -3,7 +3,7 @@ name: Artifacts
 on:
   push:
     branches:
-    - mainn
+    - main
 
   workflow_dispatch:
 
@@ -22,11 +22,12 @@ jobs:
     - uses: actions/checkout@master
     - run: mkdir -p path/to/artifact
     - run: echo "hello ${{ runner.os }}" > path/to/artifact/world.txt
+    - run: echo "hello ${{ runner.os }}" > path/to/artifact/world2.txt
 
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact/world.txt
+        path: path/to/artifact/
 
   stage-2:
     # if: contains(toJson(github.event.commits), '/no-ci') == false
@@ -47,3 +48,4 @@ jobs:
       
     - run: ls -R path/to/artifact/
     - run: cat path/to/artifact/world.txt
+    - run: cat path/to/artifact/world2.txt

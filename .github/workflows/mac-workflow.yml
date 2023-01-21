@@ -3,13 +3,19 @@ name: Mac Pipeline
 on:
   push:
     branches:
-    - main
+    - mainn
   pull_request:
     branches:
-    - main
+    - mainn
 
 
 jobs:
+
+  env:
+    PLUGIN_NAME: ci-juce-test
+    PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
+
+
   matrix_prep:
     if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false
     runs-on: ubuntu-latest
@@ -65,6 +71,11 @@ jobs:
     - name: Build for MacOS
       if: runner.os == 'MacOS'
       run: sudo cmake --build build --config Release
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: plugins-folder-artifact
+        path: ${PLUGINS_FOLDER}
 
   validate:
     name: Validate on ${{ matrix.runs_on }}
