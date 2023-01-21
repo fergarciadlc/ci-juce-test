@@ -3,6 +3,13 @@ name: Variables
 on: push
 
 jobs:
+
+  env:
+    GLOBAL_VAR: global_var
+    PLUGIN_NAME: ci-juce-test
+    PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
+
+
   test:
     name: testing
     runs-on: ubuntu-latest
@@ -11,7 +18,7 @@ jobs:
       AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
 
     steps:
-    - name: Prepare pluginval 
+    - name: Prepare pluginval ${{ env.PLUGINVAL_MAC_URL }}
       run: |
         curl -L "${PLUGINVAL_MAC_URL}" -o pluginval.zip
         unzip pluginval > /dev/null
