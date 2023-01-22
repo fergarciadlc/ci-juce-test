@@ -16,26 +16,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest']
-        # os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
-
-    outputs:
-      ARTIFACT_FOLDER: path/to/artifact/
-
-    env:
-      ARTIFACT_FOLDER: path/to/artifact/
-
+        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
 
     steps:
     - uses: actions/checkout@master
-    - run: mkdir -p "${ARTIFACT_FOLDER}"
-    - run: echo "hello ${{ runner.os }}" > ${ARTIFACT_FOLDER}/world.txt
-    - run: echo "hello ${{ runner.os }}" > ${ARTIFACT_FOLDER}/world2.txt
+    - run: mkdir -p path/to/artifact
+    - run: echo "hello ${{ runner.os }}" > path/to/artifact/world.txt
+    - run: echo "hello ${{ runner.os }}" > path/to/artifact/world2.txt
 
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: "${ ARTIFACT_FOLDER }"
+        path: path/to/artifact/
 
   stage-2:
     # if: contains(toJson(github.event.commits), '/no-ci') == false
@@ -45,19 +37,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest']
-        # os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
-    
-    env:
-      ARTIFACT_FOLDER: ${{ needs.stage-1.outputs.ARTIFACT_FOLDER }}
+        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
 
     steps:
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
         name: my-artifact
-        path: ${ ARTIFACT_FOLDER }
+        path: path/to/artifact
       
-    - run: ls -R ${ ARTIFACT_FOLDER }/
-    - run: cat ${ ARTIFACT_FOLDER }/world.txt
-    - run: cat ${ ARTIFACT_FOLDER }/world2.txt
+    - run: ls -R path/to/artifact/
+    - run: cat path/to/artifact/world.txt
+    - run: cat path/to/artifact/world2.txt
