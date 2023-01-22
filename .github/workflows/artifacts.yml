@@ -27,14 +27,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - run: mkdir -p ${{ ARTIFACT_FOLDER }}
-    - run: echo "hello ${{ runner.os }}" > ${{ ARTIFACT_FOLDER }}/world.txt
-    - run: echo "hello ${{ runner.os }}" > ${{ ARTIFACT_FOLDER }}/world2.txt
+    - run: mkdir -p ${ ARTIFACT_FOLDER }
+    - run: echo "hello ${{ runner.os }}" > ${ ARTIFACT_FOLDER }/world.txt
+    - run: echo "hello ${{ runner.os }}" > ${ ARTIFACT_FOLDER }/world2.txt
 
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: "${{ ARTIFACT_FOLDER }}"
+        path: "${ ARTIFACT_FOLDER }"
 
   stage-2:
     # if: contains(toJson(github.event.commits), '/no-ci') == false
@@ -54,8 +54,8 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: my-artifact
-        path: ${{ ARTIFACT_FOLDER }}
+        path: ${ ARTIFACT_FOLDER }
       
-    - run: ls -R ${{ ARTIFACT_FOLDER }}/
-    - run: cat ${{ ARTIFACT_FOLDER }}/world.txt
-    - run: cat ${{ ARTIFACT_FOLDER }}/world2.txt
+    - run: ls -R ${ ARTIFACT_FOLDER }/
+    - run: cat ${ ARTIFACT_FOLDER }/world.txt
+    - run: cat ${ ARTIFACT_FOLDER }/world2.txt
