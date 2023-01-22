@@ -16,7 +16,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+        os: ubuntu-latest
+        # os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
 
     outputs:
       ARTIFACT_FOLDER: path/to/artifact/
@@ -27,9 +28,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - run: mkdir -p ${ ARTIFACT_FOLDER }
-    - run: echo "hello ${{ runner.os }}" > ${ ARTIFACT_FOLDER }/world.txt
-    - run: echo "hello ${{ runner.os }}" > ${ ARTIFACT_FOLDER }/world2.txt
+    - run: mkdir -p "${ARTIFACT_FOLDER}"
+    - run: echo "hello ${{ runner.os }}" > ${ARTIFACT_FOLDER}/world.txt
+    - run: echo "hello ${{ runner.os }}" > ${ARTIFACT_FOLDER}/world2.txt
 
     - uses: actions/upload-artifact@v3
       with:
@@ -44,7 +45,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+        os: ubuntu-latest
+        # os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
     
     env:
       ARTIFACT_FOLDER: ${{ needs.stage-1.outputs.ARTIFACT_FOLDER }}
