@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ubuntu-latest
+        os: ['ubuntu-latest']
         # os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
 
     outputs:
@@ -45,7 +45,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ubuntu-latest
+        os: ['ubuntu-latest']
         # os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
     
     env:
