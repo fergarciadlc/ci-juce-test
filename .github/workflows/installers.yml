@@ -25,8 +25,19 @@ jobs:
       with:
         submodules: recursive
   
-    - name: Build Message
-      run: echo "Starting packaging"
+    - name: Download macOS installer files
+      uses: actions/download-artifact@v2
+      with: 
+        name: OJD-installer-files-mac
+        
+    - name: Download Packages installer build tool
+      run: wget http://s.sudre.free.fr/Software/files/Packages.dmg
+
+    - name: Mount Packages image
+      run: hdiutil attach Packages.dmg
+
+    - name: Install Packages
+      run: sudo installer -pkg /Volumes/Packages\ 1.2.9/Install\ Packages.pkg -target /
 
     - name: Build installer
       run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
