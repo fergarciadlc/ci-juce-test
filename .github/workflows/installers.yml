@@ -21,10 +21,10 @@ jobs:
         os: [windows-2022]
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        submodules: recursive
+    # - name: Checkout code
+    #   uses: actions/checkout@v2
+    #   with:
+    #     submodules: recursive
       
     #- name: Download Packages installer build tool
     #  run: wget http://s.sudre.free.fr/Software/files/Packages.dmg
@@ -34,6 +34,9 @@ jobs:
 
     # - name: Build mac-os installer
     #   run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
+
+    - name: Path
+      run: cd
 
     - name: Build win installer
       run: iscc installers/win/ci-cmake-juce.iss
