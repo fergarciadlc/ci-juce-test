@@ -47,9 +47,9 @@ Name: "VST64"; Description: "64-bit VST2"; Types: full;
 Name: "AAX"; Description: "64-bit AAX"; Types: full compact;
 
 [Files]
-Source: "../../plugins/win/ci-cmake-juce.vst3"; DestDir: "{code:GetDir|0}"; Components: VST364; Flags: ignoreversion;
-Source: "../../plugins/win/ci-cmake-juce.dll"; DestDir: "{code:GetDir|1}"; Components: VST64; Flags: ignoreversion;
-Source: "../../plugins/win/ci-cmake-juce/AAX/*"; DestDir: "{code:GetDir|2}"; Components: AAX; Flags: ignoreversion recursesubdirs;
+Source: "D:\a\ci-juce-test\ci-juce-test\plugins\win\ci-cmake-juce.vst3"; DestDir: "{code:GetDir|0}"; Components: VST364; Flags: ignoreversion;
+Source: "D:\a\ci-juce-test\ci-juce-test\plugins\win\ci-cmake-juce.dll"; DestDir: "{code:GetDir|1}"; Components: VST64; Flags: ignoreversion;
+Source: "D:\a\ci-juce-test\ci-juce-test\plugins\win\ci-cmake-juce/AAX/*"; DestDir: "{code:GetDir|2}"; Components: AAX; Flags: ignoreversion recursesubdirs;
 //Source: "D:\Ear Candy\Software\Instaladores\Phonograin\Version_1_1\Ear Candy Technologies\Phonograin\*"; DestDir: "{userdocs}\Ear Candy Technologies\Phonograin"; Flags: ignoreversion;
 
 [Code]
