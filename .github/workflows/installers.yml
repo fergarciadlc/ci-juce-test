@@ -46,3 +46,4 @@ jobs:
 
     - name: Build installer
       run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
+      
