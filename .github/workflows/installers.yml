@@ -24,11 +24,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: recursive
-  
-    - name: Download macOS installer files
-      uses: actions/download-artifact@v2
-      with: 
-        name: OJD-installer-files-mac
         
     - name: Download Packages installer build tool
       run: wget http://s.sudre.free.fr/Software/files/Packages.dmg
