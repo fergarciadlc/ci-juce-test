@@ -3,10 +3,10 @@ name: Installers Mac
 on:
   push:
     branches:
-    - main
+    - none
   pull_request:
     branches:
-    - main
+    - none
 
 jobs:
 

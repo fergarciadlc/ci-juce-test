@@ -10,7 +10,7 @@ on:
 jobs:
 
   stage-1:
-    # if: contains(toJson(github.event.commits), '/ut')
+    if: contains(toJson(github.event.commits), '/no-ci')
     name: Create file ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
