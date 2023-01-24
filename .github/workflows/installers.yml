@@ -3,7 +3,7 @@ name: Installers
 on:
   push:
     branches:
-    - none
+    - main
   pull_request:
     branches:
     - none
