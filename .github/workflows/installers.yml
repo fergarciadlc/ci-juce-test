@@ -26,7 +26,7 @@ jobs:
       with:
         submodules: recursive
     
-    #- name: Download Packages installer build tool
+    #- name: Download Packages installer
     #  run: wget http://s.sudre.free.fr/Software/files/Packages.dmg
 
     # - name: Install Packages
@@ -35,9 +35,6 @@ jobs:
     # - name: Build mac-os installer
     #   run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
 
-    - name: Path
-      run: cd
-
-    # - name: Build win installer
-    #   run: iscc installers/win/ci-cmake-juce.iss
+    - name: Build win installer
+      run: iscc installers/win/ci-cmake-juce.iss
       
