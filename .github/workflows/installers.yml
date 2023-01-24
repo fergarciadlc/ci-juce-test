@@ -32,7 +32,7 @@ jobs:
       run: hdiutil attach Packages.dmg
 
     - name: Install Packages
-      run: sudo installer -pkg /Users/runner/work/Packages.pkg -target
+      run: sudo installer -pkg installers/mac/Packages.pkg -target /
 
     - name: Build installer
       run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
