@@ -24,7 +24,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: recursive
-        
+      
     - name: Download Packages installer build tool
       run: wget http://s.sudre.free.fr/Software/files/Packages.dmg
 
@@ -32,7 +32,7 @@ jobs:
       run: hdiutil attach Packages.dmg
 
     - name: Install Packages
-      run: sudo installer -pkg /Volumes/Packages\ 1.2.9/Install\ Packages.pkg -target /
+      run: sudo installer -pkg /Users/runner/work/Packages.pkg -target
 
     - name: Build installer
       run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
