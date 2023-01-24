@@ -112,9 +112,9 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../plugins/ci-cmake-juce.component</string>
+															<string>/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/mac/ci-cmake-juce.component</string>
 															<key>PATH_TYPE</key>
-															<integer>1</integer>
+															<integer>0</integer>
 															<key>PERMISSIONS</key>
 															<integer>493</integer>
 															<key>TYPE</key>
@@ -975,9 +975,9 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../plugins/ci-cmake-juce.vst3</string>
+															<string>/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/mac/ci-cmake-juce.vst3</string>
 															<key>PATH_TYPE</key>
-															<integer>1</integer>
+															<integer>0</integer>
 															<key>PERMISSIONS</key>
 															<integer>493</integer>
 															<key>TYPE</key>
@@ -1838,9 +1838,9 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../plugins/ci-cmake-juce.vst</string>
+															<string>/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/mac/ci-cmake-juce.vst</string>
 															<key>PATH_TYPE</key>
-															<integer>1</integer>
+															<integer>0</integer>
 															<key>PERMISSIONS</key>
 															<integer>493</integer>
 															<key>TYPE</key>
@@ -2655,9 +2655,9 @@
 																	<key>GID</key>
 																	<integer>80</integer>
 																	<key>PATH</key>
-																	<string>../../plugins/ci-cmake-juce.aaxplugin</string>
+																	<string>/Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/plugins/mac/ci-cmake-juce.aaxplugin</string>
 																	<key>PATH_TYPE</key>
-																	<integer>1</integer>
+																	<integer>0</integer>
 																	<key>PERMISSIONS</key>
 																	<integer>493</integer>
 																	<key>TYPE</key>

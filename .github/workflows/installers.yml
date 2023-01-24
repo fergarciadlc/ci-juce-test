@@ -28,9 +28,6 @@ jobs:
     #- name: Download Packages installer build tool
     #  run: wget http://s.sudre.free.fr/Software/files/Packages.dmg
 
-    #- name: Mount Packages image
-    #  run: hdiutil attach Packages.dmg
-
     - name: Install Packages
       run: sudo installer -pkg installers/mac/Packages.pkg -target /
 
