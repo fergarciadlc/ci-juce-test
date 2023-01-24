@@ -1,4 +1,4 @@
-name: Installers Mac
+name: Installers
 
 on:
   push:
@@ -17,7 +17,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macOS-latest]
+        #os: [windows-2022]
+        os: [windows-2022]
 
     steps:
     - name: Checkout code
@@ -28,9 +29,12 @@ jobs:
     #- name: Download Packages installer build tool
     #  run: wget http://s.sudre.free.fr/Software/files/Packages.dmg
 
-    - name: Install Packages
-      run: sudo installer -pkg installers/mac/Packages.pkg -target /
+    # - name: Install Packages
+    #   run: sudo installer -pkg installers/mac/Packages.pkg -target /
 
-    - name: Build installer
-      run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
+    # - name: Build mac-os installer
+    #   run: packagesbuild installers/mac/ci-cmake-juce.pkgproj
+
+    - name: Build win installer
+      run: iscc installers/win/ci-cmake-juce.iss
       
