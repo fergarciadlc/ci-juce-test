@@ -79,7 +79,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: plugins-folder-artifact
-        path: ${PLUGINS_FOLDER}
+        path: /Users/runner/Library/Audio/Plug-Ins/
 
   validate:
     name: Validate on ${{ matrix.runs_on }}
@@ -99,7 +99,7 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: plugins-folder-artifact
-        path: ${PLUGINS_FOLDER}
+        path: /Users/runner/Library/Audio/Plug-Ins/
 
     - name: Prepare pluginval 
       run: |
@@ -147,7 +147,7 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: plugins-folder-artifact
-        path: ${PLUGINS_FOLDER}
+        path: /Users/runner/Library/Audio/Plug-Ins/
   
     - name: Sign AAX
       run: echo "validar aax"
@@ -177,7 +177,7 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: plugins-folder-artifact
-        path: ${PLUGINS_FOLDER}
+        path: /Users/runner/Library/Audio/Plug-Ins/
   
     - name: Packaging Plug-In formats
       run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
