@@ -114,7 +114,7 @@ jobs:
         ls -la
 
     - name: Log Plug-Ins Folder
-      run: find /Users/runner/Library/Audio/Plug-Ins/
+      run: find $PLUGINS_FOLDER
 
     - name: Killall Component Registrar
       run: killall -9 AudioComponentRegistrar
@@ -141,14 +141,14 @@ jobs:
           fi
         ' > validate.sh
 
-    - name: Validate AU
-      run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
-
     - name: Validate VST
       run: bash validate.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst
 
     - name: Validate VST3
       run: bash validate.sh $PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3
+
+    - name: Validate AU
+      run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
 
     - name: Validate AAX
       run: |
