@@ -127,7 +127,7 @@ jobs:
           echo "OS: ${OSTYPE}"
           echo "Validating ${PLUGIN_PATH}"
 
-          pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
+          pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
         ' > validate.sh
 
     - name: Validate VST
@@ -147,7 +147,7 @@ jobs:
         load_dish aaxval
         runtests $aax_path
         exit
-        " | SDK/DigiShell/CommandLineTools/dsh
+        " | DigiShell/CommandLineTools/dsh
 
   sign:
     name: Signing on ${{ matrix.runs_on }}
