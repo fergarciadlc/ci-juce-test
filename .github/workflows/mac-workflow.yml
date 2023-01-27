@@ -148,7 +148,7 @@ jobs:
       run: bash validate.sh $PLUGINS_FOLDER/$PLUGIN_NAME.vst
 
     - name: Validate VST3
-      run: run: bash validate.sh $PLUGINS_FOLDER/$PLUGIN_NAME.vst3
+      run: bash validate.sh $PLUGINS_FOLDER/$PLUGIN_NAME.vst3
 
     - name: Validate AAX
       run: |
