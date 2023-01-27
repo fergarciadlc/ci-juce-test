@@ -147,7 +147,7 @@ jobs:
         load_dish aaxval
         runtests $aax_path
         exit
-        " | DigiShell/CommandLineTools/dsh
+        " | aaxval_mac/CommandLineTools/dsh
 
   sign:
     name: Signing on ${{ matrix.runs_on }}
