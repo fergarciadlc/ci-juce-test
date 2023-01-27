@@ -119,20 +119,42 @@ jobs:
     - name: Killall Component Registrar
       run: killall -9 AudioComponentRegistrar
 
+    - name: Generating Validation script
+      run: |
+        echo '
+          PLUGIN_PATH=$1
+
+          echo "OS: ${OSTYPE}"
+          echo "Validating ${PLUGIN_PATH}"
+
+          if $pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
+          then
+              echo "------------------------------------------------------------------------------------------------------------------------------"
+              echo "Pluginval for ${PLUGIN_PATH} succeeded"
+              echo "------------------------------------------------------------------------------------------------------------------------------"
+          else
+              echo "------------------------------------------------------------------------------------------------------------------------------"
+              echo "Pluginval for ${PLUGIN_PATH} failed"
+              echo "------------------------------------------------------------------------------------------------------------------------------"
+              cat pluginval-logs/*
+              exit 1
+          fi
+        ' > validate.sh
+
     - name: Validate AU
-      run: bash pluginval '${PLUGINS_FOLDER}/${PLUGIN_NAME}'.component"
+      run: bash validate.sh $PLUGINS_FOLDER/$PLUGIN_NAME.component
 
     - name: Validate VST
-      run: bash pluginval '${PLUGINS_FOLDER}/${PLUGIN_NAME}'.vst"
+      run: bash validate.sh $PLUGINS_FOLDER/$PLUGIN_NAME.vst
 
     - name: Validate VST3
-      run: bash pluginval '${PLUGINS_FOLDER}/${PLUGIN_NAME}'.vst3"
+      run: run: bash validate.sh $PLUGINS_FOLDER/$PLUGIN_NAME.vst3
 
     - name: Validate AAX
       run: |
         echo "
         load_dish aaxval
-        runtests '${PLUGINS_FOLDER}/${PLUGIN_NAME}'.aaxplugin"
+        runtests $PLUGINS_FOLDER/$PLUGIN_NAME.aaxplugin
         exit
         " | SDK/DigiShell/CommandLineTools/dsh
 

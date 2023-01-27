@@ -11,7 +11,7 @@ echo '
                                              |___/   
 '
 
-PLUGIN_PATH=$1
+PLUGIN_PATH=$1.com
 
 echo "OS: ${OSTYPE}"
 echo "Validating ${PLUGIN_PATH}"
