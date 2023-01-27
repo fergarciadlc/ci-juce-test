@@ -127,18 +127,7 @@ jobs:
           echo "OS: ${OSTYPE}"
           echo "Validating ${PLUGIN_PATH}"
 
-          if $pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
-          then
-              echo "------------------------------------------------------------------------------------------------------------------------------"
-              echo "Pluginval for ${PLUGIN_PATH} succeeded"
-              echo "------------------------------------------------------------------------------------------------------------------------------"
-          else
-              echo "------------------------------------------------------------------------------------------------------------------------------"
-              echo "Pluginval for ${PLUGIN_PATH} failed"
-              echo "------------------------------------------------------------------------------------------------------------------------------"
-              cat pluginval-logs/*
-              exit 1
-          fi
+          pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
         ' > validate.sh
 
     - name: Validate VST
