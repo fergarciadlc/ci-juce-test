@@ -52,12 +52,12 @@ jobs:
     runs-on: ${{ matrix.runs_on }}
     outputs:
       GLOBAL_VAR: global_var
-      PLUGIN_NAME: ci-juce-test
+      PLUGIN_NAME: ci-cmake-juce
       PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
 
     env:
       GLOBAL_VAR: global_var
-      PLUGIN_NAME: ci-juce-test
+      PLUGIN_NAME: ci-cmake-juce
       PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
 
     steps:
@@ -152,9 +152,11 @@ jobs:
 
     - name: Validate AAX
       run: |
+        aax_path=/Users/runner/Library/ApplicationSupport/Avid/Audio/Plug-Ins/$PLUGIN_NAME.aaxplugin
+        echo "Validating $aax_path"
         echo "
         load_dish aaxval
-        runtests $PLUGINS_FOLDER/$PLUGIN_NAME.aaxplugin
+        runtests $aax_path
         exit
         " | SDK/DigiShell/CommandLineTools/dsh
 
