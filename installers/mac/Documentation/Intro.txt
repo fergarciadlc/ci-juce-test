@@ -1,0 +1,7 @@
+Welcome to the Phonograin Setup
+
+This will install Phonograin version 1.0 on your computer.
+
+It is recommended that you close all other applications before continuing.
+
+Click Next to continue, or Cancel to exit Setup.

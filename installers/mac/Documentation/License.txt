@@ -1,0 +1,94 @@
+EAR CANDY TECHNOLOGIES PRODUCT LICENSE
+
+
+END-USER LICENSE AGREEMENT FOR THIS SOFTWARE
+
+
+This End-User License Agreement ("EULA") is a legal agreement between you (either as an individual or an entity) and Ear Candy Technologies. The software and any of its supporting documentation and associated content are herein after referred to as "the product", be it freeware of commercial software. 
+
+
+By downloading and using Ear Candy Technologies, you expressly agree to the terms of the following license granted by Ear Candy Technologies to the software. If you do not agree with the terms and conditions of this license, please remove the Product from your computer and destroy any associated documentation. Any unauthorized use of the Product is strictly prohibited and subject to prosecution. 
+
+
+COPYRIGHT NOTICE
+
+
+The content of this Product and each and any of its elements, whether or not protected by author’s rights, copyrights or any other property rights, by Mexican Law and any other applicable laws, remain the sole and exclusive property of Ear Candy Technologies.
+
+
+Any reproduction, extraction, display, modification, adaptation or use of the information contained in this Product without the explicit authorization of Ear Candy Technologies is strictly prohibited and liable to prosecution. 
+
+
+The trademarks, trade names, logos and other distinctive signs of Ear Candy Technologies are protected by Mexican legislation. Any unauthorized use or reproduction is prohibited and liable to prosecution.
+ 
+GRANT OF LICENSE 
+
+
+When purchasing a Product, you are granted a personal license to use the Product on one or several machines, as long as you remain the sole user of the Product. This license is non-exclusive and non-transferable and is granted for the duration of protection of the Product and worldwide. 
+
+
+You are not allowed to lend, loan, lease, rent, sell or distribute the Product (or copies) in any form. Ear Candy Technologies will retain all rights, titles and interests (including, without limitation, all intellectual property rights) to the Product, software, components, static libraries, documentations and directory structures. Intellectual property rights (“Intellectual Property Rights”) mean any patent, software, copyright, trade or service mark, trade name, database right, goodwill, logo, trade secret right, know-how, or any other intellectual property rights or proprietary information rights, in each case whether registered or unregistered, and whether arising in any jurisdiction, including without limitation all rights of registrations, applications, and renewals thereof and causes of action for infringement or misappropriation related to any of the foregoing.
+
+
+You are also expressly forbidden from making alterations or modifications to, merge, adapt, de-compile, disassemble, reverse engineer the Product without the expressed written permission from Ear Candy Technologies. You are expressly forbidden from redistributing or re-selling any part of the Product without the expressed written permission from Ear Candy Technologies.
+
+
+Any reproduction, extraction, display, modification, adaptation or use of the information and components contained in the Product is strictly prohibited and liable to prosecution. 
+
+
+Ear Candy Technologies warrants that the Product, including any updates or version is not a violation of Intellectual Property Rights or other rights belonging to third party.
+
+
+Notwithstanding the foregoing, Ear Candy Technologies shall not be liable for claims related to unauthorized or negligent use and/or alteration of the Product by you. 
+
+
+EVALUATION LICENSE
+
+
+As part of our service, Ear Candy Technologies provides demo versions of the Product exclusively for evaluation purposes. You must not use those versions for any commercial purpose. By downloading and installing those demo versions, you agree to the provisions of those Terms and Conditions.
+
+
+When downloading a demo version of the Product, you are granted a personal license to use it for evaluation purposes. This license is non-exclusive and non-transferable. You are not allowed to lend, loan, lease, rent, sell or distribute the demo version of the Product in any form. 
+
+
+LIMITED WARRANTIES
+
+
+With respect to the Product, Ear Candy Technologieswarrants that (i) the Product will conform in all material respects to the applicable description set forth on the Website; (ii) the Product does not contain any code or other device that would (a) permit access or use by third parties, or (b) have the effect of disabling, damaging, erasing, delaying or otherwise shutting down all or any portion of the Product; and (iii) Ear Candy Technologies is the owner of the Product.
+
+
+You expressly acknowledge that the use of the Product may not be uninterrupted or error-free. As the exclusive remedy of Ear Candy Technologies under the limited warranties set forth in this article, for any error or other defect for which Ear Candy Technologies is solely responsible, Ear Candy Technologies shall, at its option, either (i) correct or repair the Product, or (ii) accept termination of this Terms and Conditions and refund the unused balance of any payment for the Product prorated for the period commencing on the date the error or defect was reported to Ear Candy Technologies.
+
+
+None of the above warranties or remedies will apply with respect to the Product that has been damaged or modified by you or any third party, or used in a manner for which the Product is not designed or intended.
+
+
+To the maximum permitted by applicable law, the Licensor’s express warranties contained in this article are in lieu of all other warranties, express or implied, including, but not limited to, any implied warranty of merchantability or fitness for a particular purpose, or any warranty arising from usage of trade or course of performance.
+
+
+LIMITATIONS OF LIABILITY
+
+
+Nothing in these Terms and Conditions limits or excludes Ear Candy Technologies’ liability for: (a) death or personal injury caused by its negligence; (b) any loss suffered by you as a result of your reliance on any fraudulent misrepresentation made by Ear Candy Technologies to you; or (c) any other liability which may not by law be limited or excluded.
+
+
+To the maximum extent permitted by applicable law, in no event shall Ear Candy Technologies be liable for loss of profits or other incidental or consequential, lost revenue, lost business opportunities, loss of data, interruption of business, or any other direct, indirect, special, exemplary or punitive damages under any circumstances whatsoever, even if Ear Candy Technologies had been advised of the possibility of such damages or if they were otherwise foreseeable.
+
+
+Due to the inherent risks of using the Internet, Ear Candy Technologies cannot be liable for any damage to, or viruses that may infect your computer equipment or any other property when you are using the Product. The downloading and installation of the Product is done at your own discretion and risk and with your consent that you will be solely responsible for any damage to your computer system or loss of data that results from the downloading or acquisition of any such materials, except in case of direct fault committed by Ear Candy Technologies.
+
+
+You remain also liable for the selection of the Product(s) necessary to achieve the intended results. 
+
+
+APPLICABLE LAW
+
+
+Those Terms and Conditions are governed by Mexican Law.
+
+
+CONTACT
+
+
+email: info@earcandytech.com
+web: https://www.earcandytech.com
