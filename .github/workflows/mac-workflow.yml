@@ -115,13 +115,13 @@ jobs:
 
     - name: Prepare pluginval
       run: | 
-        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_Windows.zip" .
+        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_macOS.zip" .
         unzip pluginval > /dev/null
         echo "pluginval.app/Contents/MacOS/pluginval"
 
     - name: Prepare aaxval
       run: |
-        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/aaxval_win.zip" .
+        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/aaxval_mac.zip" .
         unzip aaxval_mac > /dev/null
         mv aaxval_mac DigiShell
         ls -la
