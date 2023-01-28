@@ -1,4 +1,0 @@
-[00:00:00:00] Test Log: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Support_IDs_20230117_025632_01/DSH_AAXVAL_Support_IDs_20230117_025632_01_l.txt
-[00:00:00:00] ======
-[00:00:00:01] DSH_AAXVAL_Support_IDs PASSED: See plug-in description
-[00:00:00:01] Elapsed time: 1 second.

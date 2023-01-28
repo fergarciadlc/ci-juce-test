@@ -1,4 +1,0 @@
-[00:00:00:00] Test Log: /Users/jsvaldezv/Downloads/aax-developer-tools-mac-x86_64-beta-2022-09-01/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Support_General_20230111_222450_01/DSH_AAXVAL_Support_General_20230111_222450_01_l.txt
-[00:00:00:00] ======
-[00:00:00:00] DSH_AAXVAL_Support_General PASSED: See plug-in description
-[00:00:00:00] Elapsed time: 0 seconds.

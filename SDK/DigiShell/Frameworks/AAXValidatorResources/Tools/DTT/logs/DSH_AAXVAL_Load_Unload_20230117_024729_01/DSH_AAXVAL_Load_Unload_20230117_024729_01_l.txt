@@ -1,4 +1,0 @@
-[00:00:00:00] Test Log: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_Load_Unload_20230117_024729_01/DSH_AAXVAL_Load_Unload_20230117_024729_01_l.txt
-[00:00:00:00] ======
-[00:00:00:04] DSH_AAXVAL_Load_Unload PASSED: Successfully loaded/unloaded plug-in 1000 times for 3.452788 seconds
-[00:00:00:04] Elapsed time: 4 seconds.

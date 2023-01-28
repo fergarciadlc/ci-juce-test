@@ -1,7 +1,0 @@
-[00:00:00:00] Test Log: /Users/jsvaldezv/Documents/GitHub/Personal/ci-juce-test/SDK/DigiShell/Frameworks/AAXValidatorResources/Tools/DTT/logs/DSH_AAXVAL_HostContextSupport_20230117_024659_01/DSH_AAXVAL_HostContextSupport_20230117_024659_01_l.txt
-[00:00:00:00] ======
-[00:00:00:01] WARNING: dsh killed.
-[00:00:00:01] DSH_AAXVAL_HostContextSupport ABORTED: undefined method `close' for nil:NilClass
-[00:00:00:01] WARNINGS:
-[00:00:00:01] dsh killed.
-[00:00:00:01] Elapsed time: 1 second.
