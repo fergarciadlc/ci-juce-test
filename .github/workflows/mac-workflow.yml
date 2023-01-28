@@ -22,6 +22,18 @@ jobs:
         with:
           inputFile: '.github/workflows/mac_matrix.json'
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
+      - name: Run Unit Testing on ${{ matrix.runs_on }}
+        if: runner.os == 'MacOS'
+        run: echo '
+            ______              _____                _         _______        _     
+          |  ____|            / ____|              | |       |__   __|      | |    
+          | |__   __ _ _ __  | |     __ _ _ __   __| |_   _     | | ___  ___| |__  
+          |  __| / _  |  __| | |    / _  |  _ \ / _` | | | |    | |/ _ \/ __|  _ \ 
+          | |___| (_| | |    | |___| (_| | | | | (_| | |_| |    | |  __/ (__| | | |
+          |______\__,_|_|     \_____\__,_|_| |_|\__,_|\__, |    |_|\___|\___|_| |_|
+                                                        __/ |                       
+                                                      |___/   
+          '
 
   unit-test:
     name: Unit Testing on ${{ matrix.runs_on }}
@@ -131,7 +143,7 @@ jobs:
     - name: Killall Component Registrar
       run: killall -9 AudioComponentRegistrar
 
-    - name: Generating Validation script
+    - name: Generating Pluginval Validation Script
       run: |
         echo '
           PLUGIN_PATH=$1
@@ -141,6 +153,26 @@ jobs:
 
           pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
         ' > validate.sh
+
+    - name: Generating Pluginval Validation Script
+      run: |
+        echo "
+          PLUGIN_PATH=$1
+
+          load_dish aaxval
+          runtest [info.productids, ${PLUGIN_PATH}]
+          runtest [info.support.audiosuite, ${PLUGIN_PATH}]
+          runtest [info.support.general, ${PLUGIN_PATH}]
+          runtest [info.support.s6_feature, ${PLUGIN_PATH}]
+          runtest [test.load_unload, ${PLUGIN_PATH}]
+          runtest [test.page_table.automation_list, ${PLUGIN_PATH}]
+          runtest [test.parameter_traversal.linear, ${PLUGIN_PATH}]
+          runtest [test.parameter_traversal.random, ${PLUGIN_PATH}]
+          runtest [test.parameter_traversal.random.fast, ${PLUGIN_PATH}]
+          runtest [test.parameters, ${PLUGIN_PATH}]
+          exit
+          " | DigiShell/CommandLineTools/dsh
+        ' > validate_aax.sh
 
     - name: Validate VST
       run: bash validate.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst
@@ -152,7 +184,7 @@ jobs:
       run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
 
     - name: Validate AAX
-      run: bash scripts/validate_aax.sh "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin"
+      run: bash validate_aax.sh "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin"
 
   sign:
     name: Signing on ${{ matrix.runs_on }}
