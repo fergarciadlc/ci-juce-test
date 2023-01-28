@@ -78,7 +78,9 @@ jobs:
 
     - name: Copying AAX to Plugins Folder
       if: runner.os == 'MacOS'
-      run: cp -r /Library/Application Support/Avid/Audio/Plug-Ins/ /Users/runner/Library/Audio/Plug-Ins/AAX/
+      run: |
+        mkdir /Users/runner/Library/Audio/Plug-Ins/AAX/
+        cp -r /Library/Application Support/Avid/Audio/Plug-Ins/ /Users/runner/Library/Audio/Plug-Ins/AAX/
 
     - uses: actions/upload-artifact@v3
       with:
