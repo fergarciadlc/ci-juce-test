@@ -264,17 +264,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # - name: Send notification to Discord
-    #   env:
-    #     DISCORD_WEBHOOK: ${{ secrets.DISCORDHOOK_ID }}
-    #   uses: Ilshidur/action-discord@master
-    #   with:
-    #     args: 'The plug-in $PLUGIN_NAME for ${{ matrix.runs_on }} has been deployed'
 
     - name: Send notification to Discord
       uses: appleboy/discord-action@master
       with:
-        webhook_id: "GitHubActions"
+        webhook_id: ${{ secrets.DISCORDHOOK_ID }}
         webhook_token: ${{ secrets.DISCORDHOOK_ID }}
         message: The ${{ github.event_name }} event triggered first step.
     
