@@ -40,7 +40,7 @@ jobs:
         if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
           echo "/no-ut in commit message, skipping unit tests"
         else
-          echo "running uts"
+          echo "Running uts"
         fi
 
   build:
@@ -175,16 +175,16 @@ jobs:
         path: /Users/runner/Library/Audio/Plug-Ins/
   
     - name: Sign AAX
-      run: echo "validar aax"
+      run: echo "Sign AAX"
 
     - name: Sign AU
-      run: echo "validar AU"
+      run: echo "Sign AU"
 
     - name: Sign VST
-      run: echo "validar vst"
+      run: echo "Sign VST"
 
     - name: Sign VST3
-      run: echo "validar vst3"
+      run: echo "Sign VST3"
 
   packaging:
     name: Packaging on ${{ matrix.runs_on }}
@@ -204,9 +204,9 @@ jobs:
         name: plugins-folder-artifact
         path: /Users/runner/Library/Audio/Plug-Ins/
   
-    - name: Packaging Plug-In formats
-      run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
+    - name: Package Plug-Ins
+      run: echo "Packaging plugins"
 
-    - name: Packaging Plug-In formats
-      run: echo "empaquetar plugins que genera el pkg" # este comment ya debe firmar el instalador
+    - name: Upload Installers to Firebase Storage
+      run: echo "Uploading installers"
 
