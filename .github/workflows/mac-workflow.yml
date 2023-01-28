@@ -8,7 +8,6 @@ on:
     branches:
     - main
 
-
 jobs:
 
   matrix_prep:
@@ -25,7 +24,7 @@ jobs:
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
   unit-test:
-    name: Unit Testing
+    name: Unit Testing on ${{ matrix.runs_on }}
     needs: matrix_prep
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
