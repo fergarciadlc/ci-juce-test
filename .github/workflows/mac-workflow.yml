@@ -142,7 +142,7 @@ jobs:
 
     - name: Validate AAX
       run: |
-        aax_path=/Users/runner/Library/ApplicationSupport/Avid/Audio/Plug-Ins/$PLUGIN_NAME.aaxplugin
+        aax_path=/Library/Application Support/Avid/Audio/Plug-Ins/$PLUGIN_NAME.aaxplugin
         echo "Validating $aax_path"
         echo "
         load_dish aaxval
