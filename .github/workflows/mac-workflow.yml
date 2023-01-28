@@ -116,7 +116,7 @@ jobs:
     - name: Prepare pluginval
       run: | 
         gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_macOS.zip" .
-        unzip pluginval > /dev/null
+        unzip pluginval_macOS > /dev/null
         echo "pluginval.app/Contents/MacOS/pluginval"
 
     - name: Prepare aaxval
