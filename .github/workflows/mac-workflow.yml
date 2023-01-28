@@ -80,7 +80,7 @@ jobs:
       if: runner.os == 'MacOS'
       run: |
         sudo mkdir /Users/runner/Library/Audio/Plug-Ins/AAX/
-        sudo cp -r /Library/Application Support/Avid/Audio/Plug-Ins/ /Users/runner/Library/Audio/Plug-Ins/AAX/
+        sudo cp -r "/Library/Application Support/Avid/Audio/Plug-Ins/." /Users/runner/Library/Audio/Plug-Ins/AAX/
 
     - uses: actions/upload-artifact@v3
       with:
