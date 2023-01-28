@@ -111,6 +111,7 @@ jobs:
       run: |
         curl -L "${AAXVAL_MAC_URL}" -o aaxval_mac.zip
         unzip aaxval_mac > /dev/null
+        mv aaxval_mac DigiShell
         ls -la
 
     - name: Log Plug-Ins Folder
