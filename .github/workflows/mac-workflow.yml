@@ -195,19 +195,19 @@ jobs:
   
     - name: Sign AAX
       run: echo "Sign AAX"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.aaxplugin $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.aaxplugin $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
     - name: Sign AU
       run: echo "Sign AU"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.component $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.component $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
     - name: Sign VST
       run: echo "Sign VST"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
     - name: Sign VST3
       run: echo "Sign VST3"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst3 $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst3 $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
   packaging:
     name: Packaging on ${{ matrix.runs_on }}
