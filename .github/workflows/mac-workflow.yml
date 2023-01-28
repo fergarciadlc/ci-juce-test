@@ -17,14 +17,12 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      # Required as the JSON input file needs to be read
       - uses: actions/checkout@v2      
       - id: set-matrix
         uses: JoshuaTheMiller/conditional-build-matrix@main        
         with:
-          inputFile: '.github/workflows/mac_matrix.json' # Default input file path
+          inputFile: '.github/workflows/mac_matrix.json'
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
-          # addInclude: true
 
   unit-test:
     name: Unit Testing
@@ -107,6 +105,27 @@ jobs:
         name: plugins-folder-artifact
         path: /Users/runner/Library/Audio/Plug-Ins/
 
+    # - id: 'auth'
+    #   uses: 'google-github-actions/auth@v1'
+    #   with:
+    #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+    # - name: Set up gcloud SDK
+    #   uses: 'google-github-actions/setup-gcloud@v1'
+
+    # - name: 'Download pluginval from gcloud'
+    #   run: | 
+    #     gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_Windows.zip" .
+    #     unzip pluginval > /dev/null
+    #     echo "pluginval.app/Contents/MacOS/pluginval"
+
+    # - name: 'Download aaxval from gcloud'
+    #   run: |
+    #     gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/aaxval_win.zip" .
+    #     unzip aaxval_mac > /dev/null
+    #     mv aaxval_mac DigiShell
+    #     ls -la
+
     - name: Prepare pluginval 
       run: |
         curl -L "${PLUGINVAL_MAC_URL}" -o pluginval.zip
@@ -176,15 +195,19 @@ jobs:
   
     - name: Sign AAX
       run: echo "Sign AAX"
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.aaxplugin $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
 
     - name: Sign AU
       run: echo "Sign AU"
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.component $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
 
     - name: Sign VST
       run: echo "Sign VST"
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
 
     - name: Sign VST3
       run: echo "Sign VST3"
+      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst3 $WRAPTOOL_PATH $ILOK_MAIL $ILOK_PASSWORD $APPLE_DEVELOPER $PACE_GUID
 
   packaging:
     name: Packaging on ${{ matrix.runs_on }}
@@ -207,6 +230,14 @@ jobs:
     - name: Package Plug-Ins
       run: echo "Packaging plugins"
 
-    - name: Upload Installers to Firebase Storage
-      run: echo "Uploading installers"
+    # - name: Download Packages Installer
+    #   run: gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/Packages.dmg" .
 
+    # - name: Install Packages
+    #   run: sudo installer -pkg installers/mac/Packages.pkg -target /
+
+    # - name: Build MacOS Installer
+    #   run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
+
+    # - name: Upload to gcloud Bucket
+    #   run: gcloud storage cp ${PLUGIN_NAME}.pkg "gs://webearcandy.appspot.com/${PLUGIN_NAME}/${PLUGIN_NAME}.pkg"
