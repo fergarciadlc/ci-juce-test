@@ -260,7 +260,7 @@ jobs:
   #     run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
 
   notification:
-    name: Notify deployment on ${{ matrix.runs_on }}
+    name: Notify deployment
     runs-on: ubuntu-latest
 
     steps:
