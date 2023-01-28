@@ -125,12 +125,6 @@ jobs:
         mv aaxval_mac DigiShell
         ls -la
 
-    - name: Log Plug-Ins Folder
-      run: find $PLUGINS_FOLDER
-
-    - name: Killall Component Registrar
-      run: killall -9 AudioComponentRegistrar
-
     - name: Generating pluginval Validation Script
       run: |
         echo '
@@ -162,6 +156,12 @@ jobs:
           exit
           " | DigiShell/CommandLineTools/dsh
         ' > validate_aax.sh
+
+    - name: Killall Component Registrar
+      run: killall -9 AudioComponentRegistrar
+
+    - name: Log Plug-Ins Folder
+      run: find $PLUGINS_FOLDER
 
     - name: Validate VST
       run: bash validate.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst
@@ -244,10 +244,15 @@ jobs:
     - name: Install Packages
       run: sudo installer -pkg installers/mac/Packages.pkg -target /
 
-    # - name: Build MacOS Installer
-    #   run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
+    - name: Copy AAX to Repository
+      if: runner.os == 'MacOS'
+      run: |
+        sudo mkdir plugins
+        sudo cp -r "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin" plugins
+
+    - name: Build MacOS Installer
+      run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
 
     - name: Upload to gcloud Bucket
-      run: gcloud storage cp "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin" "gs://webearcandy.appspot.com/$PLUGINS_FOLDER/$PLUGIN_NAME.aaxplugin"
-      #run: gcloud storage cp ${PLUGIN_NAME}.pkg "gs://webearcandy.appspot.com/${PLUGIN_NAME}/${PLUGIN_NAME}.pkg"
+      run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
     
