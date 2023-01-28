@@ -76,6 +76,10 @@ jobs:
       if: runner.os == 'MacOS'
       run: sudo cmake --build build --config Release
 
+    - name: Copying AAX to Plugins Folder
+      if: runner.os == 'MacOS'
+      run: cp -r /Library/Application Support/Avid/Audio/Plug-Ins/ /Users/runner/Library/Audio/Plug-Ins/AAX/
+
     - uses: actions/upload-artifact@v3
       with:
         name: plugins-folder-artifact
@@ -142,7 +146,7 @@ jobs:
 
     - name: Validate AAX
       run: |
-        aax_path=/Library/Application Support/Avid/Audio/Plug-Ins/$PLUGIN_NAME.aaxplugin
+        aax_path=$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin
         echo "Validating $aax_path"
         echo "
         load_dish aaxval
