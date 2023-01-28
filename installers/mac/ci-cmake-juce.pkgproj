@@ -3695,9 +3695,9 @@
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
-							<string>/Users/jsvaldezv/Documents/GitHub/Ear Candy Technologies/ci-juce-test/installers/mac/Documentation/Intro.txt</string>
+							<string>./Documentation/Intro.txt</string>
 							<key>PATH_TYPE</key>
-							<integer>1</integer>
+							<integer>3</integer>
 						</dict>
 					</dict>
 				</array>
@@ -3712,9 +3712,9 @@
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
-							<string>/Users/jsvaldezv/Documents/GitHub/Ear Candy Technologies/ci-juce-test/installers/mac/Documentation/License.txt</string>
+							<string>./Documentation/License.txt</string>
 							<key>PATH_TYPE</key>
-							<integer>1</integer>
+							<integer>3</integer>
 						</dict>
 					</dict>
 				</array>
@@ -3731,9 +3731,9 @@
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
-							<string>/Users/jsvaldezv/Documents/GitHub/Ear Candy Technologies/ci-juce-test/installers/mac/Documentation/ReadMe.txt</string>
+							<string>./Documentation/ReadMe.txt</string>
 							<key>PATH_TYPE</key>
-							<integer>1</integer>
+							<integer>3</integer>
 						</dict>
 					</dict>
 				</array>

@@ -258,4 +258,12 @@ jobs:
 
     - name: Upload to gcloud Bucket
       run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
+
+    - name: Discord notification
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORDHOOK_ID }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: 'The plug-in $PLUGIN_NAME for ${{ matrix.runs_on }} has been deployed'
+
     
