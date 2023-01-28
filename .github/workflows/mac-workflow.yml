@@ -239,10 +239,10 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: Download Packages Installer
-      run: gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/Packages.dmg" .
+      run: gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/Packages.pkg" .
 
     - name: Install Packages
-      run: sudo installer -pkg installers/mac/Packages.pkg -target /
+      run: sudo installer -pkg Packages.pkg -target /
 
     - name: Copy AAX to Repository
       if: runner.os == 'MacOS'
