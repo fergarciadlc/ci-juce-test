@@ -151,21 +151,8 @@ jobs:
     - name: Validate AU
       run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
 
-    # - name: Validate AAX
-    #   run: |
-    #     aax_path=$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin
-    #     echo "Validating $aax_path"
-    #     echo "
-    #     load_dish aaxval
-    #     runtests $aax_path
-    #     exit
-    #     " | DigiShell/CommandLineTools/dsh
-
     - name: Validate AAX
       run: bash scripts/validate_aax.sh "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin"
-
-    - name: Validate AAX
-      run: bash validate_aax.sh $PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin
 
   sign:
     name: Signing on ${{ matrix.runs_on }}
@@ -222,15 +209,24 @@ jobs:
     - name: Package Plug-Ins
       run: echo "Packaging plugins"
 
-    # - name: Download Packages Installer
-    #   run: gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/Packages.dmg" .
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    # - name: Install Packages
-    #   run: sudo installer -pkg installers/mac/Packages.pkg -target /
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
+
+    - name: Download Packages Installer
+      run: gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/Packages.dmg" .
+
+    - name: Install Packages
+      run: sudo installer -pkg installers/mac/Packages.pkg -target /
 
     # - name: Build MacOS Installer
     #   run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
 
-    # - name: Upload to gcloud Bucket
-    #   run: gcloud storage cp ${PLUGIN_NAME}.pkg "gs://webearcandy.appspot.com/${PLUGIN_NAME}/${PLUGIN_NAME}.pkg"
+    - name: Upload to gcloud Bucket
+      run: gcloud storage cp "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin" "gs://webearcandy.appspot.com/$PLUGINS_FOLDER/$PLUGIN_NAME.aaxplugin"
+      #run: gcloud storage cp ${PLUGIN_NAME}.pkg "gs://webearcandy.appspot.com/${PLUGIN_NAME}/${PLUGIN_NAME}.pkg"
     
