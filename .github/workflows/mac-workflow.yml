@@ -23,247 +23,251 @@ jobs:
           inputFile: '.github/workflows/mac_matrix.json'
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
-  unit-test:
-    name: Unit Testing on ${{ matrix.runs_on }}
-    needs: matrix_prep
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
+  # unit-test:
+  #   name: Unit Testing on ${{ matrix.runs_on }}
+  #   needs: matrix_prep
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
 
-    steps:
-    - name: Run Unit Testing on ${{ matrix.runs_on }}
-      if: runner.os == 'MacOS'
-      run: |
-        if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
-          echo "/no-ut in commit message, skipping unit tests"
-        else
-          echo "Running uts"
-        fi
+  #   steps:
+  #   - name: Run Unit Testing on ${{ matrix.runs_on }}
+  #     if: runner.os == 'MacOS'
+  #     run: |
+  #       if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
+  #         echo "/no-ut in commit message, skipping unit tests"
+  #       else
+  #         echo "Running uts"
+  #       fi
 
-  build:
-    name: Build on ${{ matrix.runs_on }}
-    needs: [matrix_prep, unit-test]
-    if: contains(toJson(github.event.commits), '/no-build') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
-    outputs:
-      GLOBAL_VAR: global_var
-      PLUGIN_NAME: ci-cmake-juce
-      PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
+  # build:
+  #   name: Build on ${{ matrix.runs_on }}
+  #   needs: [matrix_prep, unit-test]
+  #   if: contains(toJson(github.event.commits), '/no-build') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
+  #   outputs:
+  #     GLOBAL_VAR: global_var
+  #     PLUGIN_NAME: ci-cmake-juce
+  #     PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
 
-    env:
-      GLOBAL_VAR: global_var
-      PLUGIN_NAME: ci-cmake-juce
-      PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
+  #   env:
+  #     GLOBAL_VAR: global_var
+  #     PLUGIN_NAME: ci-cmake-juce
+  #     PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
 
-    steps:
-    - name: Get latest CMake
-      uses: lukka/get-cmake@latest
+  #   steps:
+  #   - name: Get latest CMake
+  #     uses: lukka/get-cmake@latest
 
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        submodules: recursive
+  #   - name: Checkout code
+  #     uses: actions/checkout@v2
+  #     with:
+  #       submodules: recursive
 
-    - name: Configure Cmake
-      run: cmake -Bbuild
+  #   - name: Configure Cmake
+  #     run: cmake -Bbuild
 
-    - name: Build for MacOS
-      if: runner.os == 'MacOS'
-      run: sudo cmake --build build --config Release
+  #   - name: Build for MacOS
+  #     if: runner.os == 'MacOS'
+  #     run: sudo cmake --build build --config Release
 
-    - name: Copy AAX to Plugins Folder
-      if: runner.os == 'MacOS'
-      run: |
-        sudo mkdir /Users/runner/Library/Audio/Plug-Ins/AAX/
-        sudo cp -r "/Library/Application Support/Avid/Audio/Plug-Ins/." /Users/runner/Library/Audio/Plug-Ins/AAX/
+  #   - name: Copy AAX to Plugins Folder
+  #     if: runner.os == 'MacOS'
+  #     run: |
+  #       sudo mkdir /Users/runner/Library/Audio/Plug-Ins/AAX/
+  #       sudo cp -r "/Library/Application Support/Avid/Audio/Plug-Ins/." /Users/runner/Library/Audio/Plug-Ins/AAX/
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: plugins-folder-artifact
-        path: /Users/runner/Library/Audio/Plug-Ins/
+  #   - uses: actions/upload-artifact@v3
+  #     with:
+  #       name: plugins-folder-artifact
+  #       path: /Users/runner/Library/Audio/Plug-Ins/
 
-  validate:
-    name: Validate on ${{ matrix.runs_on }}
-    needs: [matrix_prep, build]
-    if: contains(toJson(github.event.commits), '/no-validate') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
-    env:
-      PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
-      PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
-      PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
-      AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
+  # validate:
+  #   name: Validate on ${{ matrix.runs_on }}
+  #   needs: [matrix_prep, build]
+  #   if: contains(toJson(github.event.commits), '/no-validate') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
+  #   env:
+  #     PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+  #     PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
+  #     PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
+  #     AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
 
-    steps:
-    - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: plugins-folder-artifact
-        path: /Users/runner/Library/Audio/Plug-Ins/
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - uses: actions/download-artifact@master
+  #     with:
+  #       name: plugins-folder-artifact
+  #       path: /Users/runner/Library/Audio/Plug-Ins/
 
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v1'
-      with:
-        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+  #   - id: 'auth'
+  #     uses: 'google-github-actions/auth@v1'
+  #     with:
+  #       credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    - name: Set up gcloud SDK
-      uses: 'google-github-actions/setup-gcloud@v1'
+  #   - name: Set up gcloud SDK
+  #     uses: 'google-github-actions/setup-gcloud@v1'
 
-    - name: Prepare pluginval
-      run: | 
-        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_macOS.zip" .
-        unzip pluginval_macOS > /dev/null
-        echo "pluginval.app/Contents/MacOS/pluginval"
+  #   - name: Prepare pluginval
+  #     run: | 
+  #       gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_macOS.zip" .
+  #       unzip pluginval_macOS > /dev/null
+  #       echo "pluginval.app/Contents/MacOS/pluginval"
 
-    - name: Prepare aaxval
-      run: |
-        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/aaxval_mac.zip" .
-        unzip aaxval_mac > /dev/null
-        mv aaxval_mac DigiShell
-        ls -la
+  #   - name: Prepare aaxval
+  #     run: |
+  #       gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/aaxval_mac.zip" .
+  #       unzip aaxval_mac > /dev/null
+  #       mv aaxval_mac DigiShell
+  #       ls -la
 
-    - name: Generating pluginval Validation Script
-      run: |
-        echo '
-          PLUGIN_PATH=$1
+  #   - name: Generating pluginval Validation Script
+  #     run: |
+  #       echo '
+  #         PLUGIN_PATH=$1
 
-          echo "OS: ${OSTYPE}"
-          echo "Validating ${PLUGIN_PATH}"
+  #         echo "OS: ${OSTYPE}"
+  #         echo "Validating ${PLUGIN_PATH}"
 
-          pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
-        ' > validate.sh
+  #         pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
+  #       ' > validate.sh
 
-    - name: Generating aaxval Validation Script
-      run: |
-        echo '
-          PLUGIN_PATH=$1
+  #   - name: Generating aaxval Validation Script
+  #     run: |
+  #       echo '
+  #         PLUGIN_PATH=$1
 
-          echo "
-          load_dish aaxval
-          runtest [info.productids, ${PLUGIN_PATH}]
-          runtest [info.support.audiosuite, ${PLUGIN_PATH}]
-          runtest [info.support.general, ${PLUGIN_PATH}]
-          runtest [info.support.s6_feature, ${PLUGIN_PATH}]
-          runtest [test.load_unload, ${PLUGIN_PATH}]
-          runtest [test.page_table.automation_list, ${PLUGIN_PATH}]
-          runtest [test.parameter_traversal.linear, ${PLUGIN_PATH}]
-          runtest [test.parameter_traversal.random, ${PLUGIN_PATH}]
-          runtest [test.parameter_traversal.random.fast, ${PLUGIN_PATH}]
-          runtest [test.parameters, ${PLUGIN_PATH}]
-          exit
-          " | DigiShell/CommandLineTools/dsh
-        ' > validate_aax.sh
+  #         echo "
+  #         load_dish aaxval
+  #         runtest [info.productids, ${PLUGIN_PATH}]
+  #         runtest [info.support.audiosuite, ${PLUGIN_PATH}]
+  #         runtest [info.support.general, ${PLUGIN_PATH}]
+  #         runtest [info.support.s6_feature, ${PLUGIN_PATH}]
+  #         runtest [test.load_unload, ${PLUGIN_PATH}]
+  #         runtest [test.page_table.automation_list, ${PLUGIN_PATH}]
+  #         runtest [test.parameter_traversal.linear, ${PLUGIN_PATH}]
+  #         runtest [test.parameter_traversal.random, ${PLUGIN_PATH}]
+  #         runtest [test.parameter_traversal.random.fast, ${PLUGIN_PATH}]
+  #         runtest [test.parameters, ${PLUGIN_PATH}]
+  #         exit
+  #         " | DigiShell/CommandLineTools/dsh
+  #       ' > validate_aax.sh
 
-    - name: Killall Component Registrar
-      run: killall -9 AudioComponentRegistrar
+  #   - name: Killall Component Registrar
+  #     run: killall -9 AudioComponentRegistrar
 
-    - name: Log Plug-Ins Folder
-      run: find $PLUGINS_FOLDER
+  #   - name: Log Plug-Ins Folder
+  #     run: find $PLUGINS_FOLDER
 
-    - name: Validate VST
-      run: bash validate.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst
+  #   - name: Validate VST
+  #     run: bash validate.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst
 
-    - name: Validate VST3
-      run: bash validate.sh $PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3
+  #   - name: Validate VST3
+  #     run: bash validate.sh $PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3
 
-    - name: Validate AU
-      run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
+  #   - name: Validate AU
+  #     run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
 
-    - name: Validate AAX
-      run: bash validate_aax.sh "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin"
+  #   - name: Validate AAX
+  #     run: bash validate_aax.sh "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin"
 
-  sign:
-    name: Signing on ${{ matrix.runs_on }}
-    needs: [matrix_prep, build, validate]
-    if: contains(toJson(github.event.commits), '/no-sign') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
-    env:
-      PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
-      PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
+  # sign:
+  #   name: Signing on ${{ matrix.runs_on }}
+  #   needs: [matrix_prep, build, validate]
+  #   if: contains(toJson(github.event.commits), '/no-sign') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
+  #   env:
+  #     PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+  #     PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
 
-    steps:
-    - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: plugins-folder-artifact
-        path: /Users/runner/Library/Audio/Plug-Ins/
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - uses: actions/download-artifact@master
+  #     with:
+  #       name: plugins-folder-artifact
+  #       path: /Users/runner/Library/Audio/Plug-Ins/
   
-    - name: Sign AAX
-      run: echo "Sign AAX"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.aaxplugin $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
+  #   - name: Sign AAX
+  #     run: echo "Sign AAX"
+  #     #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.aaxplugin $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
-    - name: Sign AU
-      run: echo "Sign AU"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.component $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
+  #   - name: Sign AU
+  #     run: echo "Sign AU"
+  #     #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.component $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
-    - name: Sign VST
-      run: echo "Sign VST"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
+  #   - name: Sign VST
+  #     run: echo "Sign VST"
+  #     #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
-    - name: Sign VST3
-      run: echo "Sign VST3"
-      #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst3 $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
+  #   - name: Sign VST3
+  #     run: echo "Sign VST3"
+  #     #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst3 $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
-  packaging:
-    name: Packaging on ${{ matrix.runs_on }}
-    needs: [matrix_prep, build, sign]
-    if: contains(toJson(github.event.commits), '/no-packaging') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
-    env:
-      PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
-      PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
+  # packaging:
+  #   name: Packaging on ${{ matrix.runs_on }}
+  #   needs: [matrix_prep, build, sign]
+  #   if: contains(toJson(github.event.commits), '/no-packaging') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
+  #   env:
+  #     PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+  #     PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
+
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - uses: actions/download-artifact@master
+  #     with:
+  #       name: plugins-folder-artifact
+  #       path: /Users/runner/Library/Audio/Plug-Ins/
+  
+  #   - name: Package Plug-Ins
+  #     run: echo "Packaging plugins"
+
+  #   - id: 'auth'
+  #     uses: 'google-github-actions/auth@v1'
+  #     with:
+  #       credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+  #   - name: Set up gcloud SDK
+  #     uses: 'google-github-actions/setup-gcloud@v1'
+
+  #   - name: Download Packages Installer
+  #     run: gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/Packages.pkg" .
+
+  #   - name: Install Packages
+  #     run: sudo installer -pkg Packages.pkg -target /
+
+  #   - name: Copy Plug-ins to Repository
+  #     if: runner.os == 'MacOS'
+  #     run: |
+  #       sudo mkdir plugins
+  #       sudo cp -r "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin" plugins
+  #       sudo cp -r "$PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3" plugins
+  #       sudo cp -r "$PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst" plugins
+  #       sudo cp -r "$PLUGINS_FOLDER/Components/$PLUGIN_NAME.component" plugins
+
+  #   - name: Build MacOS Installer
+  #     run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
+
+  #   - name: Upload to gcloud Bucket
+  #     run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
+
+  notification:
+    name: Notify deployment on ${{ matrix.runs_on }}
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: plugins-folder-artifact
-        path: /Users/runner/Library/Audio/Plug-Ins/
-  
-    - name: Package Plug-Ins
-      run: echo "Packaging plugins"
-
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v1'
-      with:
-        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
-
-    - name: Set up gcloud SDK
-      uses: 'google-github-actions/setup-gcloud@v1'
-
-    - name: Download Packages Installer
-      run: gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/Packages.pkg" .
-
-    - name: Install Packages
-      run: sudo installer -pkg Packages.pkg -target /
-
-    - name: Copy Plug-ins to Repository
-      if: runner.os == 'MacOS'
-      run: |
-        sudo mkdir plugins
-        sudo cp -r "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin" plugins
-        sudo cp -r "$PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3" plugins
-        sudo cp -r "$PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst" plugins
-        sudo cp -r "$PLUGINS_FOLDER/Components/$PLUGIN_NAME.component" plugins
-
-    - name: Build MacOS Installer
-      run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
-
-    - name: Upload to gcloud Bucket
-      run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
-
-    - name: Discord notification
+    - name: Send notification to Discord
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORDHOOK_ID }}
       uses: Ilshidur/action-discord@master
       with:
         args: 'The plug-in $PLUGIN_NAME for ${{ matrix.runs_on }} has been deployed'
-
     
