@@ -74,7 +74,7 @@ jobs:
       if: runner.os == 'MacOS'
       run: sudo cmake --build build --config Release
 
-    - name: Copying AAX to Plugins Folder
+    - name: Copy AAX to Plugins Folder
       if: runner.os == 'MacOS'
       run: |
         sudo mkdir /Users/runner/Library/Audio/Plug-Ins/AAX/
@@ -241,3 +241,4 @@ jobs:
 
     # - name: Upload to gcloud Bucket
     #   run: gcloud storage cp ${PLUGIN_NAME}.pkg "gs://webearcandy.appspot.com/${PLUGIN_NAME}/${PLUGIN_NAME}.pkg"
+    
