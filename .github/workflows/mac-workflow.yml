@@ -105,39 +105,39 @@ jobs:
         name: plugins-folder-artifact
         path: /Users/runner/Library/Audio/Plug-Ins/
 
-    # - id: 'auth'
-    #   uses: 'google-github-actions/auth@v1'
-    #   with:
-    #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    # - name: Set up gcloud SDK
-    #   uses: 'google-github-actions/setup-gcloud@v1'
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
 
-    # - name: 'Download pluginval from gcloud'
-    #   run: | 
-    #     gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_Windows.zip" .
-    #     unzip pluginval > /dev/null
-    #     echo "pluginval.app/Contents/MacOS/pluginval"
-
-    # - name: 'Download aaxval from gcloud'
-    #   run: |
-    #     gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/aaxval_win.zip" .
-    #     unzip aaxval_mac > /dev/null
-    #     mv aaxval_mac DigiShell
-    #     ls -la
-
-    - name: Prepare pluginval 
-      run: |
-        curl -L "${PLUGINVAL_MAC_URL}" -o pluginval.zip
+    - name: Prepare pluginval
+      run: | 
+        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/pluginval_Windows.zip" .
         unzip pluginval > /dev/null
         echo "pluginval.app/Contents/MacOS/pluginval"
-  
-    - name: Prepare aaxval 
+
+    - name: Prepare aaxval
       run: |
-        curl -L "${AAXVAL_MAC_URL}" -o aaxval_mac.zip
+        gsutil -m cp -r "gs://webearcandy.appspot.com/ci-utils/validators/aaxval_win.zip" .
         unzip aaxval_mac > /dev/null
         mv aaxval_mac DigiShell
         ls -la
+
+    # - name: Prepare pluginval 
+    #   run: |
+    #     curl -L "${PLUGINVAL_MAC_URL}" -o pluginval.zip
+    #     unzip pluginval > /dev/null
+    #     echo "pluginval.app/Contents/MacOS/pluginval"
+  
+    # - name: Prepare aaxval 
+    #   run: |
+    #     curl -L "${AAXVAL_MAC_URL}" -o aaxval_mac.zip
+    #     unzip aaxval_mac > /dev/null
+    #     mv aaxval_mac DigiShell
+    #     ls -la
 
     - name: Log Plug-Ins Folder
       run: find $PLUGINS_FOLDER
