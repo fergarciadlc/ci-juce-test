@@ -251,7 +251,7 @@ jobs:
         sudo cp -r "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin" plugins
         sudo cp -r "$PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3" plugins
         sudo cp -r "$PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst" plugins
-        sudo cp -r "$PLUGINS_FOLDER/AU/$PLUGIN_NAME.component" plugins
+        sudo cp -r "$PLUGINS_FOLDER/Components/$PLUGIN_NAME.component" plugins
 
     - name: Build MacOS Installer
       run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
