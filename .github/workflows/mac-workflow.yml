@@ -307,7 +307,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: Install pyopenssl
-      run: pip install pyopenssl
+      run: pip3 install pyopenssl
 
     - name: Get download URL
       run: gsutil signurl -d 10m ${{ secrets.GCP_CREDENTIALS }} gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
