@@ -228,20 +228,20 @@ jobs:
   #     run: echo "Sign VST3"
   #     #run: bash sign_mac.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst3 $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
-  packaging:
-    name: Packaging on ${{ matrix.runs_on }}
-    #needs: [matrix_prep, build, sign]
-    if: contains(toJson(github.event.commits), '/no-packaging') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
-    #outputs:
-    #  installer-url: ${{ steps.download-url.outputs.matrix }}
-    #env:
-    #  PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
-    #  PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
+  # packaging:
+  #   name: Packaging on ${{ matrix.runs_on }}
+  #   needs: [matrix_prep, build, sign]
+  #   if: contains(toJson(github.event.commits), '/no-packaging') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
+  #   outputs:
+  #    installer-url: ${{ steps.download-url.outputs.matrix }}
+  #   env:
+  #    PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+  #    PLUGINS_FOLDER: ${{ needs.build.outputs.PLUGINS_FOLDER }}
 
-    steps:
+  #   steps:
     # - uses: actions/checkout@master
     # - uses: actions/download-artifact@master
     #   with:
@@ -286,14 +286,31 @@ jobs:
     # - name: Upload to gcloud Bucket
     #   run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
 
+    # - name: Install pyopenssl
+    #   run: pip install pyopenssl
+
+    # - name: Get download URL
+    #   #run: gsutil signurl -d 10m ${{ secrets.GCP_CREDENTIALS }} gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg
+    #   run: gsutil signurl -d 10m ${{ secrets.GCP_CREDENTIALS }} gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
+
+    # Save URL for next job
+
+  gcloud:
+    runs-on: macos-12
+    steps:
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
+
     - name: Install pyopenssl
       run: pip install pyopenssl
 
     - name: Get download URL
-      #run: gsutil signurl -d 10m ${{ secrets.GCP_CREDENTIALS }} gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg
       run: gsutil signurl -d 10m ${{ secrets.GCP_CREDENTIALS }} gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
-
-    # Save URL for next job
 
   notification:
     name: Notify deployment
