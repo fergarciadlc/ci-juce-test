@@ -273,5 +273,4 @@ jobs:
       with:
         webhook-url: ${{ secrets.DISCORDHOOK_ID }}
         content: "Plugin installer deployed: URL"
-        #content: "${PLUGIN_NAME} installer deployed: URL"
     
