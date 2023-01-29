@@ -10,18 +10,18 @@ on:
 
 jobs:
 
-  matrix_prep:
-    if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v2      
-      - id: set-matrix
-        uses: JoshuaTheMiller/conditional-build-matrix@main        
-        with:
-          inputFile: '.github/workflows/mac_matrix.json'
-          filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
+  # matrix_prep:
+  #   if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     matrix: ${{ steps.set-matrix.outputs.matrix }}
+  #   steps:
+  #     - uses: actions/checkout@v2      
+  #     - id: set-matrix
+  #       uses: JoshuaTheMiller/conditional-build-matrix@main        
+  #       with:
+  #         inputFile: '.github/workflows/mac_matrix.json'
+  #         filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
   # unit-test:
   #   name: Unit Testing on ${{ matrix.runs_on }}
@@ -259,6 +259,9 @@ jobs:
   #   - name: Upload to gcloud Bucket
   #     run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
 
+  #   - name: Get and save download URL
+  #     run: gsutil signurl -d 10m ${{ secrets.GCP_CREDENTIALS }} gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg
+
   notification:
     name: Notify deployment
     runs-on: ubuntu-latest
@@ -269,5 +272,6 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.DISCORDHOOK_ID }}
-        content: "Test"
+        content: "Plugin installer deployed: URL"
+        #content: "${PLUGIN_NAME} installer deployed: URL"
     
