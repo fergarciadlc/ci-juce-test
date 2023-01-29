@@ -315,7 +315,7 @@ jobs:
   notification:
     name: Notify deployment
     runs-on: ubuntu-latest
-    needs: packaging
+    #needs: packaging
 
     steps:
     - name: Discord Webhook Action
