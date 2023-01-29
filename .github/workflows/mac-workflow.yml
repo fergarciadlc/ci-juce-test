@@ -272,5 +272,5 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.DISCORDHOOK_ID }}
-        content: "Plugin installer deployed: URL"
+        content: "MacOS Plugin Installer Deployed"
     
