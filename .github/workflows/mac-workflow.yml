@@ -320,7 +320,7 @@ jobs:
     #     json: ${{ secrets.GCP_CREDENTIALS }}
 
     - name: Set output
-      run: echo "gcp=${{ secrets.GCP_CREDENTIALS }}" >> gcp.json
+      run: echo "${{ secrets.GCP_CREDENTIALS }}" >> gcp.json
 
     - name: Get download URL
       run: gsutil signurl -d 10m gcp.json gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
