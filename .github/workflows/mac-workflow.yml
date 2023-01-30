@@ -312,15 +312,18 @@ jobs:
     # - name: Create json file
     #   run: echo "${{ secrets.GCP_CREDENTIALS }}" > gcp.json
 
-    - name: create-json
-      id: create-json
-      uses: jsdaniell/create-json@1.1.2
-      with:
-        name: "gcp.json"
-        json: ${{ secrets.GCP_CREDENTIALS }}
+    # - name: create-json
+    #   id: create-json
+    #   uses: jsdaniell/create-json@1.1.2
+    #   with:
+    #     name: "gcp.json"
+    #     json: ${{ secrets.GCP_CREDENTIALS }}
+
+    - name: Set output
+      run: echo "gcp=${{ secrets.GCP_CREDENTIALS }}" >> gcp.json
 
     - name: Get download URL
-      run: gsutil signurl -d 10m gcp.json gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg -r
+      run: gsutil signurl -d 10m gcp.json gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
 
   # notification:
   #   name: Notify deployment
