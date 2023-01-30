@@ -44,45 +44,45 @@ jobs:
       if: runner.os == 'MacOS'
       run: echo "Unit testing"
 
-  # # Building
-  # build:
-  #   name: Build on ${{ matrix.runs_on }}
-  #   needs: [matrix_prep, unit-test]
-  #   if: contains(toJson(github.event.commits), '/no-build') == false
-  #   strategy:      
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   runs-on: ${{ matrix.runs_on }}
+  # Building
+  build:
+    name: Build on ${{ matrix.runs_on }}
+    needs: [matrix_prep, unit-test]
+    if: contains(toJson(github.event.commits), '/no-build') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
 
-  #   env:
-  #     PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME }}
-  #     PLUGINS_FOLDER: ${{ needs.matrix_prep.outputs.PLUGINS_FOLDER }}
+    # env:
+    #   PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME }}
+    #   PLUGINS_FOLDER: ${{ needs.matrix_prep.outputs.PLUGINS_FOLDER }}
 
-  #   steps:
-  #   - name: Get latest CMake
-  #     uses: lukka/get-cmake@latest
+    steps:
+    - name: Get latest CMake
+      uses: lukka/get-cmake@latest
 
-  #   - name: Checkout code
-  #     uses: actions/checkout@v2
-  #     with:
-  #       submodules: recursive
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
 
-  #   - name: Configure Cmake
-  #     run: cmake -Bbuild
+    - name: Configure Cmake
+      run: cmake -Bbuild
 
-  #   - name: Build for MacOS
-  #     if: runner.os == 'MacOS'
-  #     run: sudo cmake --build build --config Release
+    - name: Build for MacOS
+      if: runner.os == 'MacOS'
+      run: sudo cmake --build build --config Release
 
-  #   - name: Copy AAX to Plugins Folder
-  #     if: runner.os == 'MacOS'
-  #     run: |
-  #       sudo mkdir /Users/runner/Library/Audio/Plug-Ins/AAX/
-  #       sudo cp -r "/Library/Application Support/Avid/Audio/Plug-Ins/." /Users/runner/Library/Audio/Plug-Ins/AAX/
+    - name: Copy AAX to Plugins Folder
+      if: runner.os == 'MacOS'
+      run: |
+        sudo mkdir $PLUGINS_FOLDER/AAX/
+        sudo cp -r "/Library/Application Support/Avid/Audio/Plug-Ins/." $PLUGINS_FOLDER/AAX/
 
-  #   - uses: actions/upload-artifact@v3
-  #     with:
-  #       name: plugins-folder-artifact
-  #       path: /Users/runner/Library/Audio/Plug-Ins/
+    - uses: actions/upload-artifact@v3
+      with:
+        name: plugins-folder-artifact
+        path: $PLUGINS_FOLDER
 
   # # Validation
   # validate:
