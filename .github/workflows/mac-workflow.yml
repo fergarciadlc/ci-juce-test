@@ -9,6 +9,7 @@ on:
     - main
 
 env:
+  OS: MacOS
   PLUGIN_NAME: ci-cmake-juce
   PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
   INSTALLER_PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
@@ -30,48 +31,19 @@ jobs:
           inputFile: '.github/workflows/mac_matrix.json'
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
-  job1:
+  # Unit tests
+  unit-test:
     name: Unit Testing on ${{ matrix.runs_on }}
     needs: matrix_prep
+    if: contains(toJson(github.event.commits), '/no-ut') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
 
     steps:
-    - name: Test One
-      run: echo $PLUGIN_NAME
-    
-    - name: Test Two
-      run: echo $PLUGINS_FOLDER
-
-  job2:
-    name: Unit Testing on ${{ matrix.runs_on }}
-    needs: matrix_prep
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
-
-    steps:
-    - name: Test One
-      run: echo $PLUGINS_FOLDER
-
-  # # Unit tests
-  # unit-test:
-  #   name: Unit Testing on ${{ matrix.runs_on }}
-  #   needs: matrix_prep
-  #   strategy:      
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   runs-on: ${{ matrix.runs_on }}
-
-  #   steps:
-  #   - name: Run Unit Testing on ${{ matrix.runs_on }}
-  #     if: runner.os == 'MacOS'
-  #     run: |
-  #       if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
-  #         echo "/no-ut in commit message, skipping unit tests"
-  #       else
-  #         echo "Running uts"
-  #       fi
+    - name: Run Unit Testing on ${{ matrix.runs_on }}
+      if: runner.os == $OS
+      run: echo "Unit testing"
 
   # # Building
   # build:
