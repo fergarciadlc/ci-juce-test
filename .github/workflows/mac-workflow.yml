@@ -10,18 +10,18 @@ on:
 
 jobs:
 
-  matrix_prep:
-    if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v2      
-      - id: set-matrix
-        uses: JoshuaTheMiller/conditional-build-matrix@main        
-        with:
-          inputFile: '.github/workflows/mac_matrix.json'
-          filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
+  # matrix_prep:
+  #   if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     matrix: ${{ steps.set-matrix.outputs.matrix }}
+  #   steps:
+  #     - uses: actions/checkout@v2      
+  #     - id: set-matrix
+  #       uses: JoshuaTheMiller/conditional-build-matrix@main        
+  #       with:
+  #         inputFile: '.github/workflows/mac_matrix.json'
+  #         filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
   # unit-test:
   #   name: Unit Testing on ${{ matrix.runs_on }}
@@ -285,9 +285,10 @@ jobs:
   #     run: gsutil acl ch -u AllUsers:R gs://webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg
 
   notification:
-    name: Notify on ${{ matrix.runs_on }}
+    #name: Notify on ${{ matrix.runs_on }}
+    name: Notify
     #needs: [matrix_prep, packaging, build, sign]
-    needs: [matrix_prep]
+    #needs: [matrix_prep]
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
@@ -300,4 +301,4 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.DISCORD_HOOK_ID }}
-        content: "${PLUGIN_NAME} Installer Deployed (Mac-Os): https://storage.googleapis.com/webearcandy.appspot.com/${PLUGIN_NAME}/${PLUGIN_NAME}.pkg"
+        content: "${{PLUGIN_NAME}} Installer Deployed (Mac-Os): https://storage.googleapis.com/webearcandy.appspot.com/${{PLUGIN_NAME}}/${{PLUGIN_NAME}}.pkg"
