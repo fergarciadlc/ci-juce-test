@@ -292,22 +292,15 @@ jobs:
     strategy:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     env:
-     #PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
+      #PLUGIN_NAME: ${{ needs.build.outputs.PLUGIN_NAME }}
       PLUGIN_NAME: "ci-cmake-juce"
+      #URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ needs.build.outputs.PLUGIN_NAME }}/${{ needs.build.outputs.PLUGIN_NAME }}.pkg"
+      URL: "https://storage.googleapis.com/webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg"
 
     steps:
-    - name: Build URL
-      run: echo 'https://storage.googleapis.com/webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg'
-
     - name: Discord notification
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
       uses: Ilshidur/action-discord@master
       with:
-        args: 'Plug-in name {{ PLUGIN_NAME }}'
-
-    # - name: Discord Webhook Action
-    #   uses: tsickert/discord-webhook@v5.3.0
-    #   with:
-    #     webhook-url: ${{ secrets.DISCORD_HOOK_ID }}
-    #     content: "$PLUGIN_NAME"
+        args: 'The Plug-in {{ PLUGIN_NAME }} was deployed: {{ URL }}'
