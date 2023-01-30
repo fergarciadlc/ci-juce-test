@@ -9,7 +9,6 @@ on:
     - main
 
 env:
-  OS: MacOS
   PLUGIN_NAME: ci-cmake-juce
   PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
   INSTALLER_PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
