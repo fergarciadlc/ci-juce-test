@@ -42,7 +42,7 @@ jobs:
 
     steps:
     - name: Run Unit Testing on ${{ matrix.runs_on }}
-      if: runner.os == $OS
+      if: runner.os == 'MacOS'
       run: echo "Unit testing"
 
   # # Building
