@@ -320,7 +320,7 @@ jobs:
         json: ${{ secrets.GCP_CREDENTIALS }}
 
     - name: Get download URL
-      run: gsutil signurl -d 10m gcp.json gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
+      run: gsutil signurl -d 10m gcp.json -r gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
 
   # notification:
   #   name: Notify deployment
