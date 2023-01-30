@@ -10,9 +10,10 @@ on:
 
 env:
   PLUGIN_NAME: ci-cmake-juce
-  PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
-  INSTALLER_PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins/
-  BUCKET_NAME: "gs://webearcandy.appspot.com"
+  PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins
+  INSTALLER_PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins
+  VALIDATORS_PATH: gs://webearcandy.appspot.com/ci-utils/validators
+  BUCKET_NAME: gs://webearcandy.appspot.com
 
 jobs:
 
@@ -53,10 +54,6 @@ jobs:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
 
-    # env:
-    #   PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME }}
-    #   PLUGINS_FOLDER: ${{ needs.matrix_prep.outputs.PLUGINS_FOLDER }}
-
     steps:
     - name: Get latest CMake
       uses: lukka/get-cmake@latest
@@ -73,7 +70,7 @@ jobs:
       if: runner.os == 'MacOS'
       run: sudo cmake --build build --config Release
 
-    - name: Copy AAX to Plugins Folder
+    - name: Copy AAX to Plug-Ins Folder
       if: runner.os == 'MacOS'
       run: |
         sudo mkdir $PLUGINS_FOLDER/AAX/
@@ -84,98 +81,95 @@ jobs:
         name: plugins-folder-artifact
         path: $PLUGINS_FOLDER
 
-  # # Validation
-  # validate:
-  #   name: Validate on ${{ matrix.runs_on }}
-  #   needs: [matrix_prep, build]
-  #   if: contains(toJson(github.event.commits), '/no-validate') == false
-  #   strategy:      
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   runs-on: ${{ matrix.runs_on }}
-  #   env:
-  #     PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME }}
-  #     PLUGINS_FOLDER: ${{ needs.matrix_prep.outputs.PLUGINS_FOLDER }}
-  #     PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
-  #     AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
-  #     BUCKET_NAME: ${{ needs.matrix_prep.outputs.BUCKET_NAME }}
+  # Validation
+  validate:
+    name: Validate on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build]
+    if: contains(toJson(github.event.commits), '/no-validate') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+    env:
+      PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
+      AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
 
-  #   steps:
-  #   - uses: actions/checkout@master
-  #   - uses: actions/download-artifact@master
-  #     with:
-  #       name: plugins-folder-artifact
-  #       path: /Users/runner/Library/Audio/Plug-Ins/
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/download-artifact@master
+      with:
+        name: plugins-folder-artifact
+        path: $PLUGINS_FOLDER
 
-  #   - id: 'auth'
-  #     uses: 'google-github-actions/auth@v1'
-  #     with:
-  #       credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-  #   - name: Set up gcloud SDK
-  #     uses: 'google-github-actions/setup-gcloud@v1'
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
 
-  #   - name: Prepare pluginval
-  #     run: | 
-  #       gsutil -m cp -r "$BUCKET_NAME/ci-utils/validators/pluginval_macOS.zip" .
-  #       unzip pluginval_macOS > /dev/null
-  #       echo "pluginval.app/Contents/MacOS/pluginval"
+    - name: Prepare pluginval
+      run: | 
+        gsutil -m cp -r "$VALIDATORS_PATH/pluginval_macOS.zip" .
+        unzip pluginval_macOS > /dev/null
+        echo "pluginval.app/Contents/MacOS/pluginval"
 
-  #   - name: Prepare aaxval
-  #     run: |
-  #       gsutil -m cp -r "$BUCKET_NAME/ci-utils/validators/aaxval_mac.zip" .
-  #       unzip aaxval_mac > /dev/null
-  #       mv aaxval_mac DigiShell
-  #       ls -la
+    - name: Prepare aaxval
+      run: |
+        gsutil -m cp -r "$VALIDATORS_PATH/aaxval_mac.zip" .
+        unzip aaxval_mac > /dev/null
+        mv aaxval_mac DigiShell
+        ls -la
 
-  #   - name: Generating pluginval Validation Script
-  #     run: |
-  #       echo '
-  #         PLUGIN_PATH=$1
+    - name: Generating Pluginval Validation Script
+      run: |
+        echo '
+          PLUGIN_PATH=$1
 
-  #         echo "OS: ${OSTYPE}"
-  #         echo "Validating ${PLUGIN_PATH}"
+          echo "OS: ${OSTYPE}"
+          echo "Validating ${PLUGIN_PATH}"
 
-  #         pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
-  #       ' > validate.sh
+          pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
+        ' > validate.sh
 
-  #   - name: Generating aaxval Validation Script
-  #     run: |
-  #       echo '
-  #         PLUGIN_PATH=$1
+    - name: Generating AAX Validation Script
+      run: |
+        echo '
+          PLUGIN_PATH=$1
 
-  #         echo "
-  #         load_dish aaxval
-  #         runtest [info.productids, ${PLUGIN_PATH}]
-  #         runtest [info.support.audiosuite, ${PLUGIN_PATH}]
-  #         runtest [info.support.general, ${PLUGIN_PATH}]
-  #         runtest [info.support.s6_feature, ${PLUGIN_PATH}]
-  #         runtest [test.load_unload, ${PLUGIN_PATH}]
-  #         runtest [test.page_table.automation_list, ${PLUGIN_PATH}]
-  #         runtest [test.parameter_traversal.linear, ${PLUGIN_PATH}]
-  #         runtest [test.parameter_traversal.random, ${PLUGIN_PATH}]
-  #         runtest [test.parameter_traversal.random.fast, ${PLUGIN_PATH}]
-  #         runtest [test.parameters, ${PLUGIN_PATH}]
-  #         exit
-  #         " | DigiShell/CommandLineTools/dsh
-  #       ' > validate_aax.sh
+          echo "
+          load_dish aaxval
+          runtest [info.productids, ${PLUGIN_PATH}]
+          runtest [info.support.audiosuite, ${PLUGIN_PATH}]
+          runtest [info.support.general, ${PLUGIN_PATH}]
+          runtest [info.support.s6_feature, ${PLUGIN_PATH}]
+          runtest [test.load_unload, ${PLUGIN_PATH}]
+          runtest [test.page_table.automation_list, ${PLUGIN_PATH}]
+          runtest [test.parameter_traversal.linear, ${PLUGIN_PATH}]
+          runtest [test.parameter_traversal.random, ${PLUGIN_PATH}]
+          runtest [test.parameter_traversal.random.fast, ${PLUGIN_PATH}]
+          runtest [test.parameters, ${PLUGIN_PATH}]
+          exit
+          " | DigiShell/CommandLineTools/dsh
+        ' > validate_aax.sh
 
-  #   - name: Killall Component Registrar
-  #     run: killall -9 AudioComponentRegistrar
+    - name: Killall Component Registrar
+      run: killall -9 AudioComponentRegistrar
 
-  #   - name: Log Plug-Ins Folder
-  #     run: find $PLUGINS_FOLDER
+    - name: Log Plug-Ins Folder
+      run: find $PLUGINS_FOLDER
 
-  #   - name: Validate VST
-  #     run: bash validate.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst
+    - name: Validate VST
+      run: bash validate.sh $PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst
 
-  #   - name: Validate VST3
-  #     run: bash validate.sh $PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3
+    - name: Validate VST3
+      run: bash validate.sh $PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3
 
-  #   - name: Validate AU
-  #     run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
+    - name: Validate AU
+      run: bash validate.sh $PLUGINS_FOLDER/Components/$PLUGIN_NAME.component
 
-  #   - name: Validate AAX
-  #     run: bash validate_aax.sh "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin"
+    - name: Validate AAX
+      run: bash validate_aax.sh "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin"
 
   # # Signing
   # sign:
