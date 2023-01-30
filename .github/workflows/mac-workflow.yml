@@ -300,4 +300,4 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.DISCORD_HOOK_ID }}
-        content: "${{PLUGIN_NAME}} Installer Deployed (Mac-Os): https://storage.googleapis.com/webearcandy.appspot.com/${{PLUGIN_NAME}}/${{PLUGIN_NAME}}.pkg"
+        content: "$PLUGIN_NAME Installer Deployed (Mac-Os): https://storage.googleapis.com/webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
