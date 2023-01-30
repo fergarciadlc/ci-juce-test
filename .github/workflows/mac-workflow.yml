@@ -309,8 +309,11 @@ jobs:
     - name: Install pyopenssl
       run: pip3 install pyopenssl
 
+    - name: Create json file
+      run: echo "${{ secrets.GCP_CREDENTIALS }}" > gcp.json
+
     - name: Get download URL
-      run: gsutil signurl -d 10m ${{ secrets.GCP_CREDENTIALS }} gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
+      run: gsutil signurl -d 10m gcp.json gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
 
   # notification:
   #   name: Notify deployment
