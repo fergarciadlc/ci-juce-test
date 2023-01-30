@@ -289,7 +289,7 @@ jobs:
 
   notification:
     name: Notify deployment on ${{ matrix.runs_on }}
-    needs: [packaging]
+    # needs: [packaging]
     runs-on: ubuntu-latest
     outputs:
      installer-url: ${{ steps.download-url.outputs.matrix }}
