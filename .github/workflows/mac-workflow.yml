@@ -299,8 +299,15 @@ jobs:
     - name: Build URL
       run: echo 'https://storage.googleapis.com/webearcandy.appspot.com/$PLUGIN_NAME/$PLUGIN_NAME.pkg'
 
-    - name: Discord Webhook Action
-      uses: tsickert/discord-webhook@v5.3.0
+    - name: Discord notification
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      uses: Ilshidur/action-discord@master
       with:
-        webhook-url: ${{ secrets.DISCORD_HOOK_ID }}
-        content: "$PLUGIN_NAME"
+        args: 'Plug-in name {{ PLUGIN_NAME }}'
+
+    # - name: Discord Webhook Action
+    #   uses: tsickert/discord-webhook@v5.3.0
+    #   with:
+    #     webhook-url: ${{ secrets.DISCORD_HOOK_ID }}
+    #     content: "$PLUGIN_NAME"
