@@ -39,6 +39,8 @@ jobs:
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
+    outputs:
+      PLUGIN_NAME_OUT: ${{ env.PLUGIN_NAME }}
 
     steps:
     - name: Run Unit Testing on ${{ matrix.runs_on }}
@@ -279,7 +281,7 @@ jobs:
     strategy:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     env:
-      PLUGIN_NAME: ci-cmake-juce
+      PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME_OUT }}
       URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ PLUGIN_NAME }}/${{ PLUGIN_NAME }}.pkg"
 
     steps:
