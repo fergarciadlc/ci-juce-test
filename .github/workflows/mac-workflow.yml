@@ -279,7 +279,8 @@ jobs:
     strategy:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     env:
-      URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg"
+      PLUGIN_NAME: ci-cmake-juce
+      URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ PLUGIN_NAME }}/${{ PLUGIN_NAME }}.pkg"
 
     steps:
     - name: Push Notification on Discord
@@ -287,4 +288,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
       uses: Ilshidur/action-discord@master
       with:
-        args: 'The plug-in ${{ env.PLUGIN_NAME }} download link is: {{ URL }}'
+        args: 'The plug-in ${{ PLUGIN_NAME }} download link is: {{ URL }}'
