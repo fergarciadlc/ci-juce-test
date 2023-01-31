@@ -259,7 +259,7 @@ jobs:
     #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component" plugins
 
     - name: Build MacOS Installer
-      run: packagesbuild ${{ env.INSTALLER_PLUGINS_FOLDER }}}/${{ env.PLUGIN_NAME }}}.pkgproj
+      run: packagesbuild ${{ env.INSTALLER_PLUGINS_FOLDER }}/${{ env.PLUGIN_NAME }}.pkgproj
 
     - name: Sign MacOS Installer
       run: echo "Sign installer"
@@ -268,10 +268,10 @@ jobs:
       run: echo "Notarize installer"
 
     - name: Upload to gcloud Bucket
-      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}}/build/${{ env.PLUGIN_NAME }}}.pkg "${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}}/${{ env.PLUGIN_NAME }}}.pkg"
+      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg "${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg"
 
     - name: Make file public
-      run: gsutil acl ch -u AllUsers:R ${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}}/${{ env.PLUGIN_NAME }}}.pkg
+      run: gsutil acl ch -u AllUsers:R ${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
 
   # # Notification
   # notification:
