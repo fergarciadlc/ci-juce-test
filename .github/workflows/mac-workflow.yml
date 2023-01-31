@@ -249,14 +249,14 @@ jobs:
     - name: Install Packages
       run: sudo installer -pkg Packages.pkg -target /
 
-    # - name: Copy Plug-ins to Repository
-    #   if: runner.os == 'MacOS'
-    #   run: |
-    #     sudo mkdir plugins
-    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin" plugins
-    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3" plugins
-    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst" plugins
-    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component" plugins
+    - name: Copy Plug-ins to Repository
+      if: runner.os == 'MacOS'
+      run: |
+        sudo mkdir plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin" plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3" plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst" plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component" plugins
 
     - name: Build MacOS Installer
       run: packagesbuild ${{ env.INSTALLER_PLUGINS_FOLDER }}/${{ env.PLUGIN_NAME }}.pkgproj
@@ -273,21 +273,21 @@ jobs:
     - name: Make file public
       run: gsutil acl ch -u AllUsers:R ${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
 
-  # # Notification
-  # notification:
-  #   name: Notify on ${{ matrix.runs_on }}
-  #   needs: [matrix_prep, build, validate, sign, packaging]
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   env:
-  #     PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME_OUT }}
-  #     URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ needs.matrix_prep.outputs.PLUGIN_NAME_OUT }}/${{ needs.matrix_prep.outputs.PLUGIN_NAME_OUT }}.pkg"
+  # Notification
+  notification:
+    name: Notify on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build, validate, sign, packaging]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    env:
+      PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME_OUT }}
+      URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ needs.matrix_prep.outputs.PLUGIN_NAME_OUT }}/${{ needs.matrix_prep.outputs.PLUGIN_NAME_OUT }}.pkg"
 
-  #   steps:
-  #   - name: Push Notification on Discord
-  #     env:
-  #       DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
-  #     uses: Ilshidur/action-discord@master
-  #     with:
-  #       args: 'The plug-in {{ PLUGIN_NAME }} download link is: {{ URL }}'
+    steps:
+    - name: Push Notification on Discord
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: 'The plug-in {{ PLUGIN_NAME }} download link is: {{ URL }}'
