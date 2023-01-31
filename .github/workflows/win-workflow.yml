@@ -8,45 +8,45 @@ on:
     branches:
     - main
 
+env:
+  PLUGIN_NAME: ci-cmake-juce
+  PLUGINS_FOLDER: plugins/
+  INSTALLER_PLUGINS_FOLDER: installers/windows
+  VALIDATORS_PATH: gs://webearcandy.appspot.com/ci-utils/validators
+  BUCKET_NAME: gs://webearcandy.appspot.com
 
 jobs:
+
+  # Matrix Preparation for OS
   matrix_prep:
     if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-win') == false
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
+      PLUGIN_NAME_OUT: ${{ env.PLUGIN_NAME }}
     steps:
-      # Required as the JSON input file needs to be read
       - uses: actions/checkout@v2      
       - id: set-matrix
         uses: JoshuaTheMiller/conditional-build-matrix@main        
         with:
-          inputFile: '.github/workflows/win_matrix.json' # Default input file path
+          inputFile: '.github/workflows/win_matrix.json'
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
-          # addInclude: true
 
-
+  # Unit tests
   unit-test:
-    name: Unit Testing
+    name: Unit Testing on ${{ matrix.runs_on }}
     needs: matrix_prep
+    if: contains(toJson(github.event.commits), '/no-ut') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
 
     steps:
-
     - name: Run Unit Testing on ${{ matrix.runs_on }}
       if: runner.os == 'Windows'
-      run: |
-        if( "${{ toJson(github.event.commit ) }}" -contains "/no-ut" )
-        {
-          echo "/no-ut in commit message, skipping unit tests"
-        } 
-        else 
-        {
-          echo "running uts"
-        }
+      run: echo "Unit testing"
 
+  # Building
   build:
     name: Build on ${{ matrix.runs_on }}
     needs: [matrix_prep, unit-test]
@@ -66,8 +66,101 @@ jobs:
 
     - name: Configure Cmake
       run: cmake -Bbuild
-    
+
     - name: Build for Windows
       if: runner.os == 'Windows'
-      run: cmake --build build --config Release --parallel 4
+      run: sudo cmake --build build --config Release
 
+    - name: Copy AAX to Plug-Ins Folder
+      if: runner.os == 'Windows'
+      run: |
+        sudo mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        sudo cp -r "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
+
+    - name: Copy VST to Plug-Ins Folder
+      if: runner.os == 'Windows'
+      run: |
+        sudo mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        sudo cp -r "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
+
+    - name: Copy VST3 to Plug-Ins Folder
+      if: runner.os == 'Windows'
+      run: |
+        sudo mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        sudo cp -r "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST/
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: plugins-folder-artifact
+        path: ${{ env.PLUGINS_FOLDER }}
+
+# on:
+#   push:
+#     branches:
+#     - main
+#   pull_request:
+#     branches:
+#     - main
+
+
+# jobs:
+#   matrix_prep:
+#     if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-win') == false
+#     runs-on: ubuntu-latest
+#     outputs:
+#       matrix: ${{ steps.set-matrix.outputs.matrix }}
+#     steps:
+#       # Required as the JSON input file needs to be read
+#       - uses: actions/checkout@v2      
+#       - id: set-matrix
+#         uses: JoshuaTheMiller/conditional-build-matrix@main        
+#         with:
+#           inputFile: '.github/workflows/win_matrix.json' # Default input file path
+#           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
+#           # addInclude: true
+
+
+#   unit-test:
+#     name: Unit Testing
+#     needs: matrix_prep
+#     strategy:      
+#       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+#     runs-on: ${{ matrix.runs_on }}
+
+#     steps:
+
+#     - name: Run Unit Testing on ${{ matrix.runs_on }}
+#       if: runner.os == 'Windows'
+#       run: |
+#         if( "${{ toJson(github.event.commit ) }}" -contains "/no-ut" )
+#         {
+#           echo "/no-ut in commit message, skipping unit tests"
+#         } 
+#         else 
+#         {
+#           echo "running uts"
+#         }
+
+#   build:
+#     name: Build on ${{ matrix.runs_on }}
+#     needs: [matrix_prep, unit-test]
+#     if: contains(toJson(github.event.commits), '/no-build') == false
+#     strategy:      
+#       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+#     runs-on: ${{ matrix.runs_on }}
+
+#     steps:
+#     - name: Get latest CMake
+#       uses: lukka/get-cmake@latest
+
+#     - name: Checkout code
+#       uses: actions/checkout@v2
+#       with:
+#         submodules: recursive
+
+#     - name: Configure Cmake
+#       run: cmake -Bbuild
+    
+#     - name: Build for Windows
+#       if: runner.os == 'Windows'
+#       run: cmake --build build --config Release --parallel 4

@@ -174,7 +174,7 @@ jobs:
 
   # Signing
   sign:
-    name: Signing on ${{ matrix.runs_on }}
+    name: Sign on ${{ matrix.runs_on }}
     needs: [matrix_prep, build, validate]
     if: contains(toJson(github.event.commits), '/no-sign') == false
     strategy:      
@@ -220,7 +220,7 @@ jobs:
 
   # Packaging
   packaging:
-    name: Packaging on ${{ matrix.runs_on }}
+    name: Package on ${{ matrix.runs_on }}
     needs: [matrix_prep, build, validate, sign]
     if: contains(toJson(github.event.commits), '/no-packaging') == false
     strategy:      

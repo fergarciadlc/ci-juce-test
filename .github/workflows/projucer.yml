@@ -69,11 +69,3 @@ jobs:
       shell: bash
       run: msbuild.exe -v:normal -m:4 -t:rebuild -verbosity:diag -property:Configuration=Release CI_Test.sln
       working-directory: Builds/VisualStudio2019
-
-    - name: Validate (Windows)
-      if: runner.os == 'Windows'
-      run: bash scripts/validate.sh
-
-    - name: Validate (MacOS)
-      if: runner.os == 'MacOS'
-      run: sh scripts/validate.sh
