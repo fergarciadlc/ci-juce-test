@@ -69,25 +69,25 @@ jobs:
 
     - name: Build for Windows
       if: runner.os == 'Windows'
-      run: sudo cmake --build build --config Release
+      run: cmake --build build --config Release
 
     - name: Copy AAX to Plug-Ins Folder
       if: runner.os == 'Windows'
       run: |
-        sudo mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
-        sudo cp -r "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
+        mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        robocopy "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
 
     - name: Copy VST to Plug-Ins Folder
       if: runner.os == 'Windows'
       run: |
-        sudo mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
-        sudo cp -r "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
+        mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        robocopy "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
 
     - name: Copy VST3 to Plug-Ins Folder
       if: runner.os == 'Windows'
       run: |
-        sudo mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
-        sudo cp -r "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST/
+        mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        robocopy "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST/
 
     - uses: actions/upload-artifact@v3
       with:
