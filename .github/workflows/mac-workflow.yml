@@ -230,33 +230,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: plugins-folder-artifact
-        path: ${{ env.PLUGINS_FOLDER }}
+    # - uses: actions/download-artifact@master
+    #   with:
+    #     name: plugins-folder-artifact
+    #     path: ${{ env.PLUGINS_FOLDER }}
 
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v1'
-      with:
-        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    # - id: 'auth'
+    #   uses: 'google-github-actions/auth@v1'
+    #   with:
+    #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    - name: Set up gcloud SDK
-      uses: 'google-github-actions/setup-gcloud@v1'
+    # - name: Set up gcloud SDK
+    #   uses: 'google-github-actions/setup-gcloud@v1'
 
-    - name: Download Packages Installer
-      run: gsutil -m cp -r "${{ env.BUCKET_NAME }}/ci-utils/Packages.pkg" .
+    # - name: Download Packages Installer
+    #   run: gsutil -m cp -r "${{ env.BUCKET_NAME }}/ci-utils/Packages.pkg" .
 
-    - name: Install Packages
-      run: sudo installer -pkg Packages.pkg -target /
+    # - name: Install Packages
+    #   run: sudo installer -pkg Packages.pkg -target /
 
-    - name: Copy Plug-ins to Repository
-      if: runner.os == 'MacOS'
-      run: |
-        sudo mkdir plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin" plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3" plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst" plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component" plugins
+    # - name: Copy Plug-ins to Repository
+    #   if: runner.os == 'MacOS'
+    #   run: |
+    #     sudo mkdir plugins
+    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin" plugins
+    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3" plugins
+    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst" plugins
+    #     sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component" plugins
 
     - name: Build MacOS Installer
       run: packagesbuild ${{ env.INSTALLER_PLUGINS_FOLDER }}}/${{ env.PLUGIN_NAME }}}.pkgproj
@@ -268,7 +268,7 @@ jobs:
       run: echo "Notarize installer"
 
     - name: Upload to gcloud Bucket
-      run: gcloud storage cp installers/mac/build/${{ env.PLUGIN_NAME }}}.pkg "${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}}/${{ env.PLUGIN_NAME }}}.pkg"
+      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}}/build/${{ env.PLUGIN_NAME }}}.pkg "${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}}/${{ env.PLUGIN_NAME }}}.pkg"
 
     - name: Make file public
       run: gsutil acl ch -u AllUsers:R ${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}}/${{ env.PLUGIN_NAME }}}.pkg
