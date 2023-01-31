@@ -80,87 +80,16 @@ jobs:
     - name: Copy VST to Plug-Ins Folder
       if: runner.os == 'Windows'
       run: |
-        mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        mkdir ${{ env.PLUGINS_FOLDER }}/VST/
         robocopy "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
 
     - name: Copy VST3 to Plug-Ins Folder
       if: runner.os == 'Windows'
       run: |
-        mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
-        robocopy "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST/
+        mkdir ${{ env.PLUGINS_FOLDER }}/VST3/
+        robocopy "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST3/
 
     - uses: actions/upload-artifact@v3
       with:
         name: plugins-folder-artifact
         path: ${{ env.PLUGINS_FOLDER }}
-
-# on:
-#   push:
-#     branches:
-#     - main
-#   pull_request:
-#     branches:
-#     - main
-
-
-# jobs:
-#   matrix_prep:
-#     if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-win') == false
-#     runs-on: ubuntu-latest
-#     outputs:
-#       matrix: ${{ steps.set-matrix.outputs.matrix }}
-#     steps:
-#       # Required as the JSON input file needs to be read
-#       - uses: actions/checkout@v2      
-#       - id: set-matrix
-#         uses: JoshuaTheMiller/conditional-build-matrix@main        
-#         with:
-#           inputFile: '.github/workflows/win_matrix.json' # Default input file path
-#           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
-#           # addInclude: true
-
-
-#   unit-test:
-#     name: Unit Testing
-#     needs: matrix_prep
-#     strategy:      
-#       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-#     runs-on: ${{ matrix.runs_on }}
-
-#     steps:
-
-#     - name: Run Unit Testing on ${{ matrix.runs_on }}
-#       if: runner.os == 'Windows'
-#       run: |
-#         if( "${{ toJson(github.event.commit ) }}" -contains "/no-ut" )
-#         {
-#           echo "/no-ut in commit message, skipping unit tests"
-#         } 
-#         else 
-#         {
-#           echo "running uts"
-#         }
-
-#   build:
-#     name: Build on ${{ matrix.runs_on }}
-#     needs: [matrix_prep, unit-test]
-#     if: contains(toJson(github.event.commits), '/no-build') == false
-#     strategy:      
-#       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-#     runs-on: ${{ matrix.runs_on }}
-
-#     steps:
-#     - name: Get latest CMake
-#       uses: lukka/get-cmake@latest
-
-#     - name: Checkout code
-#       uses: actions/checkout@v2
-#       with:
-#         submodules: recursive
-
-#     - name: Configure Cmake
-#       run: cmake -Bbuild
-    
-#     - name: Build for Windows
-#       if: runner.os == 'Windows'
-#       run: cmake --build build --config Release --parallel 4
