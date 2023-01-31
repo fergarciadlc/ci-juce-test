@@ -179,9 +179,6 @@ jobs:
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
-    # env:
-      # PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME }}
-      # PLUGINS_FOLDER: ${{ needs.matrix_prep.outputs.PLUGINS_FOLDER }}
 
     steps:
     - uses: actions/checkout@master
@@ -220,79 +217,74 @@ jobs:
       #   bash sign_mac.sh ${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst       $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
       #   bash sign_mac.sh ${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst3      $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
-  # # Packaging
-  # packaging:
-  #   name: Packaging on ${{ matrix.runs_on }}
-  #   needs: [matrix_prep, build, sign]
-  #   if: contains(toJson(github.event.commits), '/no-packaging') == false
-  #   strategy:      
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   runs-on: ${{ matrix.runs_on }}
-  #   env:
-  #     BUCKET_NAME: ${{ needs.matrix_prep.outputs.BUCKET_NAME }}
-  #     PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME }}
-  #     PLUGINS_FOLDER: ${{ needs.matrix_prep.outputs.PLUGINS_FOLDER }}
+  # Packaging
+  packaging:
+    name: Packaging on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build, validate, sign]
+    if: contains(toJson(github.event.commits), '/no-packaging') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
 
-  #   steps:
-  #   - uses: actions/checkout@master
-  #   - uses: actions/download-artifact@master
-  #     with:
-  #       name: plugins-folder-artifact
-  #       path: /Users/runner/Library/Audio/Plug-Ins/
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/download-artifact@master
+      with:
+        name: plugins-folder-artifact
+        path: ${{ env.PLUGINS_FOLDER }}
 
-  #   - id: 'auth'
-  #     uses: 'google-github-actions/auth@v1'
-  #     with:
-  #       credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-  #   - name: Set up gcloud SDK
-  #     uses: 'google-github-actions/setup-gcloud@v1'
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
 
-  #   - name: Download Packages Installer
-  #     run: gsutil -m cp -r "$BUCKET_NAME/ci-utils/Packages.pkg" .
+    - name: Download Packages Installer
+      run: gsutil -m cp -r "${{ env.BUCKET_NAME }}/ci-utils/Packages.pkg" .
 
-  #   - name: Install Packages
-  #     run: sudo installer -pkg Packages.pkg -target /
+    - name: Install Packages
+      run: sudo installer -pkg Packages.pkg -target /
 
-  #   - name: Copy Plug-ins to Repository
-  #     if: runner.os == 'MacOS'
-  #     run: |
-  #       sudo mkdir plugins
-  #       sudo cp -r "$PLUGINS_FOLDER/AAX/$PLUGIN_NAME.aaxplugin" plugins
-  #       sudo cp -r "$PLUGINS_FOLDER/VST3/$PLUGIN_NAME.vst3" plugins
-  #       sudo cp -r "$PLUGINS_FOLDER/VST/$PLUGIN_NAME.vst" plugins
-  #       sudo cp -r "$PLUGINS_FOLDER/Components/$PLUGIN_NAME.component" plugins
+    - name: Copy Plug-ins to Repository
+      if: runner.os == 'MacOS'
+      run: |
+        sudo mkdir plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin" plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3" plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst" plugins
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component" plugins
 
-  #   - name: Build MacOS Installer
-  #     run: packagesbuild installers/mac/${PLUGIN_NAME}.pkgproj
+    - name: Build MacOS Installer
+      run: packagesbuild installers/mac/${{ env.PLUGIN_NAME }}}.pkgproj
 
-  #   - name: Sign MacOS Installer
-  #     run: echo "Sign installer"
+    - name: Sign MacOS Installer
+      run: echo "Sign installer"
 
-  #   - name: Notarize MacOS Installer
-  #     run: echo "Notarize installer"
+    - name: Notarize MacOS Installer
+      run: echo "Notarize installer"
 
-  #   - name: Upload to gcloud Bucket
-  #     run: gcloud storage cp installers/mac/build/$PLUGIN_NAME.pkg "$BUCKET_NAME/$PLUGIN_NAME/$PLUGIN_NAME.pkg"
+    - name: Upload to gcloud Bucket
+      run: gcloud storage cp installers/mac/build/${{ env.PLUGIN_NAME }}}.pkg "${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}}/${{ env.PLUGIN_NAME }}}.pkg"
 
-  #   - name: Make file public
-  #     run: gsutil acl ch -u AllUsers:R $BUCKET_NAME/$PLUGIN_NAME/$PLUGIN_NAME.pkg
+    - name: Make file public
+      run: gsutil acl ch -u AllUsers:R ${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}}/${{ env.PLUGIN_NAME }}}.pkg
 
-  # # Notification
-  # notification:
-  #   name: Notify on ${{ matrix.runs_on }}
-  #   needs: [matrix_prep, packaging, build, sign]
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   env:
-  #     PLUGIN_NAME: ${{ needs.matrix_prep.outputs.PLUGIN_NAME }}
-  #     URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ needs.build.outputs.PLUGIN_NAME }}/${{ needs.build.outputs.PLUGIN_NAME }}.pkg"
+  # Notification
+  notification:
+    name: Notify on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build, validate, sign, packaging]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    env:
+      URL: "https://storage.googleapis.com/webearcandy.appspot.com/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg"
 
-  #   steps:
-  #   - name: Push Notification on Discord
-  #     env:
-  #       DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
-  #     uses: Ilshidur/action-discord@master
-  #     with:
-  #       args: 'The plug-in {{ PLUGIN_NAME }} was deployed: {{ URL }}'
+    steps:
+    - name: Push Notification on Discord
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: 'The plug-in ${{ env.PLUGIN_NAME }} download link is: {{ URL }}'
