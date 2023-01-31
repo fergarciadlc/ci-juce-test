@@ -235,19 +235,19 @@ jobs:
     #     name: plugins-folder-artifact
     #     path: ${{ env.PLUGINS_FOLDER }}
 
-    # - id: 'auth'
-    #   uses: 'google-github-actions/auth@v1'
-    #   with:
-    #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    # - name: Set up gcloud SDK
-    #   uses: 'google-github-actions/setup-gcloud@v1'
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
 
-    # - name: Download Packages Installer
-    #   run: gsutil -m cp -r "${{ env.BUCKET_NAME }}/ci-utils/Packages.pkg" .
+    - name: Download Packages Installer
+      run: gsutil -m cp -r "${{ env.BUCKET_NAME }}/ci-utils/Packages.pkg" .
 
-    # - name: Install Packages
-    #   run: sudo installer -pkg Packages.pkg -target /
+    - name: Install Packages
+      run: sudo installer -pkg Packages.pkg -target /
 
     # - name: Copy Plug-ins to Repository
     #   if: runner.os == 'MacOS'
