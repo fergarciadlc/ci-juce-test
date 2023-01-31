@@ -289,4 +289,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
       uses: Ilshidur/action-discord@master
       with:
-        args: 'The plug-in ${{ PLUGIN_NAME }} download link is: {{ URL }}'
+        args: 'The plug-in {{ PLUGIN_NAME }} download link is: {{ URL }}'
