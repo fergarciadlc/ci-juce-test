@@ -129,6 +129,11 @@ jobs:
     #     gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_Windows.zip" .
     #     powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
 
+    - name: Prepare pluginval
+      run: | 
+        powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip -OutFile pluginval.zip"
+        powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
+
     - name: See folders
       run: dir
 
