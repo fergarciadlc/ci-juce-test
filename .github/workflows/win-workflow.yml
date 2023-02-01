@@ -174,10 +174,13 @@ jobs:
       run: cd plugins && dir
 
     - name: Validate VST
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST\${{ env.PLUGIN_NAME }}.vst"
+      run: bash validate.sh "plugins\VST\ci-cmake-juce.vst"
+      #run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST\${{ env.PLUGIN_NAME }}.vst"
 
     - name: Validate VST3
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST3\${{ env.PLUGIN_NAME }}.vst3"
+      run: bash validate.sh "plugins\VST3\ci-cmake-juce.vst3"
+      #run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST3\${{ env.PLUGIN_NAME }}.vst3"
 
-    # - name: Validate AAX
-    #   run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
+    - name: Validate AAX
+      run: bash validate_aax.sh "plugins\AAX\ci-cmake-juce.aaxplugin"
+      #run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
