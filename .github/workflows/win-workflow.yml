@@ -133,10 +133,10 @@ jobs:
         powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip -OutFile pluginval.zip"
         powershell -Command "Expand-Archive pluginval.zip -DestinationPath ."
 
-    # - name: Prepare aaxval
-    #   run: |
-    #     gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/aaxval_win.zip" .
-    #     tar -xf aaxval_win.zip
+    - name: Prepare aaxval
+      run: |
+        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/aaxval_win.zip" .
+        tar -xf aaxval_win.zip
 
     - name: Generating VST, VST3 and AU Validation Script
       run: |
