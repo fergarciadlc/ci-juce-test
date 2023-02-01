@@ -165,8 +165,8 @@ jobs:
           " | start aaxval_win/dsh.exe
         ' > validate_aax.sh
 
-    - name: Log Plug-Ins Folder
-      run: dir ${{ env.PLUGINS_FOLDER }} /s /b /o:gn
+    # - name: Log Plug-Ins Folder
+    #   run: dir ${{ env.PLUGINS_FOLDER }} /s /b /o:gn
 
     - name: Validate VST
       run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
