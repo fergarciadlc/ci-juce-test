@@ -110,11 +110,11 @@ jobs:
       AAXVAL_MAC_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Faaxval_win.zip?alt=media&token=de939711-5a0b-41e6-95d7-a3bbf6637eee"
 
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: plugins-folder-artifact
-        path: ${{ env.PLUGINS_FOLDER }}
+    # - uses: actions/checkout@master
+    # - uses: actions/download-artifact@master
+    #   with:
+    #     name: plugins-folder-artifact
+    #     path: ${{ env.PLUGINS_FOLDER }}
 
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
