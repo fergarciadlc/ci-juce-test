@@ -104,10 +104,10 @@ jobs:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
     env:
-      #PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
-      PLUGINVAL_MAC_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Fpluginval_Windows.zip?alt=media&token=10881b3e-2bb3-4d15-8f3c-f48f229ebbf6"
-      #AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
-      AAXVAL_MAC_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Faaxval_win.zip?alt=media&token=de939711-5a0b-41e6-95d7-a3bbf6637eee"
+      #PLUGINVAL_WIN_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
+      PLUGINVAL_WIN_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Fpluginval_Windows.zip?alt=media&token=10881b3e-2bb3-4d15-8f3c-f48f229ebbf6"
+      #AAXVAL_WIN_URL: ${{ secrets.AAXVAL_MAC_URL }}
+      AAXVAL_WIN_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Faaxval_win.zip?alt=media&token=de939711-5a0b-41e6-95d7-a3bbf6637eee"
 
     steps:
     # - uses: actions/checkout@master
@@ -126,6 +126,10 @@ jobs:
 
     - name: Prepare pluginval
       run: | 
-        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_macOS.zip" .
+        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_Windows.zip" .
         tar -xf pluginval_Windows.zip
-        echo "pluginval.exe"
+
+    - name: Prepare aaxval
+      run: |
+        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/aaxval_win.zip" .
+        tar -xf aaxval_win.zip
