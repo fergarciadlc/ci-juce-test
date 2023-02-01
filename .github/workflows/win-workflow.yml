@@ -174,13 +174,10 @@ jobs:
       run: cd plugins && dir
 
     - name: Validate VST
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
+      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST\${{ env.PLUGIN_NAME }}.vst"
 
     - name: Validate VST3
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3"
-
-    - name: Validate AU
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component"
+      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST3\${{ env.PLUGIN_NAME }}.vst3"
 
     # - name: Validate AAX
     #   run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
