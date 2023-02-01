@@ -147,7 +147,7 @@ jobs:
           echo "OS: ${OSTYPE}"
           echo "Validating ${PLUGIN_PATH}"
 
-          pluginval.exe --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir "./bin" --timeout-ms 500000;
+          ./pluginval.exe --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
         ' > validate.sh
 
     - name: Generating AAX Validation Script
