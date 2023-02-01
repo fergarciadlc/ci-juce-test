@@ -126,7 +126,9 @@ jobs:
     - name: Prepare pluginval
       run: | 
         gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_Windows.zip" .
-        tar -xf pluginval_Windows.zip
+        powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
+        
+      # tar -xf pluginval_Windows.zip
 
     - name: Prepare aaxval
       run: |
@@ -141,7 +143,7 @@ jobs:
           echo "OS: ${OSTYPE}"
           echo "Validating ${PLUGIN_PATH}"
 
-          pluginval_Windows/pluginval.exe --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
+          pluginval.exe --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir "./bin" --timeout-ms 500000;
         ' > validate.sh
 
     - name: Generating AAX Validation Script
