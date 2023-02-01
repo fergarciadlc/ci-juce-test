@@ -166,7 +166,7 @@ jobs:
         ' > validate_aax.sh
 
     - name: Log Plug-Ins Folder
-      run: find ${{ env.PLUGINS_FOLDER }}
+      run: dir ${{ env.PLUGINS_FOLDER }} /s /b /o:gn
 
     - name: Validate VST
       run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
