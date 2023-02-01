@@ -10,7 +10,7 @@ on:
 
 env:
   PLUGIN_NAME: ci-cmake-juce
-  PLUGINS_FOLDER: plugins/
+  PLUGINS_FOLDER: plugins
   INSTALLER_PLUGINS_FOLDER: installers/windows
   VALIDATORS_PATH: gs://webearcandy.appspot.com/ci-utils/validators
   BUCKET_NAME: gs://webearcandy.appspot.com
@@ -33,72 +33,71 @@ jobs:
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
   # Unit tests
-  # unit-test:
-  #   name: Unit Testing on ${{ matrix.runs_on }}
-  #   needs: matrix_prep
-  #   if: contains(toJson(github.event.commits), '/no-ut') == false
-  #   strategy:      
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   runs-on: ${{ matrix.runs_on }}
+  unit-test:
+    name: Unit Testing on ${{ matrix.runs_on }}
+    needs: matrix_prep
+    if: contains(toJson(github.event.commits), '/no-ut') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
 
-  #   steps:
-  #   - name: Run Unit Testing on ${{ matrix.runs_on }}
-  #     if: runner.os == 'Windows'
-  #     run: echo "Unit testing"
+    steps:
+    - name: Run Unit Testing on ${{ matrix.runs_on }}
+      if: runner.os == 'Windows'
+      run: echo "Unit testing"
 
-  # # Building
-  # build:
-  #   name: Build on ${{ matrix.runs_on }}
-  #   needs: [matrix_prep, unit-test]
-  #   if: contains(toJson(github.event.commits), '/no-build') == false
-  #   strategy:      
-  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-  #   runs-on: ${{ matrix.runs_on }}
+  # Building
+  build:
+    name: Build on ${{ matrix.runs_on }}
+    needs: [matrix_prep, unit-test]
+    if: contains(toJson(github.event.commits), '/no-build') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
 
-  #   steps:
-  #   - name: Get latest CMake
-  #     uses: lukka/get-cmake@latest
+    steps:
+    - name: Get latest CMake
+      uses: lukka/get-cmake@latest
 
-  #   - name: Checkout code
-  #     uses: actions/checkout@v2
-  #     with:
-  #       submodules: recursive
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
 
-  #   - name: Configure Cmake
-  #     run: cmake -Bbuild
+    - name: Configure Cmake
+      run: cmake -Bbuild
 
-  #   - name: Build for Windows
-  #     if: runner.os == 'Windows'
-  #     run: cmake --build build --config Release
+    - name: Build for Windows
+      if: runner.os == 'Windows'
+      run: cmake --build build --config Release
 
-  #   - name: Copy AAX to Plug-Ins Folder
-  #     if: runner.os == 'Windows'
-  #     run: |
-  #       mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
-  #       move "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
+    - name: Copy AAX to Plug-Ins Folder
+      if: runner.os == 'Windows'
+      run: |
+        mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+        move "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
 
-  #   - name: Copy VST to Plug-Ins Folder
-  #     if: runner.os == 'Windows'
-  #     run: |
-  #       mkdir ${{ env.PLUGINS_FOLDER }}/VST/
-  #       move "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
+    - name: Copy VST to Plug-Ins Folder
+      if: runner.os == 'Windows'
+      run: |
+        mkdir ${{ env.PLUGINS_FOLDER }}/VST/
+        move "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
 
-  #   - name: Copy VST3 to Plug-Ins Folder
-  #     if: runner.os == 'Windows'
-  #     run: |
-  #       mkdir ${{ env.PLUGINS_FOLDER }}/VST3/
-  #       move "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST3/
+    - name: Copy VST3 to Plug-Ins Folder
+      if: runner.os == 'Windows'
+      run: |
+        mkdir ${{ env.PLUGINS_FOLDER }}/VST3/
+        move "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST3/
 
-  #   - uses: actions/upload-artifact@v3
-  #     with:
-  #       name: plugins-folder-artifact
-  #       path: ${{ env.PLUGINS_FOLDER }}
+    - uses: actions/upload-artifact@v3
+      with:
+        name: plugins-folder-artifact
+        path: ${{ env.PLUGINS_FOLDER }}
 
   # Validation
   validate:
     name: Validate on ${{ matrix.runs_on }}
-    #needs: [matrix_prep, build]
-    needs: [matrix_prep]
+    needs: [matrix_prep, build]
     if: contains(toJson(github.event.commits), '/no-validate') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
@@ -111,18 +110,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    # - uses: actions/download-artifact@master
-    #   with:
-    #     name: plugins-folder-artifact
-    #     path: ${{ env.PLUGINS_FOLDER }}
+    - uses: actions/download-artifact@master
+      with:
+        name: plugins-folder-artifact
+        path: ${{ env.PLUGINS_FOLDER }}
 
-    # - id: 'auth'
-    #   uses: 'google-github-actions/auth@v1'
-    #   with:
-    #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    # - name: Set up gcloud SDK
-    #   uses: 'google-github-actions/setup-gcloud@v1'
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
 
     # - name: Prepare pluginval
     #   run: | 
