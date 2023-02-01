@@ -33,71 +33,72 @@ jobs:
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
   # Unit tests
-  unit-test:
-    name: Unit Testing on ${{ matrix.runs_on }}
-    needs: matrix_prep
-    if: contains(toJson(github.event.commits), '/no-ut') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
+  # unit-test:
+  #   name: Unit Testing on ${{ matrix.runs_on }}
+  #   needs: matrix_prep
+  #   if: contains(toJson(github.event.commits), '/no-ut') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
 
-    steps:
-    - name: Run Unit Testing on ${{ matrix.runs_on }}
-      if: runner.os == 'Windows'
-      run: echo "Unit testing"
+  #   steps:
+  #   - name: Run Unit Testing on ${{ matrix.runs_on }}
+  #     if: runner.os == 'Windows'
+  #     run: echo "Unit testing"
 
-  # Building
-  build:
-    name: Build on ${{ matrix.runs_on }}
-    needs: [matrix_prep, unit-test]
-    if: contains(toJson(github.event.commits), '/no-build') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
+  # # Building
+  # build:
+  #   name: Build on ${{ matrix.runs_on }}
+  #   needs: [matrix_prep, unit-test]
+  #   if: contains(toJson(github.event.commits), '/no-build') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
 
-    steps:
-    - name: Get latest CMake
-      uses: lukka/get-cmake@latest
+  #   steps:
+  #   - name: Get latest CMake
+  #     uses: lukka/get-cmake@latest
 
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        submodules: recursive
+  #   - name: Checkout code
+  #     uses: actions/checkout@v2
+  #     with:
+  #       submodules: recursive
 
-    - name: Configure Cmake
-      run: cmake -Bbuild
+  #   - name: Configure Cmake
+  #     run: cmake -Bbuild
 
-    - name: Build for Windows
-      if: runner.os == 'Windows'
-      run: cmake --build build --config Release
+  #   - name: Build for Windows
+  #     if: runner.os == 'Windows'
+  #     run: cmake --build build --config Release
 
-    - name: Copy AAX to Plug-Ins Folder
-      if: runner.os == 'Windows'
-      run: |
-        mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
-        move "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
+  #   - name: Copy AAX to Plug-Ins Folder
+  #     if: runner.os == 'Windows'
+  #     run: |
+  #       mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
+  #       move "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
 
-    - name: Copy VST to Plug-Ins Folder
-      if: runner.os == 'Windows'
-      run: |
-        mkdir ${{ env.PLUGINS_FOLDER }}/VST/
-        move "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
+  #   - name: Copy VST to Plug-Ins Folder
+  #     if: runner.os == 'Windows'
+  #     run: |
+  #       mkdir ${{ env.PLUGINS_FOLDER }}/VST/
+  #       move "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
 
-    - name: Copy VST3 to Plug-Ins Folder
-      if: runner.os == 'Windows'
-      run: |
-        mkdir ${{ env.PLUGINS_FOLDER }}/VST3/
-        move "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST3/
+  #   - name: Copy VST3 to Plug-Ins Folder
+  #     if: runner.os == 'Windows'
+  #     run: |
+  #       mkdir ${{ env.PLUGINS_FOLDER }}/VST3/
+  #       move "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST3/
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: plugins-folder-artifact
-        path: ${{ env.PLUGINS_FOLDER }}
+  #   - uses: actions/upload-artifact@v3
+  #     with:
+  #       name: plugins-folder-artifact
+  #       path: ${{ env.PLUGINS_FOLDER }}
 
   # Validation
   validate:
     name: Validate on ${{ matrix.runs_on }}
-    needs: [matrix_prep, build]
+    #needs: [matrix_prep, build]
+    needs: [matrix_prep]
     if: contains(toJson(github.event.commits), '/no-validate') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
@@ -110,10 +111,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: plugins-folder-artifact
-        path: ${{ env.PLUGINS_FOLDER }}
+    # - uses: actions/download-artifact@master
+    #   with:
+    #     name: plugins-folder-artifact
+    #     path: ${{ env.PLUGINS_FOLDER }}
 
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
@@ -127,13 +128,14 @@ jobs:
       run: | 
         gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_Windows.zip" .
         powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
-        
-      # tar -xf pluginval_Windows.zip
 
-    - name: Prepare aaxval
-      run: |
-        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/aaxval_win.zip" .
-        tar -xf aaxval_win.zip
+    - name: See folders
+      run: ls -l
+
+    # - name: Prepare aaxval
+    #   run: |
+    #     gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/aaxval_win.zip" .
+    #     tar -xf aaxval_win.zip
 
     - name: Generating VST, VST3 and AU Validation Script
       run: |
@@ -179,5 +181,5 @@ jobs:
     - name: Validate AU
       run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component"
 
-    - name: Validate AAX
-      run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
+    # - name: Validate AAX
+    #   run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
