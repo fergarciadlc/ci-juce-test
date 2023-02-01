@@ -33,18 +33,18 @@ jobs:
           filter: '[?runOnBranch==`${{ github.ref }}` || runOnBranch==`main`]'
 
   # Unit tests
-  unit-test:
-    name: Unit Testing on ${{ matrix.runs_on }}
-    needs: matrix_prep
-    if: contains(toJson(github.event.commits), '/no-ut') == false
-    strategy:      
-      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
-    runs-on: ${{ matrix.runs_on }}
+  # unit-test:
+  #   name: Unit Testing on ${{ matrix.runs_on }}
+  #   needs: matrix_prep
+  #   if: contains(toJson(github.event.commits), '/no-ut') == false
+  #   strategy:      
+  #     matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+  #   runs-on: ${{ matrix.runs_on }}
 
-    steps:
-    - name: Run Unit Testing on ${{ matrix.runs_on }}
-      if: runner.os == 'Windows'
-      run: echo "Unit testing"
+  #   steps:
+  #   - name: Run Unit Testing on ${{ matrix.runs_on }}
+  #     if: runner.os == 'Windows'
+  #     run: echo "Unit testing"
 
   # # Building
   # build:
@@ -127,5 +127,5 @@ jobs:
     - name: Prepare pluginval
       run: | 
         gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_macOS.zip" .
-        unzip pluginval_Windows > /dev/null
+        tar -xf pluginval_Windows.zip
         echo "pluginval.exe"
