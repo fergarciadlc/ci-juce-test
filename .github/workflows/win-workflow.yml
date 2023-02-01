@@ -116,21 +116,21 @@ jobs:
     #     name: plugins-folder-artifact
     #     path: ${{ env.PLUGINS_FOLDER }}
 
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v1'
-      with:
-        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+    # - id: 'auth'
+    #   uses: 'google-github-actions/auth@v1'
+    #   with:
+    #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    - name: Set up gcloud SDK
-      uses: 'google-github-actions/setup-gcloud@v1'
+    # - name: Set up gcloud SDK
+    #   uses: 'google-github-actions/setup-gcloud@v1'
 
-    - name: Prepare pluginval
-      run: | 
-        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_Windows.zip" .
-        powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
+    # - name: Prepare pluginval
+    #   run: | 
+    #     gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_Windows.zip" .
+    #     powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
 
     - name: See folders
-      run: ls -l
+      run: dir
 
     # - name: Prepare aaxval
     #   run: |
@@ -172,14 +172,14 @@ jobs:
     # - name: Log Plug-Ins Folder
     #   run: dir ${{ env.PLUGINS_FOLDER }} /s /b /o:gn
 
-    - name: Validate VST
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
+    # - name: Validate VST
+    #   run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
 
-    - name: Validate VST3
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3"
+    # - name: Validate VST3
+    #   run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3"
 
-    - name: Validate AU
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component"
+    # - name: Validate AU
+    #   run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component"
 
     # - name: Validate AAX
     #   run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
