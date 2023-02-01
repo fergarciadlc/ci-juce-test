@@ -132,10 +132,7 @@ jobs:
     - name: Prepare pluginval
       run: | 
         powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip -OutFile pluginval.zip"
-        powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
-
-    - name: See folders
-      run: dir
+        powershell -Command "Expand-Archive pluginval.zip -DestinationPath ."
 
     # - name: Prepare aaxval
     #   run: |
@@ -174,17 +171,17 @@ jobs:
           " | start aaxval_win/dsh.exe
         ' > validate_aax.sh
 
-    # - name: Log Plug-Ins Folder
-    #   run: dir ${{ env.PLUGINS_FOLDER }} /s /b /o:gn
+    - name: Log Plug-Ins Folder
+      run: dir
 
-    # - name: Validate VST
-    #   run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
+    - name: Validate VST
+      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
 
-    # - name: Validate VST3
-    #   run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3"
+    - name: Validate VST3
+      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3"
 
-    # - name: Validate AU
-    #   run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component"
+    - name: Validate AU
+      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component"
 
     # - name: Validate AAX
     #   run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
