@@ -171,16 +171,16 @@ jobs:
         ' > validate_aax.sh
 
     - name: Log Plug-Ins Folder
-      run: cd plugins && tree /f
+      run: cd plugins && tree /f && cd
 
     - name: Validate VST
-      run: bash validate.sh "VST\Vstplugins\ci-cmake-juce.dll"
+      run: bash validate.sh "plugins\VST\Vstplugins\ci-cmake-juce.dll"
       #run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST\${{ env.PLUGIN_NAME }}.vst"
 
     - name: Validate VST3
-      run: bash validate.sh "VST3\VST3\ci-cmake-juce.vst3\Contents\x86_64-win\ci-cmake-juce.vst3"
+      run: bash validate.sh "plugins\VST3\VST3\ci-cmake-juce.vst3\Contents\x86_64-win\ci-cmake-juce.vst3"
       #run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST3\${{ env.PLUGIN_NAME }}.vst3"
 
     - name: Validate AAX
-      run: bash validate_aax.sh "AAX\Plug-Ins\ci-cmake-juce.aaxplugin\Contents\x64\ci-cmake-juce.aaxplugin"
+      run: bash validate_aax.sh "plugins\AAX\Plug-Ins\ci-cmake-juce.aaxplugin\Contents\x64\ci-cmake-juce.aaxplugin"
       #run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"
