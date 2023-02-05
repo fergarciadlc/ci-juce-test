@@ -279,10 +279,10 @@ jobs:
       run: echo "Notarize installer"
 
     - name: Upload to GCP Bucket
-      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg "{{ INSTALLER_URI }}"
+      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg "{{ env.PLUGIN_INSTALLER_URI }}"
 
     - name: Make file public
-      run: gsutil acl ch -u AllUsers:R ${{ env.INSTALLER_URI }}
+      run: gsutil acl ch -u AllUsers:R ${{ env.PLUGIN_INSTALLER_URI }}
 
   # Notification
   notification:
