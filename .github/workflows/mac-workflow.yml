@@ -12,7 +12,6 @@ env:
   PLUGIN_NAME: ci-cmake-juce
   PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins
   INSTALLER_PLUGINS_FOLDER: installers/mac
-  EC_CI_BUCKET: gs://webearcandy.appspot.com
   PLUGIN_INSTALLER_URI: gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
   PLUGINVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/pluginval_macOS.zip
   AAXVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/aaxval_mac.zip
@@ -40,7 +39,6 @@ jobs:
   unit-test:
     name: Unit Testing on ${{ matrix.runs_on }}
     needs: matrix_prep
-    if: contains(toJson(github.event.commits), '/no-ut') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
