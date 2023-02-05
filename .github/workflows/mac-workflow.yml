@@ -236,8 +236,6 @@ jobs:
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
-    env:
-      INSTALLER_URI: ${{ env.PLUGIN_INSTALLER_URI }}
     outputs:
       PUBLIC_NAME: ${{ env.PLUGIN_NAME }}
       INSTALLER_PUBLIC_URL: ${{ env.PUBLIC_STORAGE_URL }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
@@ -284,7 +282,7 @@ jobs:
       run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg "{{ INSTALLER_URI }}"
 
     - name: Make file public
-      run: gsutil acl ch -u AllUsers:R ${{ INSTALLER_URI }}
+      run: gsutil acl ch -u AllUsers:R ${{ env.INSTALLER_URI }}
 
   # Notification
   notification:
