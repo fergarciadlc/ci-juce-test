@@ -68,26 +68,22 @@ jobs:
       run: cmake -Bbuild
 
     - name: Build for Windows
-      if: runner.os == 'Windows'
       run: cmake --build build --config Release
 
-    - name: Copy AAX to Plug-Ins Folder
-      if: runner.os == 'Windows'
+    - name: Copy Builds to Plug-Ins Folder
       run: |
+        echo "Copy AAX to Plug-Ins Folder"
         mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
         move "C:\Program Files\Common Files/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
 
-    - name: Copy VST to Plug-Ins Folder
-      if: runner.os == 'Windows'
-      run: |
+        echo "Copy VST to Plug-Ins Folder"
         mkdir ${{ env.PLUGINS_FOLDER }}/VST/
         move "C:\Program Files/Steinberg/Vstplugins/." ${{ env.PLUGINS_FOLDER }}/VST/
-
-    - name: Copy VST3 to Plug-Ins Folder
-      if: runner.os == 'Windows'
-      run: |
+        
+        echo "Copy VST3 to Plug-Ins Folder"
         mkdir ${{ env.PLUGINS_FOLDER }}/VST3/
         move "C:\Program Files\Common Files/VST3/." ${{ env.PLUGINS_FOLDER }}/VST3/
+
 
     - uses: actions/upload-artifact@v3
       with:
