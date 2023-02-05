@@ -175,7 +175,7 @@ jobs:
 
     - name: Validate VST
       # run: bash validate.sh "plugins\VST\Vstplugins\ci-cmake-juce.dll"
-      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST\Vstplugins\${{ env.PLUGIN_NAME }}.vst"
+      run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST\Vstplugins\${{ env.PLUGIN_NAME }}.dll"
 
     - name: Validate VST3
       # run: bash validate.sh "plugins\VST3\VST3\ci-cmake-juce.vst3\Contents\x86_64-win\ci-cmake-juce.vst3"
