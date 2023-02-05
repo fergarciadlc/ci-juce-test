@@ -12,8 +12,11 @@ env:
   PLUGIN_NAME: ci-cmake-juce
   PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins
   INSTALLER_PLUGINS_FOLDER: installers/mac
-  VALIDATORS_URI: gs://webearcandy.appspot.com/ci-utils/validators
   EC_CI_BUCKET: gs://webearcandy.appspot.com
+  PLUGIN_INSTALLER_URI: gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
+  PLUGINVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/pluginval_macOS.zip
+  AAXVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/aaxval_mac.zip
+  PACKAGES_INSTALLER_URI: gs://webearcandy.appspot.com/ci-utils/Packages.pkg
   PUBLIC_STORAGE_URL: https://storage.googleapis.com/webearcandy.appspot.com
 
 jobs:
@@ -88,9 +91,6 @@ jobs:
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
-    env:
-      PLUGINVAL_MAC_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
-      AAXVAL_MAC_URL: ${{ secrets.AAXVAL_MAC_URL }}
 
     steps:
     - uses: actions/checkout@master
@@ -109,13 +109,13 @@ jobs:
 
     - name: Prepare pluginval
       run: | 
-        gsutil -m cp -r "${{ env.VALIDATORS_URI }}/pluginval_macOS.zip" .
+        gsutil -m cp -r "${{ env.PLUGINVAL_URI }}" .
         unzip pluginval_macOS > /dev/null
         echo "pluginval.app/Contents/MacOS/pluginval"
 
     - name: Prepare aaxval
       run: |
-        gsutil -m cp -r "${{ env.VALIDATORS_URI }}/aaxval_mac.zip" .
+        gsutil -m cp -r "${{ env.AAXVAL_URI }}" .
         unzip aaxval_mac > /dev/null
         mv aaxval_mac DigiShell
         ls -la
@@ -236,6 +236,8 @@ jobs:
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
+    env:
+      INSTALLER_URI: ${{ env.PLUGIN_INSTALLER_URI }}
     outputs:
       PUBLIC_NAME: ${{ env.PLUGIN_NAME }}
       INSTALLER_PUBLIC_URL: ${{ env.PUBLIC_STORAGE_URL }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
@@ -256,7 +258,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: Download Packages Installer
-      run: gsutil -m cp -r "${{ env.EC_CI_BUCKET }}/ci-utils/Packages.pkg" .
+      run: gsutil -m cp -r "${{ env.PACKAGES_INSTALLER_URI }}" .
 
     - name: Install Packages
       run: sudo installer -pkg Packages.pkg -target /
@@ -278,13 +280,11 @@ jobs:
     - name: Notarize MacOS Installer
       run: echo "Notarize installer"
 
-    - name: Upload to gcloud Bucket
-      run: |
-        gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg \ 
-        "${{ env.EC_CI_BUCKET }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg"
+    - name: Upload to GCP Bucket
+      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg "{{ INSTALLER_URI }}"
 
     - name: Make file public
-      run: gsutil acl ch -u AllUsers:R ${{ env.EC_CI_BUCKET }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
+      run: gsutil acl ch -u AllUsers:R ${{ INSTALLER_URI }}
 
   # Notification
   notification:
