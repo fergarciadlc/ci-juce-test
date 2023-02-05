@@ -43,7 +43,6 @@ jobs:
 
     steps:
     - name: Run Unit Testing on ${{ matrix.runs_on }}
-      if: runner.os == 'MacOS'
       run: echo "Unit testing"
 
   # Building
@@ -68,11 +67,9 @@ jobs:
       run: cmake -Bbuild
 
     - name: Build for MacOS
-      if: runner.os == 'MacOS'
       run: sudo cmake --build build --config Release
 
     - name: Copy AAX to Plug-Ins Folder
-      if: runner.os == 'MacOS'
       run: |
         sudo mkdir ${{ env.PLUGINS_FOLDER }}/AAX/
         sudo cp -r "/Library/Application Support/Avid/Audio/Plug-Ins/." ${{ env.PLUGINS_FOLDER }}/AAX/
@@ -249,7 +246,6 @@ jobs:
       run: sudo installer -pkg Packages.pkg -target /
 
     - name: Copy Plug-ins to Repository
-      if: runner.os == 'MacOS'
       run: |
         sudo mkdir plugins
         sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin" plugins
