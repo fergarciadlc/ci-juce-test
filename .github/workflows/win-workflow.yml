@@ -44,7 +44,15 @@ jobs:
     steps:
     - name: Run Unit Testing on ${{ matrix.runs_on }}
       if: runner.os == 'Windows'
-      run: echo "Unit testing"
+      run: |
+        if( "${{ toJson(github.event.commit ) }}" -contains "/no-ut" )
+        {
+          echo "/no-ut in commit message, skipping unit tests"
+        } 
+        else 
+        {
+          echo "running uts"
+        }
 
   # Building
   build:
