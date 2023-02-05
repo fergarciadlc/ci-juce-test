@@ -12,8 +12,8 @@ env:
   PLUGIN_NAME: ci-cmake-juce
   PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins
   INSTALLER_PLUGINS_FOLDER: installers/mac
-  VALIDATORS_PATH: gs://webearcandy.appspot.com/ci-utils/validators
-  BUCKET_NAME: gs://webearcandy.appspot.com
+  VALIDATORS_URI: gs://webearcandy.appspot.com/ci-utils/validators
+  EC_CI_BUCKET: gs://webearcandy.appspot.com
 
 jobs:
 
@@ -108,13 +108,13 @@ jobs:
 
     - name: Prepare pluginval
       run: | 
-        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_macOS.zip" .
+        gsutil -m cp -r "${{ env.VALIDATORS_URI }}/pluginval_macOS.zip" .
         unzip pluginval_macOS > /dev/null
         echo "pluginval.app/Contents/MacOS/pluginval"
 
     - name: Prepare aaxval
       run: |
-        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/aaxval_mac.zip" .
+        gsutil -m cp -r "${{ env.VALIDATORS_URI }}/aaxval_mac.zip" .
         unzip aaxval_mac > /dev/null
         mv aaxval_mac DigiShell
         ls -la
@@ -240,7 +240,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: Download Packages Installer
-      run: gsutil -m cp -r "${{ env.BUCKET_NAME }}/ci-utils/Packages.pkg" .
+      run: gsutil -m cp -r "${{ env.EC_CI_BUCKET }}/ci-utils/Packages.pkg" .
 
     - name: Install Packages
       run: sudo installer -pkg Packages.pkg -target /
@@ -263,10 +263,10 @@ jobs:
       run: echo "Notarize installer"
 
     - name: Upload to gcloud Bucket
-      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg "${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg"
+      run: gcloud storage cp ${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg "${{ env.EC_CI_BUCKET }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg"
 
     - name: Make file public
-      run: gsutil acl ch -u AllUsers:R ${{ env.BUCKET_NAME }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
+      run: gsutil acl ch -u AllUsers:R ${{ env.EC_CI_BUCKET }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
 
   # Notification
   notification:
