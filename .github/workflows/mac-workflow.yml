@@ -27,7 +27,7 @@ jobs:
     - name: Remove old artifacts
       uses: c-hive/gha-remove-artifacts@v1
       with:
-        age: '28 days'
+        age: '1 month'
 
   # Matrix Preparation for OS
   matrix_prep:
