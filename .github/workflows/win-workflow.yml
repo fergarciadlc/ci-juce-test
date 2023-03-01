@@ -7,15 +7,28 @@ on:
   pull_request:
     branches:
     - main
+    - develop
 
 env:
   PLUGIN_NAME: ci-cmake-juce
-  PLUGINS_FOLDER: plugins
-  INSTALLER_PLUGINS_FOLDER: installers/windows
-  VALIDATORS_PATH: gs://webearcandy.appspot.com/ci-utils/validators
-  BUCKET_NAME: gs://webearcandy.appspot.com
+  PLUGIN_VERSION: 1_0_0
+  # PLUGINS_FOLDER: plugins
+  INSTALLER_PLUGINS_FOLDER: installers/win
+  PLUGIN_INSTALLER_URI: gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.exe
+  PLUGINVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/pluginval_Windows.zip
+  AAXVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/aaxval_win.zip
+  PUBLIC_STORAGE_URL: https://storage.googleapis.com/webearcandy.appspot.com
 
 jobs:
+
+  remove-old-artifacts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+    - name: Remove old artifacts
+      uses: c-hive/gha-remove-artifacts@v1
+      with:
+        age: '5 days'
 
   # Matrix Preparation for OS
   matrix_prep:
@@ -43,16 +56,12 @@ jobs:
 
     steps:
     - name: Run Unit Testing on ${{ matrix.runs_on }}
-      if: runner.os == 'Windows'
       run: |
-        if( "${{ toJson(github.event.commit ) }}" -contains "/no-ut" )
-        {
+        if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
           echo "/no-ut in commit message, skipping unit tests"
-        } 
-        else 
-        {
+        else
           echo "running uts"
-        }
+        fi
 
   # Building
   build:
@@ -75,7 +84,7 @@ jobs:
     - name: Configure Cmake
       run: cmake -Bbuild
 
-    - name: Build for Windows
+    - name: Build Plug-ins
       run: cmake --build build --config Release
 
     - name: Copy Builds to Plug-Ins Folder
@@ -106,11 +115,9 @@ jobs:
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
-    env:
-      #PLUGINVAL_WIN_URL: ${{ secrets.PLUGINVAL_MAC_URL }}
-      PLUGINVAL_WIN_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Fpluginval_Windows.zip?alt=media&token=10881b3e-2bb3-4d15-8f3c-f48f229ebbf6"
-      #AAXVAL_WIN_URL: ${{ secrets.AAXVAL_MAC_URL }}
-      AAXVAL_WIN_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Faaxval_win.zip?alt=media&token=de939711-5a0b-41e6-95d7-a3bbf6637eee"
+    #env:
+    #  PLUGINVAL_WIN_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Fpluginval_Windows.zip?alt=media&token=10881b3e-2bb3-4d15-8f3c-f48f229ebbf6"
+    #  AAXVAL_WIN_URL: "https://firebasestorage.googleapis.com/v0/b/webearcandy.appspot.com/o/ci-utils%2Fvalidators%2Faaxval_win.zip?alt=media&token=de939711-5a0b-41e6-95d7-a3bbf6637eee"
 
     steps:
     - uses: actions/checkout@master
@@ -127,22 +134,17 @@ jobs:
     - name: Set up gcloud SDK
       uses: 'google-github-actions/setup-gcloud@v1'
 
-    # - name: Prepare pluginval
-    #   run: | 
-    #     gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/pluginval_Windows.zip" .
-    #     powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
-
     - name: Prepare pluginval
       run: | 
-        powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip -OutFile pluginval.zip"
-        powershell -Command "Expand-Archive pluginval.zip -DestinationPath ."
+        gsutil -m cp -r "${{ env.PLUGINVAL_URI }}" .
+        powershell -Command "Expand-Archive pluginval_Windows.zip -DestinationPath ."
 
     - name: Prepare aaxval
       run: |
-        gsutil -m cp -r "${{ env.VALIDATORS_PATH }}/aaxval_win.zip" .
+        gsutil -m cp -r "${{ env.AAXVAL_URI }}" .
         tar -xf aaxval_win.zip
 
-    - name: Generating VST, VST3 and AU Validation Script
+    - name: Generating VST and VST3 Validation Script
       run: |
         echo '
           PLUGIN_PATH=$1
@@ -150,7 +152,12 @@ jobs:
           echo "OS: ${OSTYPE}"
           echo "Validating ${PLUGIN_PATH}"
 
-          ./pluginval.exe --strictness-level 5 --validate-in-process --validate $PLUGIN_PATH --output-dir pluginval-logs --timeout-ms 500000;
+          ./pluginval.exe \
+            --strictness-level 5 \
+            --validate-in-process \
+            --validate $PLUGIN_PATH \
+            --output-dir pluginval-logs \
+            --timeout-ms 500000;
         ' > validate.sh
 
     - name: Generating AAX Validation Script
@@ -174,17 +181,127 @@ jobs:
           " | start aaxval_win/dsh.exe
         ' > validate_aax.sh
 
-    - name: Log Plug-Ins Folder
-      run: tree /f ${{ env.PLUGINS_FOLDER }}
-
     - name: Validate VST
-      # run: bash validate.sh "plugins\VST\Vstplugins\ci-cmake-juce.dll"
       run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST\Vstplugins\${{ env.PLUGIN_NAME }}.dll"
 
     - name: Validate VST3
-      # run: bash validate.sh "plugins\VST3\VST3\ci-cmake-juce.vst3\Contents\x86_64-win\ci-cmake-juce.vst3"
       run: bash validate.sh "${{ env.PLUGINS_FOLDER }}\VST3\VST3\${{ env.PLUGIN_NAME }}.vst3"
 
     - name: Validate AAX
-      # run: bash validate_aax.sh "plugins\AAX\Plug-Ins\ci-cmake-juce.aaxplugin\Contents\x64\ci-cmake-juce.aaxplugin"
       run: bash validate_aax.sh "${{ env.PLUGINS_FOLDER }}\AAX\Plug-Ins\${{ env.PLUGIN_NAME }}.aaxplugin\Contents\x64\${{ env.PLUGIN_NAME }}.aaxplugin"
+
+  # Signing
+  sign:
+    name: Sign on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build, validate]
+    if: contains(toJson(github.event.commits), '/no-sign') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/download-artifact@master
+      with:
+        name: plugins-folder-artifact
+        path: ${{ env.PLUGINS_FOLDER }}
+
+    - name: Generating Signing Script
+      run: |
+        echo '
+          PLUGIN_PATH=$1
+          WRAPTOOL_PATH=$2
+          ILOK_MAIL=$3
+          ILOK_PASSWORD=$4
+          APPLE_DEVELOPER=$5
+          PACE_GUID=$6
+
+          echo "OS: ${OSTYPE}"
+          echo "Signing ${PLUGIN_PATH}"
+
+          $WRAPTOOL_PATH sign \
+            --verbose \
+            --account $ILOK_MAIL \
+            --password $ILOK_PASSWORD \
+            --signid $APPLE_DEVELOPER \
+            --wcguid $PACE_GUID \
+            --in $PLUGIN_PATH \
+            --out $PLUGIN_PATH \
+            --allowsigningservice
+          $WRAPTOOL_PATH verify --verbose --in $PLUGIN_PATH
+          
+        ' > sign_mac.sh
+
+    - name: Sign Plug-Ins
+      run: |
+        echo "Sign AAX"
+        echo "Sign VST"
+        echo "Sign VST3"
+  
+  # Packaging
+  Packaging:
+    name: Packaging on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build, validate, sign]
+    if: contains(toJson(github.event.commits), '/no-packaging') == false
+    strategy:      
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ${{ matrix.runs_on }}
+    outputs:
+      PUBLIC_NAME: ${{ env.PLUGIN_NAME }}
+      INSTALLER_PUBLIC_URL: ${{ env.PUBLIC_STORAGE_URL }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}_${{ env.PLUGIN_VERSION }}.exe
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/download-artifact@master
+      with:
+        name: plugins-folder-artifact
+        path: ${{ env.PLUGINS_FOLDER }}
+
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+    - name: Set up gcloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'
+
+    - name: See tree
+      run: tree /f
+
+    - name: Move Plug-Ins to Repository
+      run: | 
+        mkdir "${{ env.PLUGINS_FOLDER }}/plugins"
+        move "${{ env.PLUGINS_FOLDER }}\VST\Vstplugins\${{ env.PLUGIN_NAME }}.dll"     "${{ env.INSTALLER_PLUGINS_FOLDER }}/plugins"
+        move "${{ env.PLUGINS_FOLDER }}\VST3\VST3\${{ env.PLUGIN_NAME }}.vst3"         "${{ env.INSTALLER_PLUGINS_FOLDER }}/plugins"
+        move "${{ env.PLUGINS_FOLDER }}\AAX\Plug-Ins\${{ env.PLUGIN_NAME }}.aaxplugin" "${{ env.INSTALLER_PLUGINS_FOLDER }}/plugins"
+
+    - name: Build installer
+      run: iscc ${{ env.INSTALLER_PLUGINS_FOLDER }}/${{ env.PLUGIN_NAME }}.iss
+
+    - name: Upload to GCP Bucket
+      run: | 
+        gcloud storage \ 
+        cp "${{ env.INSTALLER_PLUGINS_FOLDER }}\build\${{ env.PLUGIN_NAME }}_${{ env.VERSION }}.exe" \
+        "${{ env.PLUGIN_INSTALLER_URI }}/${{ env.PLUGIN_NAME }}_${{ env.VERSION }}.exe"
+
+    - name: Make file public
+      run: gsutil acl ch -u AllUsers:R "${{ env.PLUGIN_INSTALLER_URI }}/${{ env.PLUGIN_NAME }}_${{ env.VERSION }}.exe"
+
+  # Notification
+  notification:
+    name: Notify on ${{ matrix.runs_on }}
+    needs: [matrix_prep, build, validate, sign, packaging]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    env:
+      PLUGIN_NAME: ${{ needs.packaging.outputs.PUBLIC_NAME }}
+      URL: ${{ needs.packaging.outputs.INSTALLER_PUBLIC_URL }}
+
+    steps:
+    - name: Push Notification on Discord
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: '{{ PLUGIN_NAME }} (${{ env.VERSION }}) installer: {{ URL }}'

@@ -1,5 +1,5 @@
 #define MyAppName "ci-cmake-juce"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.0.0"
 #define MyAppPublisher "Ear Candy Technologies"
 #define MyAppURL "https://www.earcandytech.com/"
 
@@ -15,18 +15,13 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 CreateAppDir=no
 DefaultGroupName={#MyAppName}
-//LicenseFile=D:\Ear Candy\Software\Instaladores\Phonograin\Version_1_1\Lic.rtf
-OutputDir=.
-OutputBaseFilename=ci-cmake-juce_installer
-//SetupIconFile=D:\Ear Candy\Software\Instaladores\Phonograin\Version_1_1\Icono.ico
-//UninstallIconFile=D:\Ear Candy\Zafiro\Zafiro_1.1\Icono.ico
+OutputDir=.\build
+OutputBaseFilename=ci-cmake-juce_1_0_0
 Compression=lzma2/ultra64
 SolidCompression=yes
 WizardStyle=modern
 DisableWelcomePage=no
 DisableDirPage=yes
-//WizardImageFile="D:\Ear Candy\Software\Instaladores\Phonograin\Version_1_1\Lado.bmp"
-//WizardSmallImageFile="D:\Ear Candy\Software\Instaladores\Phonograin\Version_1_1\icono.bmp"
 
 ArchitecturesInstallIn64BitMode=x64
 DisableReadyPage=false
@@ -47,10 +42,9 @@ Name: "VST64"; Description: "64-bit VST2"; Types: full;
 Name: "AAX"; Description: "64-bit AAX"; Types: full compact;
 
 [Files]
-Source: "ci-cmake-juce.vst3"; DestDir: "{code:GetDir|0}"; Components: VST364; Flags: ignoreversion;
-Source: "ci-cmake-juce.dll"; DestDir: "{code:GetDir|1}"; Components: VST64; Flags: ignoreversion;
-Source: "ci-cmake-juce/AAX/*"; DestDir: "{code:GetDir|2}"; Components: AAX; Flags: ignoreversion recursesubdirs;
-//Source: "D:\Ear Candy\Software\Instaladores\Phonograin\Version_1_1\Ear Candy Technologies\Phonograin\*"; DestDir: "{userdocs}\Ear Candy Technologies\Phonograin"; Flags: ignoreversion;
+Source: "plugins\ci-cmake-juce.vst3"; DestDir: "{code:GetDir|0}"; Components: VST364; Flags: ignoreversion;
+Source: "plugins\ci-cmake-juce.dll"; DestDir: "{code:GetDir|1}"; Components: VST64; Flags: ignoreversion;
+Source: "plugins\ci-cmake-juce.aaxplugin"; DestDir: "{code:GetDir|2}"; Components: AAX; Flags: ignoreversion recursesubdirs;
 
 [Code]
 var

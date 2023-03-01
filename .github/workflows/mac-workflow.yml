@@ -7,12 +7,14 @@ on:
   pull_request:
     branches:
     - main
+    - develop
 
 env:
   PLUGIN_NAME: ci-cmake-juce
+  PLUGIN_VERSION: 1_0_0
   PLUGINS_FOLDER: /Users/runner/Library/Audio/Plug-Ins
   INSTALLER_PLUGINS_FOLDER: installers/mac
-  PLUGIN_INSTALLER_URI: gs://webearcandy.appspot.com/ci-cmake-juce/ci-cmake-juce.pkg
+  PLUGIN_INSTALLER_URI: gs://webearcandy.appspot.com/ci-cmake-juce
   PLUGINVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/pluginval_macOS.zip
   AAXVAL_URI: gs://webearcandy.appspot.com/ci-utils/validators/aaxval_mac.zip
   PACKAGES_INSTALLER_URI: gs://webearcandy.appspot.com/ci-utils/Packages.pkg
@@ -22,7 +24,7 @@ jobs:
 
   remove-old-artifacts:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 1
     steps:
     - name: Remove old artifacts
       uses: c-hive/gha-remove-artifacts@v1
@@ -82,7 +84,7 @@ jobs:
     - name: Configure Cmake
       run: cmake -Bbuild
 
-    - name: Build for MacOS
+    - name: Build Plug-ins
       run: sudo cmake --build build --config Release
 
     - name: Copy AAX to Plug-Ins Folder
@@ -169,9 +171,6 @@ jobs:
           " | DigiShell/CommandLineTools/dsh
         ' > validate_aax.sh
 
-    - name: Log Plug-Ins Folder
-      run: find ${{ env.PLUGINS_FOLDER }}
-
     - name: Validate VST
       run: bash validate.sh "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"
 
@@ -234,11 +233,6 @@ jobs:
         echo "Sign AU"
         echo "Sign VST"
         echo "Sign VST3"
-      # run: |
-      #   bash sign_mac.sh ${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.aaxplugin $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
-      #   bash sign_mac.sh ${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.component $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
-      #   bash sign_mac.sh ${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst       $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
-      #   bash sign_mac.sh ${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst3      $WRAPTOOL_PATH $ILOK_MAIL ${{ secrets.ILOK_PASSWORD }} ${{ secrets.APPLE_DEVELOPER }} ${{ secrets.PACE_GUID }}
 
   # Packaging
   packaging:
@@ -250,7 +244,7 @@ jobs:
     runs-on: ${{ matrix.runs_on }}
     outputs:
       PUBLIC_NAME: ${{ env.PLUGIN_NAME }}
-      INSTALLER_PUBLIC_URL: ${{ env.PUBLIC_STORAGE_URL }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}.pkg
+      INSTALLER_PUBLIC_URL: ${{ env.PUBLIC_STORAGE_URL }}/${{ env.PLUGIN_NAME }}/${{ env.PLUGIN_NAME }}_${{ env.PLUGIN_VERSION }}.pkg
 
     steps:
     - uses: actions/checkout@master
@@ -273,13 +267,13 @@ jobs:
     - name: Install Packages
       run: sudo installer -pkg Packages.pkg -target /
 
-    - name: Copy Plug-ins to Repository
+    - name: Move Plug-ins to Repository
       run: |
-        sudo mkdir plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin" plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3" plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst" plugins
-        sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component" plugins
+        sudo mkdir "${{ env.PLUGINS_FOLDER }}/plugins"
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/AAX/${{ env.PLUGIN_NAME }}.aaxplugin"         "${{ env.INSTALLER_PLUGINS_FOLDER }}/plugins"
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST3/${{ env.PLUGIN_NAME }}.vst3"             "${{ env.INSTALLER_PLUGINS_FOLDER }}/plugins"
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/VST/${{ env.PLUGIN_NAME }}.vst"               "${{ env.INSTALLER_PLUGINS_FOLDER }}/plugins"
+        sudo cp -r "${{ env.PLUGINS_FOLDER }}/Components/${{ env.PLUGIN_NAME }}.component"  "${{ env.INSTALLER_PLUGINS_FOLDER }}/plugins"
 
     - name: Build MacOS Installer
       run: packagesbuild ${{ env.INSTALLER_PLUGINS_FOLDER }}/${{ env.PLUGIN_NAME }}.pkgproj
@@ -291,10 +285,13 @@ jobs:
       run: echo "Notarize installer"
 
     - name: Upload to GCP Bucket
-      run: gcloud storage cp "${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}.pkg" "${{ env.PLUGIN_INSTALLER_URI }}"
+      run: |
+        gcloud storage \
+        cp "${{ env.INSTALLER_PLUGINS_FOLDER }}/build/${{ env.PLUGIN_NAME }}_${{ env.PLUGIN_VERSION }}.pkg" \ 
+        "${{ env.PLUGIN_INSTALLER_URI }}/${{ env.PLUGIN_NAME }}_${{ env.PLUGIN_VERSION }}.pkg"
 
     - name: Make file public
-      run: gsutil acl ch -u AllUsers:R ${{ env.PLUGIN_INSTALLER_URI }}
+      run: gsutil acl ch -u AllUsers:R "${{ env.PLUGIN_INSTALLER_URI }}/${{ env.PLUGIN_NAME }}_${{ env.PLUGIN_VERSION }}.pkg"
 
   # Notification
   notification:
@@ -313,4 +310,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_HOOK_ID }}
       uses: Ilshidur/action-discord@master
       with:
-        args: 'The plug-in {{ PLUGIN_NAME }} download link is: {{ URL }}'
+        args: '{{ PLUGIN_NAME }} (${{ env.VERSION }}) installer: {{ URL }}'

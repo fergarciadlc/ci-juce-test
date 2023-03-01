@@ -87,19 +87,19 @@
 																	<key>BUNDLE_POSTINSTALL_PATH</key>
 																	<dict>
 																		<key>PATH_TYPE</key>
-																		<integer>0</integer>
+																		<integer>1</integer>
 																	</dict>
 																	<key>BUNDLE_PREINSTALL_PATH</key>
 																	<dict>
 																		<key>PATH_TYPE</key>
-																		<integer>0</integer>
+																		<integer>1</integer>
 																	</dict>
 																	<key>CHILDREN</key>
 																	<array/>
 																	<key>GID</key>
 																	<integer>80</integer>
 																	<key>PATH</key>
-																	<string>../../plugins/ci-cmake-juce.aaxplugin</string>
+																	<string>plugins/ci-cmake-juce.aaxplugin</string>
 																	<key>PATH_TYPE</key>
 																	<integer>1</integer>
 																	<key>PERMISSIONS</key>
@@ -995,19 +995,19 @@
 															<key>BUNDLE_POSTINSTALL_PATH</key>
 															<dict>
 																<key>PATH_TYPE</key>
-																<integer>0</integer>
+																<integer>1</integer>
 															</dict>
 															<key>BUNDLE_PREINSTALL_PATH</key>
 															<dict>
 																<key>PATH_TYPE</key>
-																<integer>0</integer>
+																<integer>1</integer>
 															</dict>
 															<key>CHILDREN</key>
 															<array/>
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../plugins/ci-cmake-juce.vst3</string>
+															<string>plugins/ci-cmake-juce.vst3</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -1858,19 +1858,19 @@
 															<key>BUNDLE_POSTINSTALL_PATH</key>
 															<dict>
 																<key>PATH_TYPE</key>
-																<integer>0</integer>
+																<integer>1</integer>
 															</dict>
 															<key>BUNDLE_PREINSTALL_PATH</key>
 															<dict>
 																<key>PATH_TYPE</key>
-																<integer>0</integer>
+																<integer>1</integer>
 															</dict>
 															<key>CHILDREN</key>
 															<array/>
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../plugins/ci-cmake-juce.vst</string>
+															<string>plugins/ci-cmake-juce.vst</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -2721,19 +2721,19 @@
 															<key>BUNDLE_POSTINSTALL_PATH</key>
 															<dict>
 																<key>PATH_TYPE</key>
-																<integer>0</integer>
+																<integer>1</integer>
 															</dict>
 															<key>BUNDLE_PREINSTALL_PATH</key>
 															<dict>
 																<key>PATH_TYPE</key>
-																<integer>0</integer>
+																<integer>1</integer>
 															</dict>
 															<key>CHILDREN</key>
 															<array/>
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../plugins/ci-cmake-juce.component</string>
+															<string>plugins/ci-cmake-juce.component</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -3945,7 +3945,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>ci-cmake-juce</string>
+			<string>ci-cmake-juce_1_0_0</string>
 			<key>PAYLOAD_ONLY</key>
 			<false/>
 			<key>TREAT_MISSING_PRESENTATION_DOCUMENTS_AS_WARNING</key>
