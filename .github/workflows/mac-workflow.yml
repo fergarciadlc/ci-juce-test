@@ -22,15 +22,6 @@ env:
 
 jobs:
 
-  remove-old-artifacts:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-    steps:
-    - name: Remove old artifacts
-      uses: c-hive/gha-remove-artifacts@v1
-      with:
-        age: '5 days'
-
   # Matrix Preparation for OS
   matrix_prep:
     if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-mac') == false

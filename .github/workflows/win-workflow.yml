@@ -21,15 +21,6 @@ env:
 
 jobs:
 
-  remove-old-artifacts:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-    steps:
-    - name: Remove old artifacts
-      uses: c-hive/gha-remove-artifacts@v1
-      with:
-        age: '5 days'
-
   # Matrix Preparation for OS
   matrix_prep:
     if: contains(toJson(github.event.commits), '/no-ci') == false && contains(toJson(github.event.commits), '/no-win') == false
@@ -55,12 +46,16 @@ jobs:
 
     steps:
     - name: Run Unit Testing on ${{ matrix.runs_on }}
+      if: runner.os == 'Windows'
       run: |
-        if ( ${{ contains(toJson(github.event.commits), '/no-ut') }} ); then
+        if( "${{ toJson(github.event.commit ) }}" -contains "/no-ut" )
+        {
           echo "/no-ut in commit message, skipping unit tests"
-        else
+        } 
+        else 
+        {
           echo "running uts"
-        fi
+        }
 
   # Building
   build:
