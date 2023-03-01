@@ -49,7 +49,6 @@ jobs:
   unit-test:
     name: Unit Testing on ${{ matrix.runs_on }}
     needs: matrix_prep
-    if: contains(toJson(github.event.commits), '/no-ut') == false
     strategy:      
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ${{ matrix.runs_on }}
